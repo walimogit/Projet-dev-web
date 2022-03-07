@@ -91,3 +91,12 @@
 .entreprise{
     height: 100vh;
 }
+
+/* Pour le menu collant*/
+
+.fixed{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
