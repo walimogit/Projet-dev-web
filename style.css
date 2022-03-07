@@ -76,6 +76,58 @@
   }
 }
 
+.presentation{
+  background-color: grey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  top : 20%;
+  justify-content: center;
+}
+
+.who_are_you{
+  display: flex;
+  border-radius: 10px;
+  border : solid;
+  border-color: rgba(0, 255, 255, 0.123);
+  text-align: center;
+  min-width: 15%;
+  z-index: 2;
+  white-space: nowrap;
+  position: relative;
+  justify-content: center;
+  top : 30%;
+}
+
+.middlenav{
+  display: flex;
+  position: relative;
+  top : 33%;
+  justify-content: center;
+}
+
+.middlenav a{
+  min-width: 10%;
+  width: fit-content;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border: 1px solid rgba(250, 128, 114, 0.062);
+  background-color: rgba(0, 0, 0, 0.424);
+  border-radius: 5px;
+  margin: 3px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+
 .home{
     height: 100vh;
 }
@@ -91,3 +143,4 @@
 .entreprise{
     height: 100vh;
 }
+
