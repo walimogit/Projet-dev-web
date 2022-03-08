@@ -27,6 +27,9 @@ let topbar = rect.top + scrollY
 //fake.style.width = rect.width + "px"
 //fake.style.height = rect.height + "px"
 console.log(topbar)
+
+//----Fonction-onScroll----
+
 let onScroll = function () {
   let hasScrollClass = element.classList.contains('fixed')
   if (window.scrollY > topbar && !hasScrollClass){
@@ -38,6 +41,8 @@ let onScroll = function () {
     //element.parentNode.remove(fake, element)
   }
 }
+
+//----Fonction-onResize----
 
 let onResize = function () {
   element.style.width = "auto"
