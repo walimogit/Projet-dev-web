@@ -60,3 +60,24 @@ let onResize = function () {
 
 window.addEventListener('scroll', onScroll)
 window.addEventListener('resize', onResize)
+
+
+
+$(document).ready(()=>{
+    
+  //-----CGV-----
+  
+  document.getElementById("valider").disabled = true;
+  
+  $('.cgv').click(function(){
+      if($('.cgv:checked').length == 1) {
+          document.getElementById("valider").disabled = false;
+      }
+  })
+  
+  $('.cgv').click(function(){
+      if($('.cgv:checked').length == 0) {
+          document.getElementById("valider").disabled = true;
+      }
+  })
+});
