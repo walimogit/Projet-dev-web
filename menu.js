@@ -65,8 +65,6 @@ window.addEventListener('resize', onResize)
 
 $(document).ready(()=>{
     
-
-  
   document.getElementById("valider").disabled = true;
   
   $('.cgv').click(function(){
