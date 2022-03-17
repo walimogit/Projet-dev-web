@@ -1,32 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+    <link rel="stylesheet" href="./vendors/bootstrap/css/bootstrap.min.css">
     <title>Login</title>
-</head>
-<body>
-    <div class="login">
-        <form action="formulaire" method="post">
-            <div>
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="user_name">
-            </div>
-            <div>
-                <label for="mail">e-mail :</label>
-                <input type="email" id="mail" name="user_mail">
-            </div>
-            <div>
-                <label for="msg">Message :</label>
-                <textarea id="msg" name="user_message"></textarea>
-            </div>
-            <div class="button">
-                <button type="submit">Se connecter</button>
-            </div>
-        </form>
-    </div>
+    <link href="login.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <main class="form-signin">
+      <form>
+        <img class="mb-4" src="./img/logo.png" alt="logo" width="200" height="57">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-    <div class="register"></div>
-</body>
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="Email">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+          <!--<label>
+            <input type="checkbox" value="remember-me"> Remember me 
+          </label>-->
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <a href="#">Register</a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
+      </form>
+    </main>
+  </body>
 </html>
