@@ -15,22 +15,18 @@ window.onclick = function(e) {
   }
 }
 
-$(document).ready(()=>{
-    
-  document.getElementById("create_account").disabled = true;
-  
-  $('.conditions').click(function(){
-      if($('#conditions:checked').length == 1) {
-          document.getElementById("create_account").disabled = false;
-      }
-  })
-  
-  $('.conditions').click(function(){
-      if($('#conditions:checked').length == 0) {
-          document.getElementById("create_account").disabled = true;
-      }
-  })
-});
+
+
+
+var cgvCheckbox = document.querySelector('input[id="conditions"]');
+cgvCheckbox.click = function() {
+  if(cgvCheckbox.checked) {
+    document.getElementById("create_account").disabled = false;
+  }
+  else {
+    document.getElementById("create_account").disabled = true;
+  }
+}
 
 //----Menu-collant----
 
