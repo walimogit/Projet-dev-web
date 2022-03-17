@@ -15,6 +15,23 @@ window.onclick = function(e) {
   }
 }
 
+$(document).ready(()=>{
+    
+  document.getElementById("create_account").disabled = true;
+  
+  $('.conditions').click(function(){
+      if($('#conditions:checked').length == 1) {
+          document.getElementById("create_account").disabled = false;
+      }
+  })
+  
+  $('.conditions').click(function(){
+      if($('#conditions:checked').length == 0) {
+          document.getElementById("create_account").disabled = true;
+      }
+  })
+});
+
 //----Menu-collant----
 
 // Fonctions
@@ -63,19 +80,3 @@ window.addEventListener('resize', onResize)
 
 //-----CGV-----
 
-$(document).ready(()=>{
-    
-  document.getElementById("create_account").disabled = true;
-  
-  $('.conditions').click(function(){
-      if($('#conditions:checked').length == 1) {
-          document.getElementById("create_account").disabled = false;
-      }
-  })
-  
-  $('.conditions').click(function(){
-      if($('#conditions:checked').length == 0) {
-          document.getElementById("create_account").disabled = true;
-      }
-  })
-});
