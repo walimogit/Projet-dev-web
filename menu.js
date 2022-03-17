@@ -67,14 +67,14 @@ $(document).ready(()=>{
     
   document.getElementById("create_account").disabled = true;
   
-  $('.cgv').click(function(){
+  $('.conditions').click(function(){
       if($('#conditions:checked').length == 1) {
           document.getElementById("create_account").disabled = false;
       }
   })
   
-  $('.cgv').click(function(){
-      if($('.cgv:checked').length == 0) {
+  $('.conditions').click(function(){
+      if($('#conditions:checked').length == 0) {
           document.getElementById("create_account").disabled = true;
       }
   })
