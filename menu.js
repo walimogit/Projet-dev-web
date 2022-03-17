@@ -65,17 +65,17 @@ window.addEventListener('resize', onResize)
 
 $(document).ready(()=>{
     
-  document.getElementById("valider").disabled = true;
+  document.getElementById("create_account").disabled = true;
   
   $('.cgv').click(function(){
-      if($('.cgv:checked').length == 1) {
-          document.getElementById("valider").disabled = false;
+      if($('#conditions:checked').length == 1) {
+          document.getElementById("create_account").disabled = false;
       }
   })
   
   $('.cgv').click(function(){
       if($('.cgv:checked').length == 0) {
-          document.getElementById("valider").disabled = true;
+          document.getElementById("create_account").disabled = true;
       }
   })
 });
