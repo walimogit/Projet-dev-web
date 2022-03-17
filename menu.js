@@ -61,11 +61,11 @@ let onResize = function () {
 window.addEventListener('scroll', onScroll)
 window.addEventListener('resize', onResize)
 
-
+//-----CGV-----
 
 $(document).ready(()=>{
     
-  //-----CGV-----
+
   
   document.getElementById("valider").disabled = true;
   
