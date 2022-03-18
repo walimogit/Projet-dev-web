@@ -9,17 +9,18 @@
     <link href="login.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <main class="form-signin">
-      <form>
+    <main class="form-signin">*
+
+      <form action="login.php" method="POST" >
         <img class="mb-4" src="./img/logo.png" alt="logo" width="200" height="57">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="form-floating">
-          <input type="login" class="form-control" id="floatingInput" placeholder="Login">
+          <input class="form-control type="text" name="login" id="login" value="" autocomplete="off" />
           <label for="floatingInput">Login</label>
         </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <div class="form-floating"> 
+          <input type="password" class="form-control type="password" name="password" id="password" value="" autocomplete="off" />
           <label for="floatingPassword">Password</label>
         </div>
 
@@ -32,6 +33,7 @@
         <a href="#">Register</a>
         <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
       </form>
+      
     </main>
   </body>
 </html>
