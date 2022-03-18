@@ -1,0 +1,53 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: maria_sql_projet
+    image: mariadb:10.3
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: cesi
+    volumes:
+      - ./db-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - phpnet
+
+  phpmyadmin:
+    container_name: php_admin_projet
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_USER:cesi
+      - PMA_PASSWORD:cesi
+    depends_on:
+      - db
+    networks:
+      - phpnet
+
+  web:
+    container_name: php_apache_projet
+    image: php7.4-apache:projet
+    restart: always
+    ports:
+      # local:container
+      - "1337:80"
+    environment: 
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+      - COMPOSER_ALLOW_SUPERUSER=1
+    volumes:
+      - ./www:/var/www/html
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    networks:
+      - phpnet
+  
+networks:
+  phpnet :
