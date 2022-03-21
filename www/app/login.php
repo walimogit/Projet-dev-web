@@ -37,6 +37,5 @@ if(isset($_POST['submitBtnLogin'])) {
     $msg = "Both fields are required!";
   }
 }
-echo $msg;
 
 ?>
