@@ -10,7 +10,6 @@
 CREATE TABLE Enterprise(
         ID_enterprise                 Int  Auto_increment  NOT NULL ,
         Name_enterprise               Text NOT NULL ,
-        Sector_of_activity_enterprise Text NOT NULL ,
         Number_interns_accepted       Text NOT NULL ,
         Booldel                       Bool NOT NULL
 	,CONSTRAINT Enterprise_PK PRIMARY KEY (ID_enterprise)
