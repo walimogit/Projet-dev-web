@@ -36,7 +36,6 @@ include ("login.php");
           </label>-->
         </div>
         <button name="submitBtnLogin" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        <a href="register.html">Register</a>
         <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
         <?php
           // faire en sorte de récuperer le $msg de login.php et echo ici;
