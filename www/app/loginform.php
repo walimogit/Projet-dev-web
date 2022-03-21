@@ -13,10 +13,10 @@ include ("login.php");
     <title>Login</title>
     <link href="login.css" rel="stylesheet">
   </head>
-  <a class="homelogin" href="index.html"><i class="fas fa-home"></i></a>
   <body class="text-center">
     <main class="form-signin">
       <form action="login.php" method="POST" >
+        
         <img class="mb-4" src="./img/logo.png" alt="logo" width="200" height="57">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -24,6 +24,7 @@ include ("login.php");
           <input class="form-control type="text" name="login" id="login" value="" autocomplete="off" />
           <label for="floatingInput">Login</label>
         </div>
+
         <div class="form-floating"> 
           <input type="password" class="form-control type="password" name="password" id="password" value="" autocomplete="off" />
           <label for="floatingPassword">Password</label>
@@ -40,6 +41,7 @@ include ("login.php");
         <?php
           // faire en sorte de récuperer le $msg de login.php et echo ici;
         ?>
+        <a class="homelogin" href="index.html"><i class="fas fa-home"></i></a>
       </form>
     </main>
     <!--<script src="script.js"></script>-->
