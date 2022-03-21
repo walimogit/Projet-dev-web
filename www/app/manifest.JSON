@@ -1,51 +1,51 @@
 {
-"name": "Prosit 8",
-"short_name": "P8",
-"description": "Hub Stage Login",
-"start_url": "index.html",
-"display": "standalone",
-"background-color": "#FFFF",
-"theme_color" : "#03a9f4",
-"orientation": "portrait-primary",
-"icons": [
-    {
-        "src": "./img/hub_stage_x48.png",
-        "type": "image/png",
-        "sizes": "48x48"
-    },
-    {
-        "src": "./img/hub_stage_x72.png",
-        "type": "image/png",
-        "sizes": "72x72"
-    },
-    {
-        "src": "./img/hub_stage_x96.png",
-        "type": "image/png",
-        "sizes": "96x96"
-    },
-    {
-        "src": "./img/hub_stage_x128.png",
-        "type": "image/png",
-        "sizes": "128x128"
-    },
-    {
-        "src": "./img/hub_stage_x192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-    },
-    {
-        "src": "./img/hub_stage_x384.png",
-        "type": "image/png",
-        "sizes": "384x384"
-    },
-    {
-        "src": "./img/hub_stage_x512.png",
-        "type": "image/png",
-        "sizes": "512x512"
-    },
-    {
-        "src": "./img/hub_stage_x688.png",
-        "type": "image/png",
-        "sizes": "688x688"
-    }
-]}
+    "name": "HUB-STAGE",
+    "short_name": "HUBSTAGE",
+    "description": "Hub Stage Login",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background-color": "#FFFF",
+    "theme_color" : "#03a9f4",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "./img/hub_stage_x48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "./img/hub_stage_x72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "./img/hub_stage_x96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "./img/hub_stage_x128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "./img/hub_stage_x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./img/hub_stage_x384.png",
+            "type": "image/png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "./img/hub_stage_x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "./img/hub_stage_x688.png",
+            "type": "image/png",
+            "sizes": "688x688"
+        }
+    ]}    
