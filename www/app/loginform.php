@@ -38,11 +38,9 @@ include ("login.php");
         <a href="register.html">Register</a>
         <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
         <?php
-          echo "test";
-          echo $_POST["message"];
+          // faire en sorte de récuperer le $msg de login.php et echo ici;
         ?>
       </form>
-      
     </main>
     <!--<script src="script.js"></script>-->
   </body>
