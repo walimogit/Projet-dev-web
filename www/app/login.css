@@ -62,8 +62,6 @@ body {
 .homelogin{
   color: grey;
   position: absolute;
-  padding-left: 5%;
-  size: 50%;
 }
 
 @media (min-width: 768px) {
