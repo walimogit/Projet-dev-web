@@ -33,8 +33,8 @@ if(isset($_POST['submitBtnLogin'])) {
           $role = "Tutor";
         }
 
-        echo " <br><h1> hi ! ", $_SESSION['sess_user']," ",$_SESSION['sess_role_id'];
-        echo "<br>Your role is ",$role;
+        echo " <br><h1> hi ! ", $_SESSION['sess_user'];
+        echo "<br>Your role is ", $role;
         echo "<br> Maintenant il faut verif le role de USER et faire un affichage en fonction de celui-ci.";
        
       } else {
