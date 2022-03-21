@@ -28,13 +28,14 @@ if(isset($_POST['submitBtnLogin'])) {
        
       } else {
         $msg = "Invalid username and password!";
-        //header('location:login.html'); // en cas d'erreur ramène à la page précédente (Il faut faire passer le param MSG)
+        header('location:loginform.php');
       }
     } catch (PDOException $e) {
       echo "Error : ".$e->getMessage();
     }
   } else {
     $msg = "Both fields are required!";
+    header('location:loginform.php');
   }
 }
 
