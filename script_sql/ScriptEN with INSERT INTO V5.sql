@@ -858,12 +858,12 @@ CREATE TABLE Represent(
 #------------------------------------------------------------
 
 CREATE TABLE Own(
-        ID_people  Int NOT NULL ,
-        ID_role    Int NOT NULL
-	,CONSTRAINT Own_PK PRIMARY KEY (ID_people,ID_role)
+        ID_role   Int NOT NULL ,
+        ID_people Int NOT NULL
+	,CONSTRAINT Own_PK PRIMARY KEY (ID_role,ID_people)
 
+	,CONSTRAINT Own_Role_FK FOREIGN KEY (ID_role) REFERENCES Role(ID_role)
 	,CONSTRAINT Own_People0_FK FOREIGN KEY (ID_people) REFERENCES People(ID_people)
-	,CONSTRAINT Own_Role1_FK FOREIGN KEY (ID_role) REFERENCES Role(ID_role)
 )ENGINE=InnoDB;
 
 
