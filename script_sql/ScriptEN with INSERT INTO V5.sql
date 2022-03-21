@@ -860,9 +860,8 @@ CREATE TABLE Represent(
 CREATE TABLE Own(
         ID_people  Int NOT NULL ,
         ID_role    Int NOT NULL
-	,CONSTRAINT Own_PK PRIMARY KEY (ID_permits,ID_people,ID_role)
+	,CONSTRAINT Own_PK PRIMARY KEY (ID_people,ID_role)
 
-	,CONSTRAINT Own_Permits_FK FOREIGN KEY (ID_permits) REFERENCES Permits(ID_permits)
 	,CONSTRAINT Own_People0_FK FOREIGN KEY (ID_people) REFERENCES People(ID_people)
 	,CONSTRAINT Own_Role1_FK FOREIGN KEY (ID_role) REFERENCES Role(ID_role)
 )ENGINE=InnoDB;
