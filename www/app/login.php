@@ -25,6 +25,7 @@ if(isset($_POST['submitBtnLogin'])) {
         var_dump($_SESSION);
 
         echo " <br><h1> hi ! ", $_SESSION['sess_user'];
+        echo "<br> Maintenant il faut verif le role de USER et faire un affichage en fonction de celui-ci.";
        
       } else {
         $msg = "Invalid username and password!";
