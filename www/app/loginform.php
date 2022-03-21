@@ -1,3 +1,6 @@
+<?php
+include ("login.php");
+?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -34,7 +37,12 @@
         <button name="submitBtnLogin" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         <a href="register.html">Register</a>
         <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
-      </form> 
+        <?php
+          echo "test";
+          echo $_POST["message"];
+        ?>
+      </form>
+      
     </main>
     <!--<script src="script.js"></script>-->
   </body>
