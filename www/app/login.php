@@ -8,7 +8,7 @@ if(isset($_POST['submitBtnLogin'])) {
   $password = trim($_POST['password']);
   if($username != "" && $password != "") {
     try {
-      $query = 'SELECT * FROM people WHERE login=:user_name AND password=:pass_word';
+      $query = 'SELECT People.ID_people, First_name, Last_name, Login, Password, ID_role FROM `People` JOIN `Own` WHERE login=:user_name AND password=:pass_word AND People.ID_people = Own.ID_people';
       $stmt = $bdd->prepare($query);
       $stmt->bindParam('user_name', $username, PDO::PARAM_STR);
       $stmt->bindValue('pass_word', $password, PDO::PARAM_STR);
@@ -21,10 +21,20 @@ if(isset($_POST['submitBtnLogin'])) {
         $_SESSION['sess_login'] = $row['Login'];
         $_SESSION['sess_pass'] = $row['Password'];
         $_SESSION['sess_user'] = $row['First_name'];
-        
+        $_SESSION['sess_role_id'] = $row['ID_role'];
         var_dump($_SESSION);
+        
+        $role;
+        if ($_SESSION['sess_role_id'] == 1) {
+          $role = "Student";
+        } elseif ($_SESSION['sess_role_id'] == 2) {
+          $role = "Delegate";
+        } elseif ($_SESSION['sess_role_id'] == 3) {
+          $role = "Tutor";
+        }
 
-        echo " <br><h1> hi ! ", $_SESSION['sess_user'];
+        echo " <br><h1> hi ! ", $_SESSION['sess_user']," ",$_SESSION['sess_role_id'];
+        echo "<br>Your role is ",$role;
         echo "<br> Maintenant il faut verif le role de USER et faire un affichage en fonction de celui-ci.";
        
       } else {
