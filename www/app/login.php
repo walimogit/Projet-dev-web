@@ -22,37 +22,19 @@ if(isset($_POST['submitBtnLogin'])) {
         $_SESSION['sess_pass'] = $row[0]['Password'];
         $_SESSION['sess_user'] = $row[0]['First_name'];
         $_SESSION['sess_role_id'] = $row[0]['ID_role'];
-        
-        $role;
-        if ($_SESSION['sess_role_id'] == 1) {
-          $role = "Student";
-        } elseif ($_SESSION['sess_role_id'] == 2) {
-          $role = "Delegate";
-        } elseif ($_SESSION['sess_role_id'] == 3) {
-          $role = "Tutor";
-        }elseif ($_SESSION['sess_role_id'] == 4) {
-          $role = "Other";
-        }elseif ($_SESSION['sess_role_id'] == 5) {
-          $role = "Admin";
-        }
 
       } elseif ($count == 2 && !empty($row)) {
 
         $role;
         if ($row[0]['ID_role'] == 1 && $row[1]['ID_role'] == 2){
-          $role = "Student_Delegate";
           $_SESSION['sess_role_id'] =12;  
         }elseif ($row[0]['ID_role'] == 2 && $row[1]['ID_role'] == 3){
-          $role = "Tutor_Delegate";
           $_SESSION['sess_role_id'] =23;    
         }elseif ($row[0]['ID_role'] == 2 && $row[1]['ID_role'] == 4){
-          $role = "Delegate_Other";
           $_SESSION['sess_role_id'] =24;          
         }elseif ($row[0]['ID_role'] == 1 && $row[1]['ID_role'] == 5){
-          $role = "Student_Admin";
           $_SESSION['sess_role_id'] =15;      
         }elseif ($row[0]['ID_role'] == 3 && $row[1]['ID_role'] == 5){
-          $role = "Tutor_Admin";
           $_SESSION['sess_role_id']=35;
         }
 
@@ -62,18 +44,18 @@ if(isset($_POST['submitBtnLogin'])) {
         $_SESSION['sess_user'] = $row[0]['First_name'];
             
       } elseif ($count == 3 && !empty($row)) {
-        echo "cette personne a 3 roles";
 
         // A COMPLETER
 
+        $_SESSION['sess_user_id']   = $row[0]['ID_people'];
+        $_SESSION['sess_login'] = $row[0]['Login'];
+        $_SESSION['sess_pass'] = $row[0]['Password'];
+        $_SESSION['sess_user'] = $row[0]['First_name'];
 
       // **************************  GESTION DES ERREURS : *************************** //
 
       } else {
         $msg = "Invalid username and password!";
-        //echo $count;
-        //echo $row;
-        //var_dump($stmt);
         header('location:loginform.php'); 
       }
     } catch (PDOException $e) {
@@ -85,7 +67,10 @@ if(isset($_POST['submitBtnLogin'])) {
     header('location:loginform.php');
   }
 }
+
+// il n'y a pas de style.css dans le code qui suit : 
 ?>
+
 <!doctype html>
 <html lang="fr">
   <head>
