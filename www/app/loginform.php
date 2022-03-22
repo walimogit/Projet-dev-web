@@ -1,6 +1,8 @@
 <?php
-include ("login.php");
+session_start();
+if(!empty($_SESSION['sess_user_id'])) header("location: login.php");
 ?>
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -38,7 +40,7 @@ include ("login.php");
         <button name="submitBtnLogin" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
         <?php
-          echo "PRINT $ msg en cas d'erreur"
+          echo "PRINT $ msg en cas d'erreur";
           // faire en sorte de récuperer le $msg de login.php et echo ici;
         ?>
         <a class="homelogin" href="index.html"><i class="fas fa-home"></i></a>
