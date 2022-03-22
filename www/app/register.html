@@ -18,26 +18,16 @@
     <main class="form-signin">
       <form>
         <img class="mb-4" src="./img/logo.png" alt="logo" width="200" height="57">
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-        <div class="form-floating">
-            <label for="inputRole" class="form-label">Role</label>
-            <select id="inputRole" name="role" class="form-select">
-              <option selected>...</option>
-              <option value ="student">Student</option>
-              <option value ="tutor">Tutor</option>
-              <option value ="delegate">Delegate</option>
-            </select>
+        <h1 class="h3 mb-3 fw-normal">Create account for student</h1>
+        <div class="col-12">
+          <label for="fisrt_name" class="form-label">Fisrt name</label>
+          <input type="text" name="fisrt_name" class="form-control" id="fisrt_name" placeholder="Phillipe" required>
         </div>
-        <div class="form-floating">
-          <input type="fisrt_name" class="form-control" id="floatingInput" placeholder="Fisrt name">
-          <label for="fisrt_name">Fisrt name</label>
+        <div class="col-12">
+          <label for="last_name" class="form-label">Last name</label>
+          <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Poutou" required>
         </div>
-        <div class="form-floating">
-            <input type="last_name" class="form-control" id="floatingPassword" placeholder="Last name">
-            <label for="last_name">Last name</label>
-        </div>
-        <div class="form-floating">
+        <div class="col-12>
           <label for="inputCampus" class="form-label">Campus</label>
           <select id="inputCampus" name="campus" class="form-select">
             <option selected>...</option>
@@ -48,7 +38,7 @@
             <option value ="autres">Faites pas chier les autres viendront après</option>
           </select>
         </div>
-        <div class="form-floating">
+        <div class="form-outline">
           <label for="inputClass" class="form-label">Class</label>
           <select id="inputClass" name="class" class="form-select">
             <option selected>...</option>
@@ -58,17 +48,12 @@
             <option value ="a4">A4</option>
             <option value ="a5">A5</option>
           </select>
-        </div>
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" class="conditions" id="conditions" value="conditions"> By creating an account, I accept the terms and conditions.
-          </label>
-        </div>
+        </div><br>
         <button class="w-100 btn btn-lg btn-primary" id="create_account" type="submit">Create account</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
       </form>
     </main>
     <script src="./register.js"></script>
-    <script src="./script.js"></script>
+    <!--<script src="./script.js"></script>-->
   </body>
 </html>

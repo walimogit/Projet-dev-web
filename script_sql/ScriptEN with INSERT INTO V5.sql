@@ -780,7 +780,8 @@ INSERT INTO `Role` (`ID_role`, `role`) VALUES
 (1, 'Student'),
 (2, 'Delegate'),
 (3, 'Tutor'),
-(4, 'Other');
+(4, 'Other'),
+(5, 'Admin');
 
 
 #------------------------------------------------------------
