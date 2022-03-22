@@ -19,25 +19,15 @@
       <form>
         <img class="mb-4" src="./img/logo.png" alt="logo" width="200" height="57">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-        <div class="form-floating">
-            <label for="inputRole" class="form-label">Role</label>
-            <select id="inputRole" name="role" class="form-select">
-              <option selected>...</option>
-              <option value ="student">Student</option>
-              <option value ="tutor">Tutor</option>
-              <option value ="delegate">Delegate</option>
-            </select>
+        <div class="col-12">
+          <label for="fisrt_name" class="form-label">Fisrt name</label>
+          <input type="text" name="fisrt_name" class="form-control" id="fisrt_name" placeholder="Poutou">
         </div>
-        <div class="form-floating">
-          <input type="fisrt_name" class="form-control" id="floatingInput" placeholder="Fisrt name">
-          <label for="fisrt_name">Fisrt name</label>
+        <div class="col-12">
+          <label for="last_name" class="form-label">Last name</label>
+          <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Phillipe">
         </div>
-        <div class="form-floating">
-            <input type="last_name" class="form-control" id="floatingPassword" placeholder="Last name">
-            <label for="last_name">Last name</label>
-        </div>
-        <div class="form-floating">
+        <div class="col-12>
           <label for="inputCampus" class="form-label">Campus</label>
           <select id="inputCampus" name="campus" class="form-select">
             <option selected>...</option>
@@ -48,7 +38,7 @@
             <option value ="autres">Faites pas chier les autres viendront après</option>
           </select>
         </div>
-        <div class="form-floating">
+        <div class="form-outline">
           <label for="inputClass" class="form-label">Class</label>
           <select id="inputClass" name="class" class="form-select">
             <option selected>...</option>
