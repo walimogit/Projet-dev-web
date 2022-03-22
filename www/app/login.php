@@ -16,7 +16,7 @@ if(isset($_POST['submitBtnLogin'])) {
       $count = $stmt->rowCount();
       $row   = $stmt->fetch(PDO::FETCH_ASSOC);
       if($count == 1 && !empty($row)) {
-        /******************** Your code ***********************/
+
         $_SESSION['sess_user_id']   = $row['ID_people'];
         $_SESSION['sess_login'] = $row['Login'];
         $_SESSION['sess_pass'] = $row['Password'];
@@ -36,10 +36,28 @@ if(isset($_POST['submitBtnLogin'])) {
         echo " <br><h1> hi ! ", $_SESSION['sess_user'];
         echo "<br>Your role is ", $role,".";
         echo "<br> Maintenant il faut verif le role de USER et faire un affichage en fonction de celui-ci.";
-       
+
+      } elseif ($count == 2 && !empty($row)) {
+         echo "cette personne a 2 roles";
+
+      
+
+
+      
+      } elseif ($count == 3 && !empty($row)) {
+        echo "cette personne a 3 roles";
+
+
+
+
+      // **************************  GESTION DES ERREURS : *************************** //
+
       } else {
         $msg = "Invalid username and password!";
-        header('location:loginform.php');
+        //echo $count;
+        //echo $row;
+        //var_dump($stmt);
+        header('location:loginform.php'); 
       }
     } catch (PDOException $e) {
       echo "Error : ".$e->getMessage();
@@ -49,5 +67,6 @@ if(isset($_POST['submitBtnLogin'])) {
     header('location:loginform.php');
   }
 }
+//echo "<br>", $msg;
 
 ?>
