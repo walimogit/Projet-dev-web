@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 21 mars 2022 à 15:24
+-- Généré le : mar. 22 mars 2022 à 10:55
 -- Version du serveur : 10.3.34-MariaDB-1:10.3.34+maria~focal
 -- Version de PHP : 8.0.16
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `bddprojet`
+-- Base de données : `bddprojetweb`
 --
 
 -- --------------------------------------------------------
@@ -37,10 +37,11 @@ CREATE TABLE `Role` (
 --
 
 INSERT INTO `Role` (`ID_role`, `role`) VALUES
-(1, 'Student\r'),
-(2, 'Delegate\r'),
-(3, 'Tutor\r'),
-(4, 'Other\r');
+(1, 'Student'),
+(2, 'Delegate'),
+(3, 'Tutor'),
+(4, 'Other'),
+(5, 'Admin');
 
 --
 -- Index pour les tables déchargées
@@ -60,7 +61,7 @@ ALTER TABLE `Role`
 -- AUTO_INCREMENT pour la table `Role`
 --
 ALTER TABLE `Role`
-  MODIFY `ID_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
