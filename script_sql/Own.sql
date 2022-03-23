@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 21 mars 2022 à 20:13
+-- Généré le : mer. 23 mars 2022 à 11:03
 -- Version du serveur : 10.3.34-MariaDB-1:10.3.34+maria~focal
 -- Version de PHP : 8.0.16
 
@@ -125,6 +125,7 @@ INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES
 (1, 280),
 (2, 1),
 (2, 2),
+(2, 3),
 (2, 6),
 (2, 8),
 (2, 9),
@@ -317,7 +318,8 @@ INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES
 (3, 271),
 (3, 275),
 (3, 277),
-(3, 281);
+(3, 281),
+(5, 3);
 
 --
 -- Index pour les tables déchargées
