@@ -8,7 +8,7 @@ if(isset($_POST['submitBtnLogin'])) {
   $password = trim($_POST['password']);
   if($username != "" && $password != "") {
     try {
-      $query = 'SELECT People.ID_people, First_name, Last_name, Login, Password, ID_role FROM `People` JOIN `Own` WHERE login=:user_name AND password=:pass_word AND People.ID_people = Own.ID_people';
+      $query = 'SELECT People.uwu, First_name, Last_name, Login, Password, ID_role FROM `People` JOIN `Own` WHERE login=:user_name AND password=:pass_word AND People.ID_people = Own.ID_people';
       $stmt = $bdd->prepare($query);
       $stmt->bindParam('user_name', $username, PDO::PARAM_STR);
       $stmt->bindValue('pass_word', $password, PDO::PARAM_STR);
@@ -61,15 +61,15 @@ if(isset($_POST['submitBtnLogin'])) {
 
       } else {
         $msg = "Invalid username and password!";
-        header('location:loginform.php'); 
+        header('location:loginform.php?error=Invalid username and password!'); 
       }
     } catch (PDOException $e) {
       $msg = "Error : ".$e->getMessage();
-      header('location:loginform.php');
+      header('location:loginform.php?$msg');
     }
   } else {
     $msg = "Both fields are required!";
-    header('location:loginform.php');
+    header('location:loginform.php?error=Both fields are required!');
   }
 }
 
