@@ -18,9 +18,9 @@
 
 <?php endforeach; ?>
 
-liste d'annonce
+<!--liste d'annonce-->
 
-formulaire ajout d'annonce
+<!--formulaire ajout d'annonce-->
 
 <form>
     <div class="row">
