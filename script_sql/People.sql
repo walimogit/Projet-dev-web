@@ -320,7 +320,7 @@ INSERT INTO `People` (`ID_people`, `First_name`, `Last_name`, `Login`, `Password
 (278, 'Lubomir', 'Nitsch', 'Nitsch278', 'QFESG'),
 (279, 'Barton', 'Jumpertz', 'Jumpertz279', 'CVKJL'),
 (280, 'Stabislas', 'Delgrange', 'Delgrange280', 'VSOEO'),
-(281, 'Thierry', 'Beccaro', 'Beccaro281', 'TIOIP');
+(281, 'Valentin', 'Goulier', 'Goulier281', 'VALOUU');
 
 --
 -- Index pour les tables déchargées
