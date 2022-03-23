@@ -23,9 +23,9 @@ let scrollY = window.scrollY
 let element = document.querySelector('.topnav')
 let rect = element.getBoundingClientRect()
 let topbar = rect.top + scrollY
-//let fake = document.createElement('div')
-//fake.style.width = rect.width + "px"
-//fake.style.height = rect.height + "px"
+let fake = document.createElement('div')
+fake.style.width = rect.width + "px"
+fake.style.height = rect.height + "px"
 console.log(topbar)
 
 //----Fonction-onScroll----
@@ -35,10 +35,10 @@ let onScroll = function () {
   if (window.scrollY > topbar && !hasScrollClass){
     element.classList.add('fixed')
     element.style.width = rect.width + "px"
-    //element.parentNode.insertBefore(fake, element)
+    element.parentNode.insertBefore(fake, element)
   } else if (window.scrollY < top && hasScrollClass) {
     element.classList.remove('fixed')
-    //element.parentNode.remove(fake, element)
+    element.parentNode.remove(fake, element)
   }
 }
 
