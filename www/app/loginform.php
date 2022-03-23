@@ -1,6 +1,15 @@
 <?php
 session_start();
-if(!empty($_SESSION['sess_user_id'])) header("location: login.php");
+if(!empty($_SESSION['sess_user_id'])){
+  
+  if ($_SESSION['sess_role_id'] > 0){
+    header('location:youraccount1.php');
+  }elseif ($_SESSION['sess_role_id'] > 10){
+    header('location:youraccount2.php');
+  }elseif ($_SESSION['sess_role_id'] > 100){
+    header('location:youraccount3.php');
+  }
+}
 ?>
 
 <!doctype html>

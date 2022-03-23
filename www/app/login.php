@@ -23,6 +23,8 @@ if(isset($_POST['submitBtnLogin'])) {
         $_SESSION['sess_user'] = $row[0]['First_name'];
         $_SESSION['sess_role_id'] = $row[0]['ID_role'];
 
+        header('location:youraccount1.php');
+
       } elseif ($count == 2 && !empty($row)) {
 
         if ($row[0]['ID_role'] == 1 && $row[1]['ID_role'] == 2){
@@ -41,6 +43,8 @@ if(isset($_POST['submitBtnLogin'])) {
         $_SESSION['sess_login'] = $row[0]['Login'];
         $_SESSION['sess_pass'] = $row[0]['Password'];
         $_SESSION['sess_user'] = $row[0]['First_name'];
+
+        header('location:youraccount2.php');
             
       } elseif ($count == 3 && !empty($row)) {
 
@@ -57,6 +61,8 @@ if(isset($_POST['submitBtnLogin'])) {
         $_SESSION['sess_pass'] = $row[0]['Password'];
         $_SESSION['sess_user'] = $row[0]['First_name'];
 
+        header('location:youraccount3.php');
+
       // **************************  GESTION DES ERREURS : *************************** //
 
       } else {
@@ -72,31 +78,5 @@ if(isset($_POST['submitBtnLogin'])) {
     header('location:loginform.php');
   }
 }
-
-// il n'y a pas de style.css dans le code qui suit :
-// c'est juste pour debug, à terme chaque type de role aura ca propre page. 
 ?>
-
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
-    <link rel="stylesheet" href="./vendors/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./vendors/fontawesome/css/all.min.css">
-    <link rel="icon" href="./img/logo3.ico">
-  </head>
-  <body>
-    <?php
-      echo "<h1> hi ! ", $_SESSION['sess_user'];
-      echo "<br>Your role is ";
-      echo $_SESSION["sess_role_id"];
-      echo "<br>";
-      var_dump($_SESSION);
-    ?>
-    <h4><a href="logout.php">Logout</a></h4>
-    <a class="homelogin" href="index.html"><i class="fas fa-home"></i></a>  
-  </body>
-</html>
 
