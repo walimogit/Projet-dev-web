@@ -7,10 +7,14 @@ if(!isLoggedIn())
     header('Location: login.php');
 
 //TODO logique bdd / $^_POST etc...
-var_dump(isStudent());
+
 
 
 
 require_once('templates/tpl_header.php');
+
+var_dump(isStudent());
+
 require_once('templates/tpl_index.php');
 require_once('templates/tpl_footer.php');
+
