@@ -37,7 +37,7 @@
         </div>
         <button name="submitBtnLogin" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
-        <a class="homelogin" href="index.html"><i class="fas fa-home"></i></a>
+        <a class="homelogin" href="index.php"><i class="fas fa-home"></i></a>
       </form>
     </main>
     <!--<script src="script.js"></script>-->
