@@ -6,7 +6,7 @@ if(!empty($_SESSION['sess_user_id'])){
     header('location:youraccount1.php');
   }elseif ($_SESSION['sess_role_id'] > 10 && $_SESSION['sess_role_id'] < 100){
     header('location:youraccount2.php');
-  }elseif ($_SESSION['sess_role_id'] > 100 && $_SESSION['sess_role_id'] < 1000){
+  }elseif ($_SESSION['sess_role_id'] > 100 && $_SESSION['sess_role_id'] < 100){
     header('location:youraccount3.php');
   }
 }
@@ -30,6 +30,9 @@ if(!empty($_SESSION['sess_user_id'])){
         
         <img class="mb-4" src="./img/logo.png" alt="logo" width="200" height="57">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <?php if (isset($_GET['error'])){ ?>
+            <p class="alert alert-danger alert-dismissible fade show"><?php echo $_GET['error'];?></p>
+        <?php } ?>
 
         <div class="form-floating">
           <input class="form-control type="text" name="login" id="login" value="" autocomplete="off" />
@@ -48,10 +51,6 @@ if(!empty($_SESSION['sess_user_id'])){
         </div>
         <button name="submitBtnLogin" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
-        <?php
-          echo "PRINT $ msg en cas d'erreur";
-          // faire en sorte de récuperer le $msg de login.php et echo ici;
-        ?>
         <a class="homelogin" href="index.html"><i class="fas fa-home"></i></a>
       </form>
     </main>
