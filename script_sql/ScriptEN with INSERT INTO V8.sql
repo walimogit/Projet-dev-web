@@ -27,12 +27,12 @@ INSERT INTO `Enterprise` (`ID_enterprise`, `Name_enterprise`, `Number_interns_ac
 (7, 'Darty', '2', 'Darty7', 'TDINV', 1),
 (8, 'Cactus', '2', 'Cactus8', 'OENQP', 1),
 (9, 'CGT', '1', 'CGT9', 'GLIUK', 1),
-(10, 'BNP Paribas', '1', 'BNP Paribas10', 'YFNKI', 1),
+(10, 'BNP Paribas', '1', 'BNPParibas10', 'YFNKI', 1),
 (11, 'Alstom', '2', 'Alstom11', 'TLIQG', 1),
 (12, 'Citroën', '3', 'Citroën12', 'CWSBS', 1),
 (13, 'Peugeot', '2', 'Peugeot13', 'TPPHR', 1),
 (14, 'Inter-Actif', '3', 'Inter-Actif14', 'KPFPI', 1),
-(15, 'Noneo', '1', 'Noneo15', 'UNSLK', 1);
+(15, 'Noneo', '1', 'Noneo15', 'UWUVG', 1);
 
 
 #------------------------------------------------------------
