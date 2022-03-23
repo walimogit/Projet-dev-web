@@ -26,7 +26,7 @@ if(isset($_POST['submitBtnLogin'])) {
         $_SESSION['sess_user'] = $rows[0]['First_name'];
         $_SESSION['sess_roles'] = $rows;
 
-        header('location:controller/accueil.php');
+        header('location:index.php');
 
       } else {
         
