@@ -1371,16 +1371,16 @@ CREATE TABLE `Sector` (
 --
 
 INSERT INTO `Sector` (`ID_sector`, `Sector`) VALUES
-(1, 'Apple premium reseller\r'),
-(2, 'Bank, Insurance\r'),
-(3, 'Car manufacturer\r'),
-(4, 'Cleaning facilities\r'),
-(5, 'Financial audit\r'),
-(6, 'Mass distribution\r'),
-(7, 'Railway industry\r'),
-(8, 'Retail trade\r'),
-(9, 'Specialized mass distribution\r'),
-(10, 'Trade union confederation\r');
+(1, 'Apple premium reseller'),
+(2, 'Bank, Insurance'),
+(3, 'Car manufacturer'),
+(4, 'Cleaning facilities'),
+(5, 'Financial audit'),
+(6, 'Mass distribution'),
+(7, 'Railway industry'),
+(8, 'Retail trade'),
+(9, 'Specialized mass distribution'),
+(10, 'Trade union confederation');
 
 -- --------------------------------------------------------
 
