@@ -25,7 +25,6 @@ if(isset($_POST['submitBtnLogin'])) {
 
       } elseif ($count == 2 && !empty($row)) {
 
-        $role;
         if ($row[0]['ID_role'] == 1 && $row[1]['ID_role'] == 2){
           $_SESSION['sess_role_id'] =12;  
         }elseif ($row[0]['ID_role'] == 2 && $row[1]['ID_role'] == 3){
@@ -45,7 +44,13 @@ if(isset($_POST['submitBtnLogin'])) {
             
       } elseif ($count == 3 && !empty($row)) {
 
-        // A COMPLETER
+        if ($row[0]['ID_role'] == 1 && $row[1]['ID_role'] == 2 && $row[2]['ID_role'] == 5){
+          $_SESSION['sess_role_id'] =125;  
+        }elseif ($row[0]['ID_role'] == 2 && $row[1]['ID_role'] == 3 && $row[2]['ID_role'] == 5){
+          $_SESSION['sess_role_id'] =235;    
+        }elseif ($row[0]['ID_role'] == 2 && $row[1]['ID_role'] == 4 && $row[2]['ID_role'] == 5){
+          $_SESSION['sess_role_id'] =245;    
+        }
 
         $_SESSION['sess_user_id']   = $row[0]['ID_people'];
         $_SESSION['sess_login'] = $row[0]['Login'];
@@ -68,7 +73,8 @@ if(isset($_POST['submitBtnLogin'])) {
   }
 }
 
-// il n'y a pas de style.css dans le code qui suit : 
+// il n'y a pas de style.css dans le code qui suit :
+// c'est juste pour debug, à terme chaque type de role aura ca propre page. 
 ?>
 
 <!doctype html>
