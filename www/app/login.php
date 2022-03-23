@@ -29,36 +29,9 @@ if(isset($_POST['submitBtnLogin'])) {
         header('location:controller/accueil.php');
 
       } else {
-        /*
-        try {
-          $query = 'SELECT * FROM `Enterprise` WHERE name_enterprise=:user_name AND Password=:pass_word';
-          $stmt = $bdd->prepare($query);
-          $stmt->bindParam('user_name', $username, PDO::PARAM_STR);
-          $stmt->bindValue('pass_word', $password, PDO::PARAM_STR);
-          $stmt->execute();
-          $count = $stmt->rowCount();
-          $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          if($count == 1 && !empty($row)) {
-
-            //faire un code spécifique au entreprise.
-            header('location:loginform.php?error=CONNECTED');
-
-          }else{
-            header('location:loginform.php?error=Enterprise error');
-          }
-        } catch (PDOException $e) {
-          $msg = "Error : ".$e->getMessage();
-          header('location:loginform.php?$msg');
-        }
-        
-
-        //REVOIR LA LOGIQUE D'ERREUR SPECIFIQUE A l'ENTREPRISE.
-
-        */
         
         $msg = "Invalid username and password!";
         
-
       }
     } catch (PDOException $e) {
       $msg = "Error : ".$e->getMessage();

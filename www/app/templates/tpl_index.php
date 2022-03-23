@@ -3,11 +3,19 @@
         <h1>Accueil !</h1>
     </div>
 </div>
+
 <?php  if(isStudent()): ?>
 
 étudiant
 
 <?php endif; ?>
+
+<?php  if(isDelegate()): ?>
+
+délégué
+
+<?php endif; ?>
+
 <?php  if(isTutor()): ?>
 
 tuteur

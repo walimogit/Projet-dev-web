@@ -24,7 +24,7 @@
 
                 <img src="./img/logo.png" alt="logo">        
 
-                <a href="./loginform.php"><i class="fa fa-user"> </i></a>
+                <a href="./login.php"><i class="fa fa-user"> </i></a>
                 
                 <a href="#tutor">Tutor</a>
                 <a href="#entreprise">Entreprise</a>
