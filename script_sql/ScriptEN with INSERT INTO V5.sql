@@ -75,52 +75,29 @@ CREATE TABLE Internship_offers(
 	,CONSTRAINT Internship_offers_PK PRIMARY KEY (ID_internship_offers)
 )ENGINE=InnoDB;
 
-INSERT INTO `Evaluation_interns` (`ID_evaluation_interns`, `Evaluation_interns`, `Booldel`, `ID_enterprise`, `ID_people`) VALUES
-(1, '1', 1, 1, 142),
-(3, '16', 1, 3, 145),
-(4, '5', 1, 5, 9),
-(5, '9', 1, 5, 16),
-(6, '17', 1, 15, 104),
-(7, '9', 1, 7, 121),
-(8, '19', 1, 8, 8),
-(9, '20', 1, 15, 21),
-(10, '20', 1, 9, 63),
-(11, '3', 1, 1, 42),
-(12, '10', 1, 15, 46),
-(13, '15', 1, 11, 159),
-(15, '20', 1, 6, 113),
-(16, '18', 1, 8, 274),
-(17, '4', 1, 8, 148),
-(18, '3', 1, 15, 25),
-(19, '14', 1, 1, 206),
-(21, '1', 1, 7, 229),
-(22, '2', 1, 13, 75),
-(23, '18', 1, 2, 245),
-(24, '8', 1, 3, 165),
-(25, '9', 1, 1, 34),
-(26, '9', 1, 6, 238),
-(27, '6', 1, 4, 169),
-(28, '16', 1, 11, 166),
-(29, '9', 1, 10, 140),
-(30, '2', 1, 6, 202),
-(32, '1', 1, 10, 102),
-(33, '19', 1, 2, 96),
-(34, '4', 1, 11, 79),
-(35, '10', 1, 7, 52),
-(37, '19', 1, 8, 141),
-(38, '7', 1, 15, 189),
-(39, '12', 1, 10, 48),
-(40, '16', 1, 11, 74),
-(41, '1', 1, 15, 248),
-(42, '14', 1, 7, 214),
-(43, '6', 1, 6, 80),
-(44, '19', 1, 2, 62),
-(45, '10', 1, 12, 197),
-(46, '7', 1, 13, 129),
-(47, '1', 1, 5, 276),
-(48, '17', 1, 8, 195),
-(49, '9', 1, 13, 253),
-(50, '3', 1, 12, 265);
+INSERT INTO `Internship_offers` (`ID_internship_offers`, `Competense`, `Duree_de_stage`, `Base_remuneration`, `Date_offre`, `Nb_places_offertes`, `Boolsuppr`) VALUES
+(1, 'System and Computer Security Engineer', '6 months', '5,20 €', '2022-02-25', 1, 1),
+(2, 'IT Operations Technician M/F', '6 months', '3,90 €', '2022-02-25', 2, 1),
+(3, 'English Community Manager H/F', '2 months', '0,00 €', '2022-02-16', 2, 1),
+(4, 'JAVA Developer M/F', '6 months', '3,90 €', '2022-01-28', 2, 1),
+(5, 'PHP Web Developer', '6 months', '3,90 €', '2021-11-05', 2, 1),
+(6, 'Receptionist', '4 months', '5,20 €', '2022-03-02', 3, 1),
+(7, 'HR Officer M/F', '5 months', '3,90 €', '2022-03-16', 2, 1),
+(8, 'Sales/Bar/Communication/Commercial/Event management', '2 months', '0,00 €', '2022-03-22', 1, 1),
+(9, 'Internal Communication M/F', '6 months', '4,70 €', '2022-03-08', 2, 1),
+(10, 'Communication Officer M/F', '6 months', '3,90 €', '2022-03-19', 1, 1),
+(11, 'Technician (M/F)', '4 months', '3,90 €', '2022-02-22', 5, 1),
+(12, 'Commercial M/F', '44 days < 2 months', '0,00 €', '2022-03-06', 1, 1),
+(13, 'Show off your talent', '2 months', '0,00 €', '2022-02-04', 1, 1),
+(14, 'Business Development Assistant M/F', '4 months', '3,90 €', '2022-01-01', 1, 1),
+(15, 'Marketing & Sales Development', '6 months', '3,90 €', '2022-03-18', 5, 1),
+(16, 'BTS International Trade M/F Bulgaria', '2 months', '18,40 €', '2022-03-18', 3, 1),
+(17, 'Web Marketing Digital Manager', '6 months', '3,90 €', '2022-03-15', 2, 1),
+(18, 'Assistant Area Manager - IDF (M/F)', '6 months', '6,40 €', '2022-03-15', 15, 1),
+(19, 'Assistant IT or Logistics Project Manager (M/F)', '4-6 months', '5,00 €', '2022-03-09', 1, 1),
+(20, 'Executive Assistant M/F', '2 months', '0,00 €', '2022-03-18', 1, 1),
+(21, 'Executive Assistant M/F', '3 months', '3,90 €', '2022-03-21', 1, 1),
+(22, 'Sales Assistant M/F', '2 months', '3,90 €', '2022-03-25', 1, 1);
 
 
 #------------------------------------------------------------
@@ -135,7 +112,7 @@ CREATE TABLE Campus(
 )ENGINE=InnoDB;
 
 INSERT INTO `Campus` (`ID_campus`, `Campus`, `Booldel`) VALUES
-(1, 'Aix-en-Provance', 1),
+(1, 'Aix-en-Provence', 1),
 (2, 'Angoulême', 1),
 (3, 'Arras', 1),
 (4, 'Bordeaux', 1),
@@ -153,7 +130,7 @@ INSERT INTO `Campus` (`ID_campus`, `Campus`, `Booldel`) VALUES
 (16, 'Nanterre', 1),
 (17, 'Nantes', 1),
 (18, 'Nice', 1),
-(19, 'Orléan', 1),
+(19, 'Orléans', 1),
 (20, 'Pau', 1),
 (21, 'Reims', 1),
 (22, 'Rouen', 1),
@@ -1050,6 +1027,7 @@ INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES
 (1, 280),
 (2, 1),
 (2, 2),
+(2, 3),
 (2, 6),
 (2, 8),
 (2, 9),
@@ -1242,7 +1220,8 @@ INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES
 (3, 271),
 (3, 275),
 (3, 277),
-(3, 281);
+(3, 281),
+(5, 3);
 
 
 #------------------------------------------------------------
