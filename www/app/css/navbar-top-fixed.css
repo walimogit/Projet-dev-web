@@ -1,0 +1,53 @@
+/* Show it is fixed to the top */
+.navbar-collapse {
+  flex-grow: 0;
+  }
+  
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+form-control, me-2{
+  background-color: #8497B0;
+}
+
+input.form-control.me-2 {
+  background-color: #8497B0;
+}
+
+input.form-control.me-2::placeholder{
+  color: #e6e3e3;
+  font-weight: bold;
+}
+
+.btn-outline-success {
+  min-width: 76px;
+  color: #b8bbba;
+  border-color: #b8bbba;
+}
+
+.btn-outline-success:hover {
+  color: #e6e3e3;
+  font-weight: bold;
+  background-color: #8497B0;
+  border-color: #b8bbba;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
