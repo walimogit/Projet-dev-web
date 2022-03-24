@@ -34,6 +34,36 @@ function isTutor() {
     return false;
 }
 
+function isOther() {
+    if(!isLoggedIn())
+        return false;
+    foreach($_SESSION['sess_roles'] as $value){
+        if($value['ID_role'] === 4)
+            return true;
+    }
+    return false;
+}
+
+function isAdmin() {
+    if(!isLoggedIn())
+        return false;
+    foreach($_SESSION['sess_roles'] as $value){
+        if($value['ID_role'] === 5)
+            return true;
+    }
+    return false;
+}
+
+function isEnterprise() {
+    if(!isLoggedIn())
+        return false;
+    foreach($_SESSION['sess_roles'] as $value){
+        if($value['ID_role'] === 6)
+            return true;
+    }
+    return false;
+}
+
 
 
 ?>

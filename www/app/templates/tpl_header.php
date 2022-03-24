@@ -25,10 +25,26 @@
                 <img src="./img/logo.png" alt="logo">        
 
                 <a href="./login.php"><i class="fa fa-user"> </i></a>
-                
-                <a href="#tutor">Tutor</a>
-                <a href="#entreprise">Entreprise</a>
-                <a href="#student">Student</a>
+               
+                <?php  if(isStudent()): ?>
+                    <a href="#student">Student</a>
+                <?php endif; ?>
+                <?php  if(isDelegate()): ?>
+                    <a href="#Delegate">Delegate</a>
+                <?php endif; ?>
+                <?php  if(isTutor()): ?>
+                    <a href="#tutor">Tutor</a>
+                <?php endif; ?>
+                <?php  if(isOther()): ?>
+                    <a href="#other">Other</a>
+                <?php endif; ?>
+                <?php  if(isEnterprise()): ?>
+                    <a href="#entreprise">Entreprise</a>
+                <?php endif; ?>
+                <?php  if(isAdmin()): ?>
+                    <a href="#admin">Admin</a>
+                <?php endif; ?>
+
                 <a href="#"><i class="fas fa-home"></i></a>
                 
                 <div class="search-container">
