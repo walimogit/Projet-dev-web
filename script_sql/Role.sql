@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : mar. 22 mars 2022 à 10:55
+-- Généré le : jeu. 24 mars 2022 à 09:08
 -- Version du serveur : 10.3.34-MariaDB-1:10.3.34+maria~focal
 -- Version de PHP : 8.0.16
 
@@ -41,7 +41,8 @@ INSERT INTO `Role` (`ID_role`, `role`) VALUES
 (2, 'Delegate'),
 (3, 'Tutor'),
 (4, 'Other'),
-(5, 'Admin');
+(5, 'Admin'),
+(6, 'Enterprise');
 
 --
 -- Index pour les tables déchargées
@@ -61,7 +62,7 @@ ALTER TABLE `Role`
 -- AUTO_INCREMENT pour la table `Role`
 --
 ALTER TABLE `Role`
-  MODIFY `ID_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
