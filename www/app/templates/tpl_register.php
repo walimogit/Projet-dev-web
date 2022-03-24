@@ -5,7 +5,7 @@
           <div class="col-12">
             <label for="fisrt_name" class="form-label">Fisrt name</label>
             <input type="text" name="fisrt_name" class="form-control" id="fisrt_name" placeholder="Jean" required>
-          </div>
+          </div>  
           <div class="col-12">
             <label for="last_name" class="form-label">Last name</label>
             <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Lassale" required>

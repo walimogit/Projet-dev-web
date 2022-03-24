@@ -18,3 +18,4 @@ var_dump(isStudent());
 require_once('templates/tpl_index.php');
 require_once('templates/tpl_footer.php');
 
+?>

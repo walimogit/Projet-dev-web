@@ -21,3 +21,21 @@ délégué
 tuteur
 
 <?php endif; ?>
+
+<?php  if(isOther()): ?>
+
+other
+
+<?php endif; ?>
+
+<?php  if(isAdmin()): ?>
+
+admin
+
+<?php endif; ?>
+
+<?php  if(isEnterprise()): ?>
+
+enterprise
+
+<?php endif; ?>
