@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3">
+        <div class="col-3"><br></br>
             <div class="row">
                 <div class="col-4">
                     <div class="row row-gest">
@@ -12,7 +12,7 @@
                         <div class="btn btn-carac">Student</div>
                     </div>
                 </div>
-            </div>
+            </div><br></br>
             <div class="row row-gest">
                 <div class="btn btn-carac">Name</div>
             </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="row row-gest">   
                 <div class="btn btn-carac">Promo</div>
-            </div>
+            </div><br></br>
             <div class="row row-gest">
                 <div class="col col-gest">
                     <div class="row">
@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col"><br></br>
             <div class="row row-gest justify-content-md-center">
                 <div class="btn btn-gest">Internnship gestion</div>
             </div>
