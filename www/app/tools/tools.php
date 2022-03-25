@@ -177,5 +177,28 @@ function DeleteEnterprise($ID_enterprise){
         return $msg;
     }
 
+function EvaluateEntreprise($ID_enterprise, $note, $id_people){
+    require("bdd.php");
+    try{ 
+        $query = 'INSERT INTO Evaluation_interns ID_evaluation_interns, Evaluation_interns, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('note', $ID_enterprise, PDO::PARAM_STR);
+        $stmt->bindValue('identreprise', $note, PDO::PARAM_STR);
+        $stmt->bindValue('idpeople', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if(!empty($rows)) {
+            return true;
+          } else {
+            $msg = "ERREUR";
+          }
+        } catch (PDOException $e) {
+          $msg = "Error : ".$e->getMessage(); 
+        }
+        return $msg;
+    }
+}
+
+
 
 ?>
