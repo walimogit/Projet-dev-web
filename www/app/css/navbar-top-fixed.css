@@ -52,3 +52,30 @@ input.form-control.me-2::placeholder{
 .navbar-collapse {
   flex-grow: 0;
   }
+
+
+.btn-gest{
+width: auto;
+color: rgb(80, 120, 196);
+border-color: rgb(80, 120, 196);
+}
+
+.btn-carac{
+min-width: 76px;
+color: rgb(80, 120, 196);
+border-color: rgb(80, 120, 196);
+}
+
+.btn-modif{
+min-width: 76px;
+color: rgb(120, 175, 83);
+border-color: rgb(120, 175, 83);
+}
+
+.row-gest{
+padding: 10px;
+}
+
+.col-gest{
+padding-right: 20px;
+}
