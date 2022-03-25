@@ -38,10 +38,26 @@
                 </div>
             </div>
         </div>
+
         <div class="col"><br></br>
-            <div class="row row-gest justify-content-md-center">
-                <div class="btn btn-gest">My internship</div>
-            </div>
+            <div class="row">
+                <div class="col col-gest">
+                    <div class="row">
+                        <div class="btn btn-modif">My internship</div>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <div class="btn btn-modif">Create enterprise</div>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <div class="btn btn-modif">Modify/delete enterprise</div>
+                    </div>
+                </div>
+            </div><br></br>
+
             <div class="row row-gest justify-content-md-center">
                 Big tableau sa mère
             </div>

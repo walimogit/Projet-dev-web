@@ -115,6 +115,109 @@ function Search(){
     return $tab;
 }
 
+function CreateEnterprise($name, $Number_accepted, $id_people){
+    require("bdd.php");
+    try{ 
+        $query = 'INSERT INTO Enterprise, ID_enterprise, Name_enterprise, Number_interns_accepted, Booldel, ID_people VALUES (NULL, :name, :number1, 1, :numberid);'; // 1 = booldel
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('name', $name, PDO::PARAM_STR);
+        $stmt->bindValue('number1', $Number_accepted, PDO::PARAM_STR);
+        $stmt->bindValue('numberid', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if(!empty($rows)) {
+            return true;
+          } else {
+            $msg = "ERREUR";
+          }
+        } catch (PDOException $e) {
+          $msg = "Error : ".$e->getMessage(); 
+        }
+        return $msg;
+    }
+
+function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise){
+    require("bdd.php");
+    try{ 
+        $query = 'UPDATE Entreprise SET Name_entreprise = :name, Number_interns_accepted = :number1, ID_people = :numberid, WHERE Enterprise.ID_enterprise = :numberidEntre';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('name', $name, PDO::PARAM_STR);
+        $stmt->bindValue('number1', $Number_accepted, PDO::PARAM_STR);
+        $stmt->bindValue('numberid', $id_people, PDO::PARAM_STR);
+        $stmt->bindValue('numberidEntre', $ID_enterprise, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if(!empty($rows)) {
+            return true;
+            } else {
+            $msg = "ERREUR";
+            }
+        } catch (PDOException $e) {
+            $msg = "Error : ".$e->getMessage(); 
+        }
+        return $msg;
+    }
+
+function DeleteEnterprise($ID_enterprise){
+    require("bdd.php");
+    try{ 
+        $query = 'UPDATE Entreprise SET Booldel = "0" WHERE Enterprise.ID_enterprise = :numberidEntre';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('numberidEntre', $ID_enterprise, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if(!empty($rows)) {
+            return true;
+            } else {
+            $msg = "ERREUR";
+            }
+        } catch (PDOException $e) {
+            $msg = "Error : ".$e->getMessage(); 
+        }
+        return $msg;
+    }
+
+function EvaluateEntreprise($ID_enterprise, $note, $id_people){
+    require("bdd.php");
+    if(isTutor()){
+        try{ 
+            $query = 'INSERT INTO Evaluation_interns ID_evaluation_interns, Evaluation_interns, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
+            $stmt = $bdd->prepare($query);
+            $stmt->bindParam('note', $ID_enterprise, PDO::PARAM_STR);
+            $stmt->bindValue('identreprise', $note, PDO::PARAM_STR);
+            $stmt->bindValue('idpeople', $id_people, PDO::PARAM_STR);
+            $stmt->execute();
+            $rows = $stmt->fetchAll();
+            if(!empty($rows)) {
+                return true;
+              } else {
+                $msg = "ERREUR";
+              }
+            } catch (PDOException $e) {
+              $msg = "Error : ".$e->getMessage(); 
+            }
+            return $msg;
+
+    }else{
+        try{ 
+            $query = 'INSERT INTO Pilot_trust ID_Pilot_trust, Pilot_trust, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
+            $stmt = $bdd->prepare($query);
+            $stmt->bindParam('note', $ID_enterprise, PDO::PARAM_STR);
+            $stmt->bindValue('identreprise', $note, PDO::PARAM_STR);
+            $stmt->bindValue('idpeople', $id_people, PDO::PARAM_STR);
+            $stmt->execute();
+            $rows = $stmt->fetchAll();
+            if(!empty($rows)) {
+                return true;
+              } else {
+                $msg = "ERREUR";
+              }
+            } catch (PDOException $e) {
+              $msg = "Error : ".$e->getMessage(); 
+            }
+            return $msg;
+    }
+}
 
 
 
