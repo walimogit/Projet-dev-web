@@ -1,8 +1,5 @@
 /* Show it is fixed to the top */
-.navbar-collapse {
-  flex-grow: 0;
-  }
-  
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
@@ -51,3 +48,7 @@ input.form-control.me-2::placeholder{
   -moz-user-select: none;
   user-select: none;
 }
+
+.navbar-collapse {
+  flex-grow: 0;
+  }
