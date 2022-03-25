@@ -43,6 +43,12 @@
                 <div class="btn btn-gest">My internship</div>
             </div>
             <div class="row row-gest justify-content-md-center">
+                <div class="btn btn-gest">Create enterprise</div>
+            </div>
+            <div class="row row-gest justify-content-md-center">
+                <div class="btn btn-gest">Modify/delete enterprise</div>
+            </div>
+            <div class="row row-gest justify-content-md-center">
                 Big tableau sa mère
             </div>
         </div>

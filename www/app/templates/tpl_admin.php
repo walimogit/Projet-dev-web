@@ -9,7 +9,7 @@
                 </div>
                 <div class="col">
                     <div class="row row-gest">
-                        <div class="btn btn-carac">Student</div>
+                        <div class="btn btn-carac">Admin</div>
                     </div>
                 </div>
             </div><br></br>
@@ -43,7 +43,10 @@
                 <div class="btn btn-gest">My internship</div>
             </div>
             <div class="row row-gest justify-content-md-center">
-                <div class="btn btn-gest">Enterprises</div>
+                <div class="btn btn-gest">Create enterprise</div>
+            </div>
+            <div class="row row-gest justify-content-md-center">
+                <div class="btn btn-gest">Modify/delete enterprise</div>
             </div>
             <div class="row row-gest justify-content-md-center">
                 <div class="btn btn-gest">Accounts</div>
