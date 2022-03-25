@@ -3,7 +3,6 @@
         <h1>Accueil !</h1>
     </div>
 </div>
-
 <?php  if(isStudent()): ?>
 
 étudiant

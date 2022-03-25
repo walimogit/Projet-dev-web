@@ -1,3 +1,6 @@
+<?php
+$cars = array("Volvo", "BMW", "Toyota", "Peugeot");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,9 +19,30 @@
         <link rel="apple-touch-icon" sizes="192x192" href="./img/hub_stage_x192.png">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script  type="text/javascript" src="../js/typeahead.bundle.js"></script>
-        <script src="../js/auto-complete.js"></script>
         <link rel="stylesheet" href="../css/navbar-top-fixed.css">
         <title>STAGE HUB</title>
+        <script>
+            $(document).ready(function(){
+            
+            var cars = <?php echo json_encode($result_stage); ?>;
+            
+            var cars = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.whitespace,
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                local: cars
+            });
+            
+            $('.typeahead').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            },
+            {
+                name: 'cars',
+                source: cars
+            });
+        });
+        </script>
     </head>
 
     <body>
@@ -65,7 +89,8 @@
                     </div>
                 </div>
             </nav>
+            <div><?php echo $result_stage; ?></div>
         </header>
-        
+
 
 <div class="container-fluid">

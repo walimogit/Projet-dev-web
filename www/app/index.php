@@ -9,7 +9,7 @@ if(!isLoggedIn())
 //TODO logique bdd / $^_POST etc...
 
 
-
+$result_stage = Search();
 
 require_once('templates/tpl_header.php');
 
