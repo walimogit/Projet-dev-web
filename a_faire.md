@@ -10,3 +10,12 @@ select roles
 nom
 
 prenom
+
+
+**Pour la barre de recherche**
+
+Faire apparaitre le nom et prénom du tableau *array* tout en gardant caché *ID_People*.
+
+**BDD**
+
+Ajouter boolsuppr
