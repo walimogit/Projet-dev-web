@@ -136,6 +136,46 @@ function CreateEnterprise($name, $Number_accepted, $id_people){
         return $msg;
     }
 
+function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise){
+    require("bdd.php");
+    try{ 
+        $query = 'UPDATE Entreprise SET Name_entreprise = :name, Number_interns_accepted = :number1, ID_people = :numberid, WHERE Enterprise.ID_enterprise = :numberidEntre';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('name', $name, PDO::PARAM_STR);
+        $stmt->bindValue('number1', $Number_accepted, PDO::PARAM_STR);
+        $stmt->bindValue('numberid', $id_people, PDO::PARAM_STR);
+        $stmt->bindValue('numberidEntre', $ID_enterprise, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if(!empty($rows)) {
+            return true;
+            } else {
+            $msg = "ERREUR";
+            }
+        } catch (PDOException $e) {
+            $msg = "Error : ".$e->getMessage(); 
+        }
+        return $msg;
+    }
+
+function DeleteEnterprise($ID_enterprise){
+    require("bdd.php");
+    try{ 
+        $query = 'UPDATE Entreprise SET Booldel = "0" WHERE Enterprise.ID_enterprise = :numberidEntre';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('numberidEntre', $ID_enterprise, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if(!empty($rows)) {
+            return true;
+            } else {
+            $msg = "ERREUR";
+            }
+        } catch (PDOException $e) {
+            $msg = "Error : ".$e->getMessage(); 
+        }
+        return $msg;
+    }
 
 
 ?>
