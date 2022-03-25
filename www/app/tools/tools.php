@@ -63,31 +63,6 @@ function isEnterprise() {
     return false;
 }
 
-function loadSearch() {
-    if(!isLoggedIn())
-        return false;
-    
-    if(isStudent()){
-
-    }
-    if(isDelegate()){
-
-    }
-    if(isTutor()){
-
-    }
-    if(isTutor()){
-
-    }
-    if(isOther()){
-
-    }
-    if(isEnterprise()){
-
-    }
-
-}
-
 function Search(){
     require("bdd.php");
     $tab = [];
@@ -111,36 +86,32 @@ function Search(){
         }
     }
     if (isAdmin() OR isDelegate()){
-        $query = 'SELECT * FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 3;';
+        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 3;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $value){
-        array_push($tab , $value['First_name'], $value['Last_name']);
+            array_push($tab , $value);
         }
     }
     if (isAdmin() OR isTutor() OR isDelegate()){
-        $query = 'SELECT * FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 2;';
+        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 2;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $value){
-        array_push($tab , $value['First_name'], $value['Last_name']);
+            array_push($tab , $value);
         }
     }
     if (isAdmin() OR isTutor() OR isDelegate()){
-        $query = 'SELECT * FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 1;';
+        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 1;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $value){
-        array_push($tab , $value['First_name'], $value['Last_name']);
+            array_push($tab , $value);
         }
     }
-    
-    
-    
-
     return $tab;
 }
 
