@@ -115,6 +115,26 @@ function Search(){
     return $tab;
 }
 
+function CreateEnterprise($name, $Number_accepted, $id_people){
+    require("bdd.php");
+    try{ 
+        $query = 'INSERT INTO Enterprise, ID_enterprise, Name_enterprise, Number_interns_accepted, Booldel, ID_people VALUES (NULL, :name, :number1, 1, :numberid);'; // 1 = booldel
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('name', $name, PDO::PARAM_STR);
+        $stmt->bindValue('number1', $Number_accepted, PDO::PARAM_STR);
+        $stmt->bindValue('numberid', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if(!empty($rows)) {
+            return true;
+          } else {
+            $msg = "ERREUR";
+          }
+        } catch (PDOException $e) {
+          $msg = "Error : ".$e->getMessage(); 
+        }
+        return $msg;
+    }
 
 
 
