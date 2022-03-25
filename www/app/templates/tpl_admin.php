@@ -18,12 +18,6 @@
             </div>
             <div class="row row-gest">
                 <div class="btn btn-carac">First name</div>
-            </div>
-            <div class="row row-gest">
-                <div class="btn btn-carac">Campus</div>
-            </div>
-            <div class="row row-gest">   
-                <div class="btn btn-carac">Promo</div>
             </div><br></br>
             <div class="row row-gest">
                 <div class="col col-gest">
@@ -40,10 +34,19 @@
         </div>
         <div class="col"><br></br>
             <div class="row row-gest justify-content-md-center">
+                <div class="btn btn-gest">Student management</div>
+            </div>
+            <div class="row row-gest justify-content-md-center">
+                <div class="btn btn-gest">Internship offers</div>
+            </div>
+            <div class="row row-gest justify-content-md-center">
                 <div class="btn btn-gest">My internship</div>
             </div>
             <div class="row row-gest justify-content-md-center">
-                Big tableau sa mère
+                <div class="btn btn-gest">Enterprises</div>
+            </div>
+            <div class="row row-gest justify-content-md-center">
+                <div class="btn btn-gest">Accounts</div>
             </div>
         </div>
     </div>
