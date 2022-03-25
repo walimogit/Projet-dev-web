@@ -26,8 +26,8 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
-                    <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" action="/search.php">
+                    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -37,7 +37,7 @@
                         </li>
                         <li class="nav-item">
                             <?php  if(isStudent()): ?>
-                            <a href="#student">Student</a>
+                            <a class="nav-link active" href="#student">Student</a>
                             <?php endif; ?>
                             <?php  if(isDelegate()): ?>
                                 <a class="nav-link active" href="#Delegate">Delegate</a>
