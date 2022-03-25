@@ -9,7 +9,7 @@
                 </div>
                 <div class="col">
                     <div class="row row-gest">
-                        <div class="btn btn-carac">Student</div>
+                        <div class="btn btn-carac">Delegate</div>
                     </div>
                 </div>
             </div><br></br>

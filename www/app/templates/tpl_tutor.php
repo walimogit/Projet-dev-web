@@ -9,7 +9,7 @@
                 </div>
                 <div class="col">
                     <div class="row row-gest">
-                        <div class="btn btn-carac">Student</div>
+                        <div class="btn btn-carac">Tutor</div>
                     </div>
                 </div>
             </div><br></br>
@@ -40,7 +40,7 @@
         </div>
         <div class="col"><br></br>
             <div class="row row-gest justify-content-md-center">
-                <div class="btn btn-gest">My internship</div>
+                <div class="btn btn-gest">Student management</div>
             </div>
             <div class="row row-gest justify-content-md-center">
                 Big tableau sa mère

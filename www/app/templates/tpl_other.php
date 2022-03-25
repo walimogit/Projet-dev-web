@@ -9,21 +9,21 @@
                 </div>
                 <div class="col">
                     <div class="row row-gest">
-                        <div class="btn btn-carac">Student</div>
+                        <div class="btn btn-carac">Other</div>
                     </div>
                 </div>
             </div><br></br>
             <div class="row row-gest">
-                <div class="btn btn-carac">Name</div>
+                <div class="btn btn-carac">What</div>
             </div>
             <div class="row row-gest">
-                <div class="btn btn-carac">First name</div>
+                <div class="btn btn-carac">How</div>
             </div>
             <div class="row row-gest">
-                <div class="btn btn-carac">Campus</div>
+                <div class="btn btn-carac">Who</div>
             </div>
             <div class="row row-gest">   
-                <div class="btn btn-carac">Promo</div>
+                <div class="btn btn-carac">Where</div>
             </div><br></br>
             <div class="row row-gest">
                 <div class="col col-gest">
@@ -40,7 +40,7 @@
         </div>
         <div class="col"><br></br>
             <div class="row row-gest justify-content-md-center">
-                <div class="btn btn-gest">My internship</div>
+                <div class="btn btn-gest">Other are here</div>
             </div>
             <div class="row row-gest justify-content-md-center">
                 Big tableau sa mère
