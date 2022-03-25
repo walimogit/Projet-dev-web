@@ -183,8 +183,8 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people){
         try{ 
             $query = 'INSERT INTO Evaluation_interns ID_evaluation_interns, Evaluation_interns, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
             $stmt = $bdd->prepare($query);
-            $stmt->bindParam('note', $ID_enterprise, PDO::PARAM_STR);
-            $stmt->bindValue('identreprise', $note, PDO::PARAM_STR);
+            $stmt->bindParam('note', $note, PDO::PARAM_STR);
+            $stmt->bindValue('identreprise', $ID_enterprise, PDO::PARAM_STR);
             $stmt->bindValue('idpeople', $id_people, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll();
@@ -202,8 +202,8 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people){
         try{ 
             $query = 'INSERT INTO Pilot_trust ID_Pilot_trust, Pilot_trust, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
             $stmt = $bdd->prepare($query);
-            $stmt->bindParam('note', $ID_enterprise, PDO::PARAM_STR);
-            $stmt->bindValue('identreprise', $note, PDO::PARAM_STR);
+            $stmt->bindParam('note', $note, PDO::PARAM_STR);
+            $stmt->bindValue('identreprise', $ID_enterprise, PDO::PARAM_STR);
             $stmt->bindValue('idpeople', $id_people, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll();
@@ -218,6 +218,29 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people){
             return $msg;
     }
 }
+
+function GetGradEntrepriseByPeople($ID_enterprise){
+    require("bdd.php");
+    $note = [];
+    try{ 
+        $query = ''; // Faire requeste
+        $stmt->bindParam('enterprise', $ID_enterprise, PDO::PARAM_STR);
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($rows)) {
+            foreach ($rows as $value){
+                array_push($note , $value['Evaluation_interns']);           
+            }
+            return $note;
+            } else {
+            $msg = "ERREUR";
+            }
+        } catch (PDOException $e) {
+            $msg = "Error : ".$e->getMessage(); 
+        }
+        return $msg;
+  }
 
 
 
