@@ -26,8 +26,8 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
-                    <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" action="/search.php">
+                    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -36,24 +36,23 @@
                         <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active"></a>
                             <?php  if(isStudent()): ?>
-                            <a href="#student">Student</a>
+                            <a class="nav-link active" href="#student">Student</a>
                             <?php endif; ?>
                             <?php  if(isDelegate()): ?>
-                                <a class="nav-link active href="#Delegate">Delegate</a>
+                                <a class="nav-link active" href="#Delegate">Delegate</a>
                             <?php endif; ?>
                             <?php  if(isTutor()): ?>
-                                <a class="nav-link active href="#tutor">Tutor</a>
+                                <a class="nav-link active" href="#tutor">Tutor</a>
                             <?php endif; ?>
                             <?php  if(isOther()): ?>
-                                <a class="nav-link active href="#other">Other</a>
+                                <a class="nav-link active" href="#other">Other</a>
                             <?php endif; ?>
                             <?php  if(isEnterprise()): ?>
-                                <a class="nav-link active href="#entreprise">Entreprise</a>
+                                <a class="nav-link active" href="#entreprise">Entreprise</a>
                             <?php endif; ?>
                             <?php  if(isAdmin()): ?>
-                                <a class="nav-link active href="#admin">Admin</a>
+                                <a class="nav-link active" href="#admin">Admin</a>
                             <?php endif; ?>
                         </li>
                         <li class="nav-item">
