@@ -14,6 +14,9 @@
         <link rel="icon" href="./img/logo3.ico">
         <link rel="manifest" href="manifest.json">
         <link rel="apple-touch-icon" sizes="192x192" href="./img/hub_stage_x192.png">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script  type="text/javascript" src="../js/typeahead.bundle.js"></script>
+        <script src="../js/auto-complete.js"></script>
         <link rel="stylesheet" href="../css/navbar-top-fixed.css">
         <title>STAGE HUB</title>
     </head>
@@ -27,7 +30,7 @@
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <form class="d-flex" action="/search.php">
-                    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
+                    <input class="typeahead form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search" spellcheck="false" autocomplete="off">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
