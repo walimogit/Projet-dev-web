@@ -70,13 +70,13 @@ border-color: rgb(80, 120, 196);
 }
 
 .btn-modif{
-min-width: 76px;
 color: rgb(120, 175, 83);
 border-color: rgb(120, 175, 83);
 }
 
 .row-gest{
-padding: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
 }
 
 .col-gest{
