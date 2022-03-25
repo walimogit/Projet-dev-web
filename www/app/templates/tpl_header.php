@@ -36,24 +36,23 @@
                         <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active"></a>
                             <?php  if(isStudent()): ?>
                             <a href="#student">Student</a>
                             <?php endif; ?>
                             <?php  if(isDelegate()): ?>
-                                <a class="nav-link active href="#Delegate">Delegate</a>
+                                <a class="nav-link active" href="#Delegate">Delegate</a>
                             <?php endif; ?>
                             <?php  if(isTutor()): ?>
-                                <a class="nav-link active href="#tutor">Tutor</a>
+                                <a class="nav-link active" href="#tutor">Tutor</a>
                             <?php endif; ?>
                             <?php  if(isOther()): ?>
-                                <a class="nav-link active href="#other">Other</a>
+                                <a class="nav-link active" href="#other">Other</a>
                             <?php endif; ?>
                             <?php  if(isEnterprise()): ?>
-                                <a class="nav-link active href="#entreprise">Entreprise</a>
+                                <a class="nav-link active" href="#entreprise">Entreprise</a>
                             <?php endif; ?>
                             <?php  if(isAdmin()): ?>
-                                <a class="nav-link active href="#admin">Admin</a>
+                                <a class="nav-link active" href="#admin">Admin</a>
                             <?php endif; ?>
                         </li>
                         <li class="nav-item">
