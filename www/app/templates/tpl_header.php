@@ -1,6 +1,3 @@
-<?php
-$cars = array("Volvo", "BMW", "Toyota", "Peugeot");
-?>
 <!DOCTYPE html>
 <html lang="fr">
 
