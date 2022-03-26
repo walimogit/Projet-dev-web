@@ -262,6 +262,7 @@ function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $peopl
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('competense', $competense, PDO::PARAM_STR);
         $stmt->bindValue('time', $time, PDO::PARAM_STR);
+        $stmt->bindValue('remunerate', $remunerate, PDO::PARAM_STR);
         $stmt->bindValue('timestamp', $timestamp, PDO::PARAM_STR);
         $stmt->bindValue('place', $place, PDO::PARAM_STR);
         $stmt->execute();
@@ -295,3 +296,75 @@ function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $peopl
     return $msg;
 }
 
+function UpdateOffer($offer, $competense, $time, $remunerate, $timestamp, $place)
+{
+    require("bdd.php");
+    try {
+        $query = 'UPDATE Internship_offers SET Competense =:competense, Duree_de_stage = :time, `Base_remuneration` = :remunerate, `Date_offre` = :timestamp, `Nb_places_offertes` = :place WHERE Internship_offers.ID_internship_offers = :offer';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('competense', $competense, PDO::PARAM_STR);
+        $stmt->bindValue('time', $time, PDO::PARAM_STR);
+        $stmt->bindValue('remunerate', $remunerate, PDO::PARAM_STR);
+        $stmt->bindValue('timestamp', $timestamp, PDO::PARAM_STR);
+        $stmt->bindValue('place', $place, PDO::PARAM_STR);
+        $stmt->bindValue('offer', $offer, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function DeleteOffer($ID_offer)
+{
+    require("bdd.php");
+    try {
+        $query = 'UPDATE Internship_offers SET Boolsuppr = 1 WHERE Internship_offers.ID_internship_offers = :ID_offer';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('ID_offer', $ID_offer, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function GetStatsOffer($ID_offer)
+{
+    require("bdd.php");
+    $stats = [];
+    try {
+        $query = 'ALLED'; 
+        $stmt->bindParam('ID_offer', $ID_offer, PDO::PARAM_STR);
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($rows)) {
+            foreach ($rows as $value) {
+                array_push($stats, $value[''], $value[''], $value['']);
+            }
+            return $stats;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+
+
+?>
