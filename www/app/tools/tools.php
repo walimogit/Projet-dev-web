@@ -346,14 +346,14 @@ function GetStatsOffer($ID_offer)
     require("bdd.php");
     $stats = [];
     try {
-        $query = 'ALLED'; 
+        $query = 'SELECT * FROM Internship_offers where ID_internship_offers=:ID_offer'; 
         $stmt->bindParam('ID_offer', $ID_offer, PDO::PARAM_STR);
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (!empty($rows)) {
             foreach ($rows as $value) {
-                array_push($stats, $value[''], $value[''], $value['']);
+                array_push($stats, $value['Duree_de_stage'], $value['Base_remuneration'], $value['Date_offre'], $value['Nb_places_offertes']);
             }
             return $stats;
         } else {
