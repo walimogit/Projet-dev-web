@@ -255,7 +255,8 @@ function GetStatsEntreprise($ID_enterprise)
 }
 
 function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $people)
-{
+{ // A REFAIRE EN UTILISANT : https://openclassrooms.com/forum/sujet/insert-into-sur-plusieurs-tables MAIS DEJA IL FAUT TESTER "CreatePeople" pour voir si c'est viable
+    /*
     require("bdd.php");
     try {
         $query = 'INSERT INTO Internship_offers ID_internship_offers, Competense, Duree_de_stage, Base_remuneration, Date_offre, Nb_places_offertes, Boolsuppr VALUES (NULL, :competense, :time, :remunerate, :timestamp, :place, 1)';
@@ -293,7 +294,7 @@ function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $peopl
     } catch (PDOException $e) {
         $msg = "Error : " . $e->getMessage();
     }
-    return $msg;
+    return $msg;*/
 }
 
 function UpdateOffer($offer, $competense, $time, $remunerate, $timestamp, $place)
@@ -346,7 +347,7 @@ function GetStatsOffer($ID_offer)
     require("bdd.php");
     $stats = [];
     try {
-        $query = 'SELECT * FROM Internship_offers where ID_internship_offers=:ID_offer'; 
+        $query = 'SELECT * FROM Internship_offers where ID_internship_offers=:ID_offer';
         $stmt->bindParam('ID_offer', $ID_offer, PDO::PARAM_STR);
         $stmt = $bdd->prepare($query);
         $stmt->execute();
@@ -365,6 +366,78 @@ function GetStatsOffer($ID_offer)
     return $msg;
 }
 
+function CreatePeople($First_name, $Last_name, $Login, $Password, $role)
+{
+    require("bdd.php");
+    try {
+        $query1 = 'INSERT INTO `People` (`ID_people`, `First_name`, `Last_name`, `Login`, `Password`, `Booldel`) VALUES (NULL, :First_name, :Last_name, :Login, :Password, 1)';
+        $stmt = $bdd->prepare($query1);
+        $stmt->bindParam('First_name', $First_name, PDO::PARAM_STR);
+        $stmt->bindValue('Last_name', $Last_name, PDO::PARAM_STR);
+        $stmt->bindValue('Login', $Login, PDO::PARAM_STR);
+        $stmt->bindValue('Password', $Password, PDO::PARAM_STR);
+        $stmt->execute();
 
+        $LastID = $pdo->lastInsertId();     // A TESTER !!!!!!!!!!!!!!!!!!!!!!!
 
-?>
+        $query2 = 'INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES ($role, $LastID)';
+        $stmt = $bdd->prepare($query2);
+        $stmt->bindParam('role', $role, PDO::PARAM_STR);
+        $stmt->bindValue('LastID', $LastID, PDO::PARAM_STR);
+        $stmt->execute();
+
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_people)
+{
+    require("bdd.php");
+    try {
+        $query = 'UPDATE People SET First_name = :First_name, `Last_name` = :Last_name, `Login` = :Login, `Password` = :Password WHERE own.ID_people = :id_people AND People.ID_people = :id_people AND Own.ID_role = :role';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('First_name', $First_name, PDO::PARAM_STR);
+        $stmt->bindValue('Last_name', $Last_name, PDO::PARAM_STR);
+        $stmt->bindValue('Login', $Login, PDO::PARAM_STR);
+        $stmt->bindValue('Password', $Password, PDO::PARAM_STR);
+        $stmt->bindValue('role', $role, PDO::PARAM_STR);
+        $stmt->bindValue('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function DeletePeople($id_people)
+{
+    require("bdd.php");
+    try {
+        $query = 'UPDATE People SET Booldel = 0 WHERE ID_people = :id_people';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
