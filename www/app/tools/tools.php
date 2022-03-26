@@ -181,7 +181,7 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people){
     require("bdd.php");
     if(isTutor()){
         try{ 
-            $query = 'INSERT INTO Evaluation_interns ID_evaluation_interns, Evaluation_interns, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
+            $query = 'INSERT INTO Pilot_trust ID_Pilot_trust, Pilot_trust, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
             $stmt = $bdd->prepare($query);
             $stmt->bindParam('note', $note, PDO::PARAM_STR);
             $stmt->bindValue('identreprise', $ID_enterprise, PDO::PARAM_STR);
@@ -197,10 +197,9 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people){
               $msg = "Error : ".$e->getMessage(); 
             }
             return $msg;
-
     }else{
         try{ 
-            $query = 'INSERT INTO Pilot_trust ID_Pilot_trust, Pilot_trust, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
+            $query = 'INSERT INTO Evaluation_interns ID_evaluation_interns, Evaluation_interns, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
             $stmt = $bdd->prepare($query);
             $stmt->bindParam('note', $note, PDO::PARAM_STR);
             $stmt->bindValue('identreprise', $ID_enterprise, PDO::PARAM_STR);
@@ -219,20 +218,20 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people){
     }
 }
 
-function GetGradEntrepriseByPeople($ID_enterprise){
+function GetStatsEntreprise($ID_enterprise){ //renvoie directement la moyenne des notes par id d'entreprise
     require("bdd.php");
-    $note = [];
+    $stats = [];
     try{ 
-        $query = ''; // Faire requeste
+        $query = 'SELECT Enterprise.ID_enterprise, Number_interns_accepted, AVG(Evaluation_interns), AVG(Pilot_trust) FROM Enterprise, Evaluation_interns, Pilot_trust WHERE Enterprise.ID_enterprise =:enterprise ;'; // 
         $stmt->bindParam('enterprise', $ID_enterprise, PDO::PARAM_STR);
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($rows)) {
             foreach ($rows as $value){
-                array_push($note , $value['Evaluation_interns']);           
+                array_push($stats , $value['Number_interns_accepted'], $value['AVG(Evaluation_interns)'], $value['AVG(Pilot_trust)']);           
             }
-            return $note;
+            return $stats;
             } else {
             $msg = "ERREUR";
             }
@@ -240,7 +239,47 @@ function GetGradEntrepriseByPeople($ID_enterprise){
             $msg = "Error : ".$e->getMessage(); 
         }
         return $msg;
-  }
+}
+
+function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $people){
+    require("bdd.php");
+    try{ 
+        $query = 'INSERT INTO Internship_offers ID_internship_offers, Competense, Duree_de_stage, Base_remuneration, Date_offre, Nb_places_offertes, Boolsuppr VALUES (NULL, :competense, :time, :remunerate, :timestamp, :place, 1)';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('competense', $competense, PDO::PARAM_STR);
+        $stmt->bindValue('time', $time, PDO::PARAM_STR);
+        $stmt->bindValue('timestamp', $timestamp, PDO::PARAM_STR);
+        $stmt->bindValue('place', $place, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if(!empty($rows)) {
+            $query = 'SELECT MAX(ID_internship_offers) FROM Internship_offers';
+            $stmt = $bdd->prepare($query);
+            $stmt->execute();
+            $rows = $stmt->fetchAll();
+            if(!empty($rows)) {
+                $value = $rows[0]['MAX(ID_internship_offers)'];
+                $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`) VALUES (:people, :id)';
+                $stmt->bindParam('people', $people, PDO::PARAM_STR);
+                $stmt->bindValue('id', $value, PDO::PARAM_STR);
+                $stmt = $bdd->prepare($query);
+                $stmt->execute();
+                $rows = $stmt->fetchAll();
+                if(!empty($rows)) {
+                    return TRUE;
+                }else
+                    $msg = "ERREUR";
+            }else {
+                $msg = "ERREUR";
+            }
+            } else {
+            $msg = "ERREUR";
+            }
+    } catch (PDOException $e) {
+        $msg = "Error : ".$e->getMessage(); 
+    }
+    return $msg;
+}
 
 
 
