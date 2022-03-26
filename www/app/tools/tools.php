@@ -1,123 +1,132 @@
 <?php
-function isLoggedIn(){
+function isLoggedIn()
+{
     return isset($_SESSION['sess_user_id']);
 }
 
-function isStudent() {
-    if(!isLoggedIn())
+function isStudent()
+{
+    if (!isLoggedIn())
         return false;
-    foreach($_SESSION['sess_roles'] as $value){
-        if($value['ID_role'] === 1)
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 1)
             return true;
     }
     return false;
 }
 
-function isDelegate() {
-    if(!isLoggedIn())
+function isDelegate()
+{
+    if (!isLoggedIn())
         return false;
-    foreach($_SESSION['sess_roles'] as $value){
-        if($value['ID_role'] === 2)
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 2)
             return true;
     }
     return false;
 }
 
-function isTutor() {
-    if(!isLoggedIn())
+function isTutor()
+{
+    if (!isLoggedIn())
         return false;
-    foreach($_SESSION['sess_roles'] as $value){
-        if($value['ID_role'] === 3)
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 3)
             return true;
     }
     return false;
 }
 
-function isOther() {
-    if(!isLoggedIn())
+function isOther()
+{
+    if (!isLoggedIn())
         return false;
-    foreach($_SESSION['sess_roles'] as $value){
-        if($value['ID_role'] === 4)
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 4)
             return true;
     }
     return false;
 }
 
-function isAdmin() {
-    if(!isLoggedIn())
+function isAdmin()
+{
+    if (!isLoggedIn())
         return false;
-    foreach($_SESSION['sess_roles'] as $value){
-        if($value['ID_role'] === 5)
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 5)
             return true;
     }
     return false;
 }
 
-function isEnterprise() {
-    if(!isLoggedIn())
+function isEnterprise()
+{
+    if (!isLoggedIn())
         return false;
-    foreach($_SESSION['sess_roles'] as $value){
-        if($value['ID_role'] === 6)
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 6)
             return true;
     }
     return false;
 }
 
-function Search(){
+function Search()
+{
     require("bdd.php");
     $tab = [];
-    if (isAdmin() OR isTutor() OR isStudent() OR isDelegate()){
+    if (isAdmin() or isTutor() or isStudent() or isDelegate()) {
         $query = 'SELECT * From Enterprise where Booldel=1 ';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $value){
-        array_push($tab , $value['Name_enterprise']);           
+        foreach ($rows as $value) {
+            array_push($tab, $value['Name_enterprise']);
         }
     }
 
-    if (isAdmin() OR isTutor() OR isStudent() OR isDelegate()){
+    if (isAdmin() or isTutor() or isStudent() or isDelegate()) {
         $query = 'SELECT * From Internship_offers where Boolsuppr=1';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $value){
-        array_push($tab , $value['Competense']);           
+        foreach ($rows as $value) {
+            array_push($tab, $value['Competense']);
         }
     }
-    if (isAdmin() OR isDelegate()){
+    if (isAdmin() or isDelegate()) {
         $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 3;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $value){
-            array_push($tab , $value);
+        foreach ($rows as $value) {
+            array_push($tab, $value);
         }
     }
-    if (isAdmin() OR isTutor() OR isDelegate()){
+    if (isAdmin() or isTutor() or isDelegate()) {
         $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 2;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $value){
-            array_push($tab , $value);
+        foreach ($rows as $value) {
+            array_push($tab, $value);
         }
     }
-    if (isAdmin() OR isTutor() OR isDelegate()){
+    if (isAdmin() or isTutor() or isDelegate()) {
         $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 1;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $value){
-            array_push($tab , $value);
+        foreach ($rows as $value) {
+            array_push($tab, $value);
         }
     }
     return $tab;
 }
 
-function CreateEnterprise($name, $Number_accepted, $id_people){
+function CreateEnterprise($name, $Number_accepted, $id_people)
+{
     require("bdd.php");
-    try{ 
+    try {
         $query = 'INSERT INTO Enterprise, ID_enterprise, Name_enterprise, Number_interns_accepted, Booldel, ID_people VALUES (NULL, :name, :number1, 1, :numberid);'; // 1 = booldel
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('name', $name, PDO::PARAM_STR);
@@ -125,20 +134,21 @@ function CreateEnterprise($name, $Number_accepted, $id_people){
         $stmt->bindValue('numberid', $id_people, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll();
-        if(!empty($rows)) {
+        if (!empty($rows)) {
             return true;
-          } else {
+        } else {
             $msg = "ERREUR";
-          }
-        } catch (PDOException $e) {
-          $msg = "Error : ".$e->getMessage(); 
         }
-        return $msg;
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
     }
+    return $msg;
+}
 
-function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise){
+function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise)
+{
     require("bdd.php");
-    try{ 
+    try {
         $query = 'UPDATE Entreprise SET Name_entreprise = :name, Number_interns_accepted = :number1, ID_people = :numberid, WHERE Enterprise.ID_enterprise = :numberidEntre';
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('name', $name, PDO::PARAM_STR);
@@ -147,40 +157,42 @@ function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise){
         $stmt->bindValue('numberidEntre', $ID_enterprise, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll();
-        if(!empty($rows)) {
+        if (!empty($rows)) {
             return true;
-            } else {
+        } else {
             $msg = "ERREUR";
-            }
-        } catch (PDOException $e) {
-            $msg = "Error : ".$e->getMessage(); 
         }
-        return $msg;
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
     }
+    return $msg;
+}
 
-function DeleteEnterprise($ID_enterprise){
+function DeleteEnterprise($ID_enterprise)
+{
     require("bdd.php");
-    try{ 
+    try {
         $query = 'UPDATE Entreprise SET Booldel = "0" WHERE Enterprise.ID_enterprise = :numberidEntre';
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('numberidEntre', $ID_enterprise, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll();
-        if(!empty($rows)) {
+        if (!empty($rows)) {
             return true;
-            } else {
+        } else {
             $msg = "ERREUR";
-            }
-        } catch (PDOException $e) {
-            $msg = "Error : ".$e->getMessage(); 
         }
-        return $msg;
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
     }
+    return $msg;
+}
 
-function EvaluateEntreprise($ID_enterprise, $note, $id_people){
+function EvaluateEntreprise($ID_enterprise, $note, $id_people)
+{
     require("bdd.php");
-    if(isTutor()){
-        try{ 
+    if (isTutor()) {
+        try {
             $query = 'INSERT INTO Pilot_trust ID_Pilot_trust, Pilot_trust, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
             $stmt = $bdd->prepare($query);
             $stmt->bindParam('note', $note, PDO::PARAM_STR);
@@ -188,17 +200,17 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people){
             $stmt->bindValue('idpeople', $id_people, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll();
-            if(!empty($rows)) {
+            if (!empty($rows)) {
                 return true;
-              } else {
+            } else {
                 $msg = "ERREUR";
-              }
-            } catch (PDOException $e) {
-              $msg = "Error : ".$e->getMessage(); 
             }
-            return $msg;
-    }else{
-        try{ 
+        } catch (PDOException $e) {
+            $msg = "Error : " . $e->getMessage();
+        }
+        return $msg;
+    } else {
+        try {
             $query = 'INSERT INTO Evaluation_interns ID_evaluation_interns, Evaluation_interns, Booldel, ID_enterprise, ID_people VALUES (NULL, :note, 1, :identreprise, :idpeople);'; // 1 = booldel
             $stmt = $bdd->prepare($query);
             $stmt->bindParam('note', $note, PDO::PARAM_STR);
@@ -206,44 +218,46 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people){
             $stmt->bindValue('idpeople', $id_people, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll();
-            if(!empty($rows)) {
+            if (!empty($rows)) {
                 return true;
-              } else {
+            } else {
                 $msg = "ERREUR";
-              }
-            } catch (PDOException $e) {
-              $msg = "Error : ".$e->getMessage(); 
             }
-            return $msg;
+        } catch (PDOException $e) {
+            $msg = "Error : " . $e->getMessage();
+        }
+        return $msg;
     }
 }
 
-function GetStatsEntreprise($ID_enterprise){ //renvoie directement la moyenne des notes par id d'entreprise
+function GetStatsEntreprise($ID_enterprise)
+{ //renvoie directement la moyenne des notes par id d'entreprise
     require("bdd.php");
     $stats = [];
-    try{ 
+    try {
         $query = 'SELECT Enterprise.ID_enterprise, Number_interns_accepted, AVG(Evaluation_interns), AVG(Pilot_trust) FROM Enterprise, Evaluation_interns, Pilot_trust WHERE Enterprise.ID_enterprise =:enterprise ;'; // 
         $stmt->bindParam('enterprise', $ID_enterprise, PDO::PARAM_STR);
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if(!empty($rows)) {
-            foreach ($rows as $value){
-                array_push($stats , $value['Number_interns_accepted'], $value['AVG(Evaluation_interns)'], $value['AVG(Pilot_trust)']);           
+        if (!empty($rows)) {
+            foreach ($rows as $value) {
+                array_push($stats, $value['Number_interns_accepted'], $value['AVG(Evaluation_interns)'], $value['AVG(Pilot_trust)']);
             }
             return $stats;
-            } else {
+        } else {
             $msg = "ERREUR";
-            }
-        } catch (PDOException $e) {
-            $msg = "Error : ".$e->getMessage(); 
         }
-        return $msg;
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
 }
 
-function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $people){
+function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $people)
+{
     require("bdd.php");
-    try{ 
+    try {
         $query = 'INSERT INTO Internship_offers ID_internship_offers, Competense, Duree_de_stage, Base_remuneration, Date_offre, Nb_places_offertes, Boolsuppr VALUES (NULL, :competense, :time, :remunerate, :timestamp, :place, 1)';
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('competense', $competense, PDO::PARAM_STR);
@@ -252,12 +266,12 @@ function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $peopl
         $stmt->bindValue('place', $place, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll();
-        if(!empty($rows)) {
+        if (!empty($rows)) {
             $query = 'SELECT MAX(ID_internship_offers) FROM Internship_offers';
             $stmt = $bdd->prepare($query);
             $stmt->execute();
             $rows = $stmt->fetchAll();
-            if(!empty($rows)) {
+            if (!empty($rows)) {
                 $value = $rows[0]['MAX(ID_internship_offers)'];
                 $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`) VALUES (:people, :id)';
                 $stmt->bindParam('people', $people, PDO::PARAM_STR);
@@ -265,22 +279,19 @@ function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $peopl
                 $stmt = $bdd->prepare($query);
                 $stmt->execute();
                 $rows = $stmt->fetchAll();
-                if(!empty($rows)) {
+                if (!empty($rows)) {
                     return TRUE;
-                }else
+                } else
                     $msg = "ERREUR";
-            }else {
+            } else {
                 $msg = "ERREUR";
             }
-            } else {
+        } else {
             $msg = "ERREUR";
-            }
+        }
     } catch (PDOException $e) {
-        $msg = "Error : ".$e->getMessage(); 
+        $msg = "Error : " . $e->getMessage();
     }
     return $msg;
 }
 
-
-
-?>
