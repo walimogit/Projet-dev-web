@@ -48,6 +48,11 @@
                 </div>
                 <div class="col col-gest">
                     <div class="row">
+                        <div class="btn btn-modif">Offer management</div>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
                         <div class="btn btn-modif">Create enterprise</div>
                     </div>
                 </div>
