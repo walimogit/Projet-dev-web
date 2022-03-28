@@ -255,46 +255,36 @@ function GetStatsEntreprise($ID_enterprise)
 }
 
 function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $people)
-{ // A REFAIRE EN UTILISANT : https://openclassrooms.com/forum/sujet/insert-into-sur-plusieurs-tables MAIS DEJA IL FAUT TESTER "CreatePeople" pour voir si c'est viable
-    /*
+{ //https://openclassrooms.com/forum/sujet/insert-into-sur-plusieurs-tables
     require("bdd.php");
     try {
-        $query = 'INSERT INTO Internship_offers ID_internship_offers, Competense, Duree_de_stage, Base_remuneration, Date_offre, Nb_places_offertes, Boolsuppr VALUES (NULL, :competense, :time, :remunerate, :timestamp, :place, 1)';
-        $stmt = $bdd->prepare($query);
+        $query1 = 'INSERT INTO Internship_offers ID_internship_offers, Competense, Duree_de_stage, Base_remuneration, Date_offre, Nb_places_offertes, Boolsuppr VALUES (NULL, :competense, :time, :remunerate, :timestamp, :place, 1)';
+        $stmt = $bdd->prepare($query1);
         $stmt->bindParam('competense', $competense, PDO::PARAM_STR);
         $stmt->bindValue('time', $time, PDO::PARAM_STR);
         $stmt->bindValue('remunerate', $remunerate, PDO::PARAM_STR);
         $stmt->bindValue('timestamp', $timestamp, PDO::PARAM_STR);
         $stmt->bindValue('place', $place, PDO::PARAM_STR);
         $stmt->execute();
+
+        $LastID = $pdo->lastInsertId();     // A TESTER !!!!!!!!!!!!!!!!!!!!!!!
+
+        $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`) VALUES (:people, :id)';
+        $stmt->bindParam('people', $people, PDO::PARAM_STR);
+        $stmt->bindValue('id', $LastID, PDO::PARAM_STR);
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
         $rows = $stmt->fetchAll();
+
         if (!empty($rows)) {
-            $query = 'SELECT MAX(ID_internship_offers) FROM Internship_offers';
-            $stmt = $bdd->prepare($query);
-            $stmt->execute();
-            $rows = $stmt->fetchAll();
-            if (!empty($rows)) {
-                $value = $rows[0]['MAX(ID_internship_offers)'];
-                $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`) VALUES (:people, :id)';
-                $stmt->bindParam('people', $people, PDO::PARAM_STR);
-                $stmt->bindValue('id', $value, PDO::PARAM_STR);
-                $stmt = $bdd->prepare($query);
-                $stmt->execute();
-                $rows = $stmt->fetchAll();
-                if (!empty($rows)) {
-                    return TRUE;
-                } else
-                    $msg = "ERREUR";
-            } else {
-                $msg = "ERREUR";
-            }
+            return true;
         } else {
             $msg = "ERREUR";
         }
     } catch (PDOException $e) {
         $msg = "Error : " . $e->getMessage();
     }
-    return $msg;*/
+    return $msg;
 }
 
 function UpdateOffer($offer, $competense, $time, $remunerate, $timestamp, $place)
