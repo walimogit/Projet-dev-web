@@ -1,76 +1,34 @@
 <main class="main">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <fieldset>
-                    <h5>Nouvelles annonces</h5>
-                </fieldset>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Internship Offers</h1>
+                <p class="lead text-muted">Find all the current internship announcements.</p>
             </div>
-            <?php foreach($annonces as $annonce): ?>
-            <div class="carousel-item annonce">
-                <fieldset>
-                    <h5 class="col">
-                        Annonce <?= $annonce ?>
-                    </h5>
-                    <div class="col">
-                        Competense <?= $annonce ?>
-                    </div>
-                    <div class="col">
-                        Duree_stage <?= $annonce ?>
-                    </div>
-                    <div class="col">
-                        Base_remuneration <?= $annonce ?>
-                    </div>
-                    <div class="col">
-                        Date_offre <?= $annonce ?>
-                    </div>
-                    <div class="col">
-                        Nb_places_offertes <?= $annonce ?>
-                    </div>
-                </fieldset>
-            </div>
-            <?php endforeach; ?>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+    </section>
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <?php for ($i = 0; $i < count($annonce); $i++) : ?>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h4><? echo $annonce[$i]['Competense'] ?></h4>
+                                <p>Time of internship: <? echo $annonce[$i]['Duree_de_stage'] ?></p>
+                                <p>Remuneration: <? echo $annonce[$i]['Base_remuneration'] ?></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    </div>
+                                    <small class="text-muted"><? echo $annonce[$i]['Date_offre'] ?></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endfor; ?>
+            </div>
+        </div>
     </div>
 </main>
-
-
-<!--<?php //foreach($annonces as $annonce): ?>
-
-<div class="row">
-    <div class="col-auto">
-        <img src="https://picsum.photos/200" />
-    </div>
-    <div class="col">
-        <div class="row">
-            <div class="col">
-                Annonce <?= $annonce ?>
-            </div>
-            <div class="col text-end">
-                Date de stage
-            </div>
-        </div>
-    </div>
-</div>-->
-
-
-<!--liste d'annonce-->
-
-<!--formulaire ajout d'annonce-->
-
-<form>
-    <div class="row">
-        <div class="col">
-            <label>Nom</label>
-            <input type="text" class="form-control" name="nom" />
-        </div>
-    </div>
-</form>

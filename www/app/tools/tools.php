@@ -400,7 +400,7 @@ function GetStatsOffer($ID_offer)
     require("bdd.php");
     $stats = [];
     try {
-        $query = 'SELECT * FROM Internship_offers where ID_internship_offers=:ID_offer';
+        $query = 'SELECT * FROM Internship_offers where ID_internship_offers=:ID_offer'; //Penser à join l'id de l'entreprise à l'offre
         $stmt->bindParam('ID_offer', $ID_offer, PDO::PARAM_STR);
         $stmt = $bdd->prepare($query);
         $stmt->execute();
@@ -410,6 +410,25 @@ function GetStatsOffer($ID_offer)
                 array_push($stats, $value['Duree_de_stage'], $value['Base_remuneration'], $value['Date_offre'], $value['Nb_places_offertes']);
             }
             return $stats;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function GetAllStatsOffer()
+{
+    require("bdd.php");
+    try {
+        $query = 'SELECT * FROM Internship_offers JOIN Propose WHERE Boolsuppr =  1 AND Propose.ID_internship_offers = Internship_offers.ID_internship_offers';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($rows)) {
+            return $rows;
         } else {
             $msg = "ERREUR";
         }
