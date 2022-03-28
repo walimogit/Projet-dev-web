@@ -123,7 +123,7 @@ function Search()
     return $tab;
 }
 
-function CreateEnterprise($name, $Number_accepted, $id_people) //RAJOUTER L'ENTREE VILLE & secteur
+function CreateEnterprise($name, $Number_accepted, $id_people, $city, $sector)
 {
     require("bdd.php");
     try {
@@ -134,8 +134,42 @@ function CreateEnterprise($name, $Number_accepted, $id_people) //RAJOUTER L'ENTR
         $stmt->bindValue('numberid', $id_people, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll();
+
+        $ID = $pdo->lastInsertId(); 
+       
         if (!empty($rows)) {
-            return true;
+            try {
+                $query1 = 'INSERT INTO `Being_located` (`ID_City`, `ID_enterprise`) VALUES (:city, :ID)';
+                $stmt = $bdd->prepare($query1);
+                $stmt->bindParam('city', $city, PDO::PARAM_STR);
+                $stmt->bindValue('ID', $ID, PDO::PARAM_STR);
+                $stmt->execute();
+                $rows1 = $stmt->fetchAll();
+                if (!empty($rows1)) {
+                    
+                    try {
+                        $query = 'INSERT INTO `Being_in` (`ID_sector`, `ID_enterprise`) VALUES (:sector, :id)';
+                        $stmt = $bdd->prepare($query);
+                        $stmt->bindParam('sector', $sector, PDO::PARAM_STR);
+                        $stmt->bindValue('id', $ID, PDO::PARAM_STR);
+                        $stmt->execute();
+                        $rows2 = $stmt->fetchAll();
+
+                        if (!empty($rows2)) {
+                            return true;
+                        } else {
+                            $msg = "ERREUR";
+                        }
+                    } catch (PDOException $e) {
+                        $msg = "Error : " . $e->getMessage();
+                    }
+                    
+                } else {
+                    $msg = "ERREUR";
+                }
+            } catch (PDOException $e) {
+                $msg = "Error : " . $e->getMessage();
+            }
         } else {
             $msg = "ERREUR";
         }
@@ -495,5 +529,66 @@ function UpdateOfferAdvancement($id_people, $id_offer, $advancement){
     return $msg;
 }
 
+function AddToWishlist($id_people, $id_offer){
+    require("bdd.php");
+    try {
+        $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`, `Advancement`) VALUES (:id_people, :id_offer, 0)';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->bindValue('id_offer', $id_offer, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function GetWishlist($id_people){
+    require("bdd.php");
+    try {
+        $query = 'SELECT * FROM Being_proposed WHERE ID_people = :id_people AND Advancement = 0;';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            foreach ($rows as $value) {
+                array_push($stats, $value['ID_internship_offers'], $value['Advancement']);
+            }
+            return $stats;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function RemoveWishlist($id_people, $id_offer){
+    require("bdd.php");
+    try {
+        $query = 'DELETE FROM Being_proposed WHERE `Being_proposed`.`ID_people` = :id_people AND `Being_proposed`.`ID_internship_offers` = :id_offer';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->bindValue('id_offer', $id_offer, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
 
 ?>
