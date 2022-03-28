@@ -109,3 +109,47 @@ padding-right: 20px;
 .tt-suggestion p {
   margin: 0;
 }
+
+.footer{
+  color: #999;
+  text-transform: uppercase;
+  font-size: .815rem;
+}
+
+.u-listUnstyled {
+  padding-left: 0;
+  list-style: none;
+    list-style-position: initial;
+    list-style-image: initial;
+    list-style-type: none;
+}
+
+.Footer h4 {
+  font-family: Open Sans Condensed Bold,Arial,sans-serif;
+  font-size: 1.065rem;
+  line-height: 1.1rem;
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(255, 255, 255);
+  padding-bottom: 4px;
+  margin: 20px 0;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+section {
+  height: 100vh;
+}
