@@ -123,7 +123,7 @@ function Search()
     return $tab;
 }
 
-function CreateEnterprise($name, $Number_accepted, $id_people)
+function CreateEnterprise($name, $Number_accepted, $id_people) //RAJOUTER L'ENTREE VILLE & secteur
 {
     require("bdd.php");
     try {
@@ -145,7 +145,7 @@ function CreateEnterprise($name, $Number_accepted, $id_people)
     return $msg;
 }
 
-function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise)
+function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise) //RAJOUTER L'ENTREE VILLE & secteur
 {
     require("bdd.php");
     try {
