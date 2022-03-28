@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,49 +40,47 @@
         });
         </script>
     </head>
-
     <body>
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
                     <img src="./img/logo.png" alt="logo" class="navbar-brand" width="150">
-                    
                     <form class="d-flex" action="/search.php">
-                    <input class="typeahead form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search" spellcheck="false" autocomplete="off">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="typeahead form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search" spellcheck="false" autocomplete="off">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <?php  if(isStudent()): ?>
-                            <a class="nav-link active" href="#student">Student</a>
-                            <?php endif; ?>
-                            <?php  if(isDelegate()): ?>
-                                <a class="nav-link active" href="#Delegate">Delegate</a>
-                            <?php endif; ?>
-                            <?php  if(isTutor()): ?>
-                                <a class="nav-link active" href="#tutor">Tutor</a>
-                            <?php endif; ?>
-                            <?php  if(isOther()): ?>
-                                <a class="nav-link active" href="#other">Other</a>
-                            <?php endif; ?>
-                            <?php  if(isEnterprise()): ?>
-                                <a class="nav-link active" href="#entreprise">Entreprise</a>
-                            <?php endif; ?>
-                            <?php  if(isAdmin()): ?>
-                                <a class="nav-link active" href="#admin">Admin</a>
-                            <?php endif; ?>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link active" href="./login.php"><i class="fa fa-user"></i></a>
-                        </li>
-                    </ul>
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <?php  if(isStudent()): ?>
+                                <a class="nav-link active" href="#student">Student</a>
+                                <?php endif; ?>
+                                <?php  if(isDelegate()): ?>
+                                    <a class="nav-link active" href="#Delegate">Delegate</a>
+                                <?php endif; ?>
+                                <?php  if(isTutor()): ?>
+                                    <a class="nav-link active" href="#tutor">Tutor</a>
+                                <?php endif; ?>
+                                <?php  if(isOther()): ?>
+                                    <a class="nav-link active" href="#other">Other</a>
+                                <?php endif; ?>
+                                <?php  if(isEnterprise()): ?>
+                                    <a class="nav-link active" href="#entreprise">Entreprise</a>
+                                <?php endif; ?>
+                                <?php  if(isAdmin()): ?>
+                                    <a class="nav-link active" href="#admin">Admin</a>
+                                <?php endif; ?>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./login.php"><i class="fa fa-user"></i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
