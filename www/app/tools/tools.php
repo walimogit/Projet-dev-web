@@ -179,7 +179,7 @@ function CreateEnterprise($name, $Number_accepted, $id_people, $city, $sector)
     return $msg;
 }
 
-function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise) //RAJOUTER L'ENTREE VILLE & secteur
+function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise, $city, $sector)
 {
     require("bdd.php");
     try {
@@ -192,7 +192,36 @@ function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise) /
         $stmt->execute();
         $rows = $stmt->fetchAll();
         if (!empty($rows)) {
-            return true;
+            try {
+                $query = 'UPDATE `Being_located` SET `ID_City` = :city WHERE `Being_located`.`ID_enterprise` = :ID_enterprise';
+                $stmt = $bdd->prepare($query);
+                $stmt->bindParam('city', $city, PDO::PARAM_STR);
+                $stmt->bindValue('ID_enterprise', $ID_enterprise, PDO::PARAM_STR);
+                $stmt->execute();
+                $rows1 = $stmt->fetchAll();
+                if (!empty($rows1)) {
+                    try {
+                        $query = 'UPDATE `Being_in` SET `ID_sector` = :sector WHERE `Being_in`.`ID_enterprise` = :ID_enterprise';
+                        $stmt = $bdd->prepare($query);
+                        $stmt->bindParam('sector', $sector, PDO::PARAM_STR);
+                        $stmt->bindValue('ID_enterprise', $ID_enterprise, PDO::PARAM_STR);
+                        $stmt->execute();
+                        $rows2 = $stmt->fetchAll();
+                        if (!empty($rows2)) {
+                            
+                            return true;
+                        } else {
+                            $msg = "ERREUR";
+                        }
+                    } catch (PDOException $e) {
+                        $msg = "Error : " . $e->getMessage();
+                    } 
+                } else {
+                    $msg = "ERREUR";
+                }
+            } catch (PDOException $e) {
+                $msg = "Error : " . $e->getMessage();
+            }
         } else {
             $msg = "ERREUR";
         }
