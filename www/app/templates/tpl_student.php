@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col col-gest">
                     <div class="row">
-                        <div class="btn btn-modif">My internship</div>
+                        <div class="btn btn-modif">My internship : enterprises and offers</div>
                     </div>
             </div><br></br>
 
