@@ -47,13 +47,14 @@
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
                     <img src="./img/logo.png" alt="logo" class="navbar-brand" width="150">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
+                    
                     <form class="d-flex" action="/search.php">
                     <input class="typeahead form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search" spellcheck="false" autocomplete="off">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
