@@ -5,6 +5,7 @@
 </div>
 <?php  if(isStudent()): ?>
 
+<a href="../annonces.php">Annonces</a>
 étudiant
 
 <?php endif; ?>
