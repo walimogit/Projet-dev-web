@@ -431,3 +431,69 @@ function DeletePeople($id_people)
     }
     return $msg;
 }
+
+function GetStatAdvancement($id_people){
+    require("bdd.php");
+    try {
+        $query = 'SELECT * FROM Being_proposed WHERE ID_people = :id_people;';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            foreach ($rows as $value) {
+                array_push($stats, $value['ID_internship_offers'], $value['Advancement']);
+            }
+            return $stats;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function GetOffer($id_people, $id_offer){
+    require("bdd.php");
+    try {
+        $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`, `Advancement`) VALUES (:id_people, :id_offer, 1)';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->bindValue('id_offer', $id_offer, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function UpdateOfferAdvancement($id_people, $id_offer, $advancement){
+    require("bdd.php");
+    try {
+        $query = 'UPDATE `Being_proposed` SET `Advancement` = :advancement WHERE `Being_proposed`.`ID_people` = :id_people AND `Being_proposed`.`ID_internship_offers` = :id_offer';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('advancement', $advancement, PDO::PARAM_STR);
+        $stmt->bindValue('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->bindValue('id_offer', $id_offer, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+
+?>
