@@ -7,11 +7,12 @@ require_once('templates/tpl_header.php');
 require_once('templates/tpl_upload.php');
 
 
-
 if(isset($_POST['submit']))
 {
    AddAFile();
-} 
+}
 
+$path = './tools/doc_people/test';
+DownloadFile($path);
 
 ?>

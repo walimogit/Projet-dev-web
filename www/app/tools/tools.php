@@ -743,6 +743,7 @@ function AddAFile(){
 
     $ID_people =  $_SESSION['sess_user_id'];
     $Directory = "./tools/doc_people/$ID_people/";
+    $DirectoryFile = "$Directory" . $_FILES["file"]["name"];
 
     if ($_FILES["file"]["error"] > 0) {
         echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
@@ -755,18 +756,18 @@ function AddAFile(){
             }else{
                 move_uploaded_file($_FILES["file"]["tmp_name"], $Directory . $_FILES["file"]["name"]);
                 echo "Stored in: " . "$Directory" . $_FILES["file"]["name"];
-                echo PathToBDD($Directory,  $ID_people);
+                echo PathToBDD($DirectoryFile,  $ID_people);
             }     
         }
     }
 }
 
-function PathToBDD($Directory,  $ID_people){
+function PathToBDD($DirectoryFile,  $ID_people){
     require("bdd.php");
     try {
         $query = 'INSERT INTO `File` (`ID_Path`, `Path`) VALUES (NULL, :directory)'; 
         $stmt = $bdd->prepare($query);
-        $stmt->bindParam('directory', $Directory, PDO::PARAM_STR);
+        $stmt->bindParam('directory', $DirectoryFile, PDO::PARAM_STR);
         $stmt->execute();
 
         $LastID = $bdd->lastInsertId();
@@ -780,7 +781,7 @@ function PathToBDD($Directory,  $ID_people){
                 $stmt->execute();
 
                 if ($query1) {
-                    $msg = "ADDED TO BDD";
+                    $msg = $DirectoryFile;
                 } else {
                     $msg = "ERREUR 2";
                 }
@@ -796,4 +797,33 @@ function PathToBDD($Directory,  $ID_people){
 
     return $msg;
 }
+
+function GetFilePeople($id_people){
+    require("bdd.php");
+    try {
+        $query = 'SELECT * FROM upload JOIN file WHERE upload.ID_people = :id_people and file.ID_Path=upload.ID_Path';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+
+            return $rows;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function DownloadFile($path){
+    if (file_exists($path)) {
+        
+
+    }
+
+}
+
 ?>
