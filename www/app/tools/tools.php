@@ -26,6 +26,61 @@ function isDelegate()
     return false;
 }
 
+function isDelegateStudent()
+{
+    if (!isLoggedIn())
+        return false;
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 21)
+            return true;
+    }
+    return false;
+}
+
+function isDelegateTutor()
+{
+    if (!isLoggedIn())
+        return false;
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 23)
+            return true;
+    }
+    return false;
+}
+
+function isDelegateOther()
+{
+    if (!isLoggedIn())
+        return false;
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 24)
+            return true;
+    }
+    return false;
+}
+
+function isDelegateAdmin()
+{
+    if (!isLoggedIn())
+        return false;
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 25)
+            return true;
+    }
+    return false;
+}
+
+function isDelegateEnterprise()
+{
+    if (!isLoggedIn())
+        return false;
+    foreach ($_SESSION['sess_roles'] as $value) {
+        if ($value['ID_role'] === 26)
+            return true;
+    }
+    return false;
+}
+
 function isTutor()
 {
     if (!isLoggedIn())
@@ -68,6 +123,28 @@ function isEnterprise()
             return true;
     }
     return false;
+}
+
+function changeRoleDelegate($ID_role, $ID_people)
+{
+    require("bdd.php");
+    try {
+        
+        $query = 'UPDATE `Own` SET `ID_role` = :idrole WHERE `Own`.`ID_role` = :id_role AND `Own`.`ID_people` = :id_people';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('idrole', $ID_role, PDO::PARAM_STR);
+        $stmt->bindValue('id_people', $ID_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return true;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
 }
 
 function Search()

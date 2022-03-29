@@ -58,7 +58,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./index.php"><i class="fas fa-home"></i></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item nav-role">
                             <?php if (isStudent()) : ?>
                                 <a class="nav-link active" href="../student.php">Student</a>
                             <?php endif; ?>
