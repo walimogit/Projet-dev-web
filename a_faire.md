@@ -19,3 +19,7 @@ Faire apparaitre le nom et prénom du tableau *array* tout en gardant caché *ID
 **BDD**
 
 Ajouter boolsuppr
+
+**Menu déroulant**
+
+https://getbootstrap.com/docs/4.0/components/dropdowns/?msclkid=35496b91af3e11eca2673ae489840a83
