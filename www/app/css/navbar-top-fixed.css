@@ -188,6 +188,10 @@ section {
   color: rgb(191, 191, 191);
 }
 
+.prin-color:hover{
+  color: rgb(191, 191, 191);
+}
+
 @media (min-width: 535px){
   .col-sm-7 {
     -webkit-box-flex: 0;
