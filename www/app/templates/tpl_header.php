@@ -96,8 +96,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle deroulant" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"> </i></a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Your Account</a></li>
+                                <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
