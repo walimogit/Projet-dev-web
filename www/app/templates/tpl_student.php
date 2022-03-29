@@ -1,3 +1,8 @@
+<pre><?php
+
+        var_dump($StatsStudent);
+
+        ?></pre>
 <div class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
@@ -22,7 +27,7 @@
             <div class="row row-gest">
                 <div class="btn btn-carac">Campus</div>
             </div>
-            <div class="row row-gest">   
+            <div class="row row-gest">
                 <div class="btn btn-carac">Promo</div>
             </div><br></br>
             <div class="row row-gest">
@@ -45,11 +50,35 @@
                     <div class="row">
                         <div class="btn btn-modif">My internship : enterprises and offers</div>
                     </div>
-            </div><br></br>
+                </div><br></br>
 
-            <div class="row row-gest justify-content-md-center">
-                Big tableau sa mère
+                <div class="table-responsive">
+                    <table class="table table-responsive">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Competense</th>
+                                <th scope="col">Advancement</th>
+                                <th scope="col">Internship duration</th>
+                                <th scope="col">Salary basis</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php for ($i = 0; $i < count($StatsStudent); $i++) : ?>
+                                <tr>
+                                    <td><? echo $StatsStudent[$i]['Competense'] ?></td>
+                                    <td><? echo $StatsStudent[$i]['Advancement'] ?></td>
+                                    <td><? echo $StatsStudent[$i]['Duree_de_stage'] ?></td>
+                                    <td><? echo $StatsStudent[$i]['Base_remuneration'] ?></td>
+                                </tr>
+                            <?php endfor; ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row row-gest justify-content-md-center">
+                    Big tableau sa mère
+                </div>
             </div>
         </div>
     </div>
-</div>
