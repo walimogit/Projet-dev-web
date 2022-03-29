@@ -65,6 +65,21 @@
                             <?php if (isDelegate()) : ?>
                                 <a class="nav-link active" href="../delegate.php">Delegate</a>
                             <?php endif; ?>
+                            <?php if (isDelegateStudent()) : ?>
+                                <a class="nav-link active" href="../delegate.php">Delegate Student</a>
+                            <?php endif; ?>
+                            <?php if (isDelegateTutor()) : ?>
+                                <a class="nav-link active" href="../delegate.php">Delegate Tutor</a>
+                            <?php endif; ?>
+                            <?php if (isDelegateOther()) : ?>
+                                <a class="nav-link active" href="../delegate.php">Delegate Other</a>
+                            <?php endif; ?>
+                            <?php if (isDelegateAdmin()) : ?>
+                                <a class="nav-link active" href="../delegate.php">Delegate Admin</a>
+                            <?php endif; ?>
+                            <?php if (isDelegateEnterprise()) : ?>
+                                <a class="nav-link active" href="../delegate.php">Delegate Enterprise</a>
+                            <?php endif; ?>
                             <?php if (isTutor()) : ?>
                                 <a class="nav-link active" href="../tutor.php">Tutor</a>
                             <?php endif; ?>
