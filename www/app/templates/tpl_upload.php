@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="../tools/tools_upload.php" method="post"
+<form action="upload.php" method="post"
 enctype="multipart/form-data">
 <label for="file">Filename:</label>
 <input type="file" name="file" id="file" /> 
