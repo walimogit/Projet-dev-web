@@ -1,11 +1,5 @@
 /* Show it is fixed to the top */
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
 body {
   min-height: 75rem;
   padding-top: 4.5rem;
@@ -171,12 +165,6 @@ section {
   height: 100vh;
 }
 
-.col-sm-7 {
-  -webkit-box-flex: 0;
-  flex: 0 0 29.16666667%;
-  max-width: 29.16666667%;
-}
-
 .col-sm-1 {
   -webkit-box-flex: 0;
   flex: 0 0 4.16666667%;
@@ -188,4 +176,25 @@ section {
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+.col-lg-5 {
+  position: relative;
+  width: 100%;
+}
+
+
+@media (min-width: 492px){
+  .col-sm-7 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 29.16666667%;
+    flex: 0 0 29.16666667%;
+    max-width: 29.16666667%;
+  }
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
