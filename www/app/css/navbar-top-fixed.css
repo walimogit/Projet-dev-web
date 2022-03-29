@@ -184,7 +184,7 @@ section {
 }
 
 
-@media (min-width: 492px){
+@media (min-width: 535px){
   .col-sm-7 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 29.16666667%;
