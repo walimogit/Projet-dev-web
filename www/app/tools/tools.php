@@ -738,4 +738,62 @@ function GetStatsStudent($id_people){
     return $msg;
 }
 
+
+function AddAFile(){
+
+    $ID_people =  $_SESSION['sess_user_id'];
+    $Directory = "./tools/doc_people/$ID_people/";
+
+    if ($_FILES["file"]["error"] > 0) {
+        echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+    } else {
+        if (file_exists("$Directory" . $_FILES["file"]["name"])) {
+            echo $_FILES["file"]["name"] . " already exists. ";
+        } else {
+            if (!is_dir("$Directory")){
+                mkdir($Directory);
+            }else{
+                move_uploaded_file($_FILES["file"]["tmp_name"], $Directory . $_FILES["file"]["name"]);
+                echo "Stored in: " . "$Directory" . $_FILES["file"]["name"];
+                echo PathToBDD($Directory,  $ID_people);
+            }     
+        }
+    }
+}
+
+function PathToBDD($Directory,  $ID_people){
+    require("bdd.php");
+    try {
+        $query = 'INSERT INTO `File` (`ID_Path`, `Path`) VALUES (NULL, :directory)'; 
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('directory', $Directory, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $LastID = $bdd->lastInsertId();
+
+        if ($query) {
+            try {
+                $query1 = 'INSERT INTO `Upload` (`ID_Path`, `ID_people`) VALUES (:id_path, :id_people)'; 
+                $stmt = $bdd->prepare($query1);
+                $stmt->bindParam('id_people', $ID_people, PDO::PARAM_STR);
+                $stmt->bindParam('id_path', $LastID, PDO::PARAM_STR);
+                $stmt->execute();
+
+                if ($query1) {
+                    $msg = "ADDED TO BDD";
+                } else {
+                    $msg = "ERREUR 2";
+                }
+            } catch (PDOException $e) {
+                $msg = "Error : " . $e->getMessage();
+            }
+        } else {
+            $msg = "ERREUR 1";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+
+    return $msg;
+}
 ?>
