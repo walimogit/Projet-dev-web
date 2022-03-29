@@ -143,17 +143,10 @@ padding-right: 20px;
   font-family: Open Sans Condensed Bold,Arial,sans-serif;
   font-size: 1.065rem;
   line-height: 1.1rem;
-  color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(255, 255, 255);
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(255, 255, 255);
+  color: rgb(191, 191, 191);
+  border-bottom: 1px solid rgb(191, 191, 191);
   padding-bottom: 4px;
   margin: 20px 0;
-    margin-top: 20px;
-    margin-right: 0px;
-    margin-bottom: 20px;
-    margin-left: 0px;
 }
 
 h4 {
@@ -187,6 +180,13 @@ section {
   width: 100%;
 }
 
+.prin-color{
+  color: rgb(132, 151, 176);
+}
+
+.sec-color{
+  color: rgb(191, 191, 191);
+}
 
 @media (min-width: 535px){
   .col-sm-7 {
