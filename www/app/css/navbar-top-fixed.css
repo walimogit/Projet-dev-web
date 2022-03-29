@@ -1,11 +1,5 @@
 /* Show it is fixed to the top */
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
 body {
   min-height: 75rem;
   padding-top: 4.5rem;
@@ -188,4 +182,10 @@ section {
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
