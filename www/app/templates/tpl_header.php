@@ -93,8 +93,12 @@
                                 <a class="nav-link active" href="../admin.php">Admin</a>
                             <?php endif; ?>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./login.php"><i class="fa fa-user"></i></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle deroulant" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"> </i></a>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Your Account</a></li>
+                                <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

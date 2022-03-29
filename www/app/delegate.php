@@ -3,6 +3,9 @@ session_start();
 require_once("tools/bdd.php");
 require_once("tools/tools.php");
 
+if(!isDelegate())
+    header('Location: index.php');
+
 $result_stage = Search();
 
 require_once('tools/tools.php');

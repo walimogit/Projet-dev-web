@@ -67,8 +67,35 @@ input.form-control.me-2::placeholder{
   user-select: none;
 }
 
+.deroulant {
+  display: block;
+}
+
 .navbar-collapse {
   flex-grow: 0;
+}
+
+.tt-menu {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  padding: 8px 0;
+  width: 98%;
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  background-color: #8497B0;
+  color: #FFFFFF;
+}
+.tt-suggestion p {
+  margin: 0;
 }
 
 .btn-gest{
@@ -99,29 +126,6 @@ padding-right: 20px;
 
 .form-control{
   width: auto;
-}
-
-.tt-menu {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 12px;
-  padding: 8px 0;
-  width: 98%;
-}
-
-.tt-suggestion {
-  padding: 3px 20px;
-}
-
-.tt-suggestion:hover {
-  cursor: pointer;
-  background-color: #8497B0;
-  color: #FFFFFF;
-}
-.tt-suggestion p {
-  margin: 0;
 }
 
 .Footer{
