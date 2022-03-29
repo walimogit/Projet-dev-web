@@ -12,7 +12,6 @@ if(isset($_POST['submit']))
    AddAFile();
 }
 
-$path = './tools/doc_people/test';
-DownloadFile($path);
+
 
 ?>

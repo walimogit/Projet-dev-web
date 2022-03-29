@@ -815,12 +815,17 @@ function GetFilePeople($id_people){
     return $msg;
 }
 
-function DownloadFile($path){
+function DownloadFile($path, $name){ //attention le nom doit contenir l'extension, exemple :
+    // $path = './tools/doc_people/test.docx';
+    // DownloadFile($path, 'test.docx');
     if (file_exists($path)) {
-        
-
+        header("Content-disposition: attachment; filename=$name"); 
+        header("Content-Type: application/force-download");
+        header("Content-Length: ".filesize($path));
+        header("Pragma: no-cache");
+        header("Cache-Control: must-revalidate, post-check=0, pre-check=0, public");
+        header("Expires: 0");
     }
-
 }
 
 ?>
