@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../css/navbar-top-fixed.css">
+<script src="../vendors/bootstrap/js/bootstrap.js"></script>
 </div>
 </div>
 <footer>
