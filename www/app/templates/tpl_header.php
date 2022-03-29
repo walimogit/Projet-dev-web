@@ -85,7 +85,6 @@
                 </div>
             </div>
         </nav>
-        <div><?php echo $result_stage; ?></div>
     </header>
 
 
