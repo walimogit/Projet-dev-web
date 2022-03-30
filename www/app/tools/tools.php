@@ -655,8 +655,7 @@ function DeletePeople($id_people)
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
         $stmt->execute();
-        $rows = $stmt->fetchAll();
-        if (!empty($rows)) {
+        if ($query) {
             return true;
         } else {
             $msg = "ERREUR";

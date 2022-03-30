@@ -52,7 +52,7 @@
                 </div>
                 <div class="col col-gest">
                     <div class="row">
-                        <div class="btn btn-modif">Create enterprise</div>
+                        <a class="btn btn-modif" href="../delete_account.php">Delete student account</a>
                     </div>
                 </div>
                 <div class="col col-gest">
