@@ -60,7 +60,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
+                        <li class="nav-item" style="margin: auto;">
                             <a class="nav-link active" aria-current="page" href="./index.php"><i class="fas fa-home"></i></a>
                         </li>
                         <li class="nav-item nav-role">
