@@ -157,6 +157,59 @@ function Search()
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $value) {
+            array_push($tab, $value);
+        }
+    }
+
+    if (isAdmin() or isTutor() or isStudent() or isDelegate()) {
+        $query = 'SELECT * From Internship_offers where Boolsuppr=1';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $value) {
+            array_push($tab, $value);
+        }
+    }
+    if (isAdmin() or isDelegate()) {
+        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 3;';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $value) {
+            array_push($tab, $value);
+        }
+    }
+    if (isAdmin() or isTutor() or isDelegate()) {
+        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 2;';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $value) {
+            array_push($tab, $value);
+        }
+    }
+    if (isAdmin() or isTutor() or isDelegate()) {
+        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 1;';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $value) {
+            array_push($tab, $value);
+        }
+    }
+    return $tab;
+}
+
+function Search2()
+{
+    require("bdd.php");
+    $tab = [];
+    if (isAdmin() or isTutor() or isStudent() or isDelegate()) {
+        $query = 'SELECT * From Enterprise where Booldel=1 ';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $value) {
             array_push($tab, $value['Name_enterprise']);
         }
     }

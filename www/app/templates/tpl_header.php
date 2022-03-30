@@ -47,7 +47,12 @@
             <div class="container-fluid">
                 <img src="./img/logo.png" alt="logo" class="navbar-brand" width="150">
                 <form class="d-flex" action="/search.php">
-                    <input class="typeahead form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search" spellcheck="false" autocomplete="off">
+                    <input class="typeahead form-control me-2" type="text" placeholder="<?php 
+                    if (isset($_GET['search'])){
+                        echo $_GET['search'];
+                    }else
+                        echo 'Search';
+                    ?>" aria-label="Search" name="search" spellcheck="false" autocomplete="off">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

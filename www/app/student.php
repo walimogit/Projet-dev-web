@@ -7,7 +7,8 @@ if(!isStudent())
     header('Location: index.php');
 
 
-$result_stage = Search();
+$result_stage = Search2();
+
 $StatsStudent = GetStatsStudent(142);
 
 require_once('templates/tpl_header.php');
