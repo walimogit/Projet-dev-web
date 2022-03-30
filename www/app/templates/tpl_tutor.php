@@ -57,7 +57,7 @@
                 </div>
                 <div class="col col-gest">
                     <div class="row">
-                        <div class="btn btn-modif">Create enterprise</div>
+                        <a href="../new_enterprise.php" class="btn btn-modif">Create enterprise</a>
                     </div>
                 </div>
                 <div class="col col-gest">
