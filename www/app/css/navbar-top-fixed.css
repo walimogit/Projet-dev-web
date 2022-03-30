@@ -219,5 +219,15 @@ a:hover{
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
+    
+  }
+}
+
+ @media (min-width: 0px) and (max-width: 560px) { /*cache l'image en fonction de la taille de l'écran */
+  a {
+    display: none;
+  }
+  .img navbar-brand{
+    visibility: hidden;
   }
 }
