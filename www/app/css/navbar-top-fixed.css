@@ -100,19 +100,22 @@ input.form-control.me-2::placeholder{
 
 .btn-gest{
 width: auto;
-color: rgb(80, 120, 196);
-border-color: rgb(80, 120, 196);
+color: rgb(191, 191, 191);
+border-color: rgb(191, 191, 191);
+background-color: rgb(33, 37, 41);
 }
 
 .btn-carac{
 min-width: 76px;
-color: rgb(80, 120, 196);
-border-color: rgb(80, 120, 196);
+color: rgb(191, 191, 191);
+border-color: rgb(191, 191, 191);
+background-color: rgb(33, 37, 41);
 }
 
 .btn-modif{
-color: rgb(120, 175, 83);
-border-color: rgb(120, 175, 83);
+color: rgb(215, 215, 215);
+border-color: rgb(163, 177, 196);
+background-color: rgb(66, 76, 88);
 }
 
 .row-gest{
@@ -189,6 +192,18 @@ section {
 }
 
 a:hover{
+  color: rgb(191, 191, 191);
+}
+
+.btn-carac:hover { 
+  background-color: rgb(33, 37, 41);
+  border-color: rgb(191, 191, 191);
+  color: rgb(191, 191, 191);
+}
+
+.btn-gest:hover {
+  background-color: rgb(33, 37, 41);
+  border-color: rgb(191, 191, 191);
   color: rgb(191, 191, 191);
 }
 
