@@ -461,27 +461,6 @@ function PeopleOfEnterprise($ID_people)
         $msg = "Error : " . $e->getMessage();
     }
     return $msg;
-} { //renvoie directement la moyenne des notes par id d'entreprise
-    require("bdd.php");
-    $stats = [];
-    try {
-        $query = 'SELECT Enterprise.ID_enterprise, Number_interns_accepted, AVG(Evaluation_interns), AVG(Pilot_trust) FROM Enterprise, Evaluation_interns, Pilot_trust WHERE Enterprise.ID_enterprise= :enterprise;'; // 
-        $stmt = $bdd->prepare($query);
-        $stmt->bindParam('enterprise', $ID_enterprise, PDO::PARAM_STR);
-        $stmt->execute();
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if (!empty($rows)) {
-            // foreach ($rows as $value) {
-            //     array_push($stats, $value['Number_interns_accepted'], $value['AVG(Evaluation_interns)'], $value['AVG(Pilot_trust)']);
-            // }
-            return $rows;
-        } else {
-            $msg = "ERREUR";
-        }
-    } catch (PDOException $e) {
-        $msg = "Error : " . $e->getMessage();
-    }
-    return $msg;
 }
 
 function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $people)
