@@ -7,6 +7,7 @@ if(!isEnterprise())
     header('Location: index.php');
 
 $result_stage = Search();
+//$AllStatsEntreprise = GetAllStatsEntreprise();
 
 require_once('templates/tpl_header.php');
 require_once('templates/tpl_enterprise.php');

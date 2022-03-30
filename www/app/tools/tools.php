@@ -129,7 +129,7 @@ function changeRoleDelegate($ID_role, $ID_people)
 {
     require("bdd.php");
     try {
-        
+
         $query = 'UPDATE `Own` SET `ID_role` = :idrole WHERE `Own`.`ID_role` = :id_role AND `Own`.`ID_people` = :id_people';
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('idrole', $ID_role, PDO::PARAM_STR);
@@ -265,8 +265,8 @@ function CreateEnterprise($name, $Number_accepted, $id_people, $city, $sector)
         $stmt->execute();
         $rows = $stmt->fetchAll();
 
-        $ID = $pdo->lastInsertId(); 
-       
+        $ID = $bdd->lastInsertId();
+
         if (!empty($rows)) {
             try {
                 $query1 = 'INSERT INTO `Being_located` (`ID_City`, `ID_enterprise`) VALUES (:city, :ID)';
@@ -276,7 +276,7 @@ function CreateEnterprise($name, $Number_accepted, $id_people, $city, $sector)
                 $stmt->execute();
                 $rows1 = $stmt->fetchAll();
                 if (!empty($rows1)) {
-                    
+
                     try {
                         $query = 'INSERT INTO `Being_in` (`ID_sector`, `ID_enterprise`) VALUES (:sector, :id)';
                         $stmt = $bdd->prepare($query);
@@ -293,7 +293,6 @@ function CreateEnterprise($name, $Number_accepted, $id_people, $city, $sector)
                     } catch (PDOException $e) {
                         $msg = "Error : " . $e->getMessage();
                     }
-                    
                 } else {
                     $msg = "ERREUR";
                 }
@@ -338,14 +337,14 @@ function UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise, $
                         $stmt->execute();
                         $rows2 = $stmt->fetchAll();
                         if (!empty($rows2)) {
-                            
+
                             return true;
                         } else {
                             $msg = "ERREUR";
                         }
                     } catch (PDOException $e) {
                         $msg = "Error : " . $e->getMessage();
-                    } 
+                    }
                 } else {
                     $msg = "ERREUR";
                 }
@@ -460,7 +459,7 @@ function CreateOffer($competense, $time, $remunerate, $timestamp, $place, $peopl
         $stmt->bindValue('place', $place, PDO::PARAM_STR);
         $stmt->execute();
 
-        $LastID = $pdo->lastInsertId();     // A TESTER !!!!!!!!!!!!!!!!!!!!!!!
+        $LastID = $bdd->lastInsertId();     // A TESTER !!!!!!!!!!!!!!!!!!!!!!!
 
         $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`) VALUES (:people, :id)';
         $stmt->bindParam('people', $people, PDO::PARAM_STR);
@@ -568,9 +567,29 @@ function GetAllStatsOffer()
     return $msg;
 }
 
+function GetAllStatsPeople()
+{
+    require("bdd.php");
+    try {
+        $query = 'SELECT * FROM People JOIN Own WHERE Own.ID_people = People.ID_people AND ID_role = 1 OR ID_role = 21';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($rows)) {
+            return $rows;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
 function CreatePeople($First_name, $Last_name, $Login, $Password, $role)
 {
     require("bdd.php");
+
     try {
         $query1 = 'INSERT INTO `People` (`ID_people`, `First_name`, `Last_name`, `Login`, `Password`, `Booldel`) VALUES (NULL, :First_name, :Last_name, :Login, :Password, 1)';
         $stmt = $bdd->prepare($query1);
@@ -580,15 +599,15 @@ function CreatePeople($First_name, $Last_name, $Login, $Password, $role)
         $stmt->bindValue('Password', $Password, PDO::PARAM_STR);
         $stmt->execute();
 
-        $LastID = $pdo->lastInsertId();     // A TESTER !!!!!!!!!!!!!!!!!!!!!!!
+        $LastID = $bdd->lastInsertId();
 
-        $query2 = 'INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES ($role, $LastID)';
+        $query2 = 'INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES (:role, :LastID)';
         $stmt = $bdd->prepare($query2);
         $stmt->bindParam('role', $role, PDO::PARAM_STR);
         $stmt->bindValue('LastID', $LastID, PDO::PARAM_STR);
         $stmt->execute();
 
-        if (!empty($rows)) {
+        if ($query2) {
             return true;
         } else {
             $msg = "ERREUR";
@@ -644,7 +663,8 @@ function DeletePeople($id_people)
     return $msg;
 }
 
-function GetStatAdvancement($id_people){
+function GetStatAdvancement($id_people)
+{
     require("bdd.php");
     try {
         $query = 'SELECT * FROM Being_proposed WHERE ID_people = :id_people;';
@@ -666,7 +686,8 @@ function GetStatAdvancement($id_people){
     return $msg;
 }
 
-function GetOffer($id_people, $id_offer){
+function GetOffer($id_people, $id_offer)
+{
     require("bdd.php");
     try {
         $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`, `Advancement`) VALUES (:id_people, :id_offer, 1)';
@@ -686,7 +707,8 @@ function GetOffer($id_people, $id_offer){
     return $msg;
 }
 
-function UpdateOfferAdvancement($id_people, $id_offer, $advancement){
+function UpdateOfferAdvancement($id_people, $id_offer, $advancement)
+{
     require("bdd.php");
     try {
         $query = 'UPDATE `Being_proposed` SET `Advancement` = :advancement WHERE `Being_proposed`.`ID_people` = :id_people AND `Being_proposed`.`ID_internship_offers` = :id_offer';
@@ -707,7 +729,8 @@ function UpdateOfferAdvancement($id_people, $id_offer, $advancement){
     return $msg;
 }
 
-function AddToWishlist($id_people, $id_offer){
+function AddToWishlist($id_people, $id_offer)
+{
     require("bdd.php");
     try {
         $query = 'INSERT INTO `Being_proposed` (`ID_people`, `ID_internship_offers`, `Advancement`) VALUES (:id_people, :id_offer, 0)';
@@ -727,7 +750,8 @@ function AddToWishlist($id_people, $id_offer){
     return $msg;
 }
 
-function GetWishlist($id_people){
+function GetWishlist($id_people)
+{
     require("bdd.php");
     try {
         $query = 'SELECT * FROM Being_proposed WHERE ID_people = :id_people AND Advancement = 0;';
@@ -749,7 +773,8 @@ function GetWishlist($id_people){
     return $msg;
 }
 
-function RemoveWishlist($id_people, $id_offer){
+function RemoveWishlist($id_people, $id_offer)
+{
     require("bdd.php");
     try {
         $query = 'DELETE FROM Being_proposed WHERE `Being_proposed`.`ID_people` = :id_people AND `Being_proposed`.`ID_internship_offers` = :id_offer';
@@ -769,7 +794,8 @@ function RemoveWishlist($id_people, $id_offer){
     return $msg;
 }
 
-function GetStatsStudent($id_people){
+function GetStatsStudent($id_people)
+{
     require("bdd.php");
     try {
         $query = 'SELECT * FROM people, Being_proposed JOIN Internship_offers WHERE Being_proposed.ID_people = 142 AND people.ID_people = 142 AND Being_proposed.ID_internship_offers=internship_offers.ID_internship_offers AND Boolsuppr = 1';
@@ -789,7 +815,8 @@ function GetStatsStudent($id_people){
 }
 
 
-function AddAFile(){
+function AddAFile()
+{
 
     $ID_people =  $_SESSION['sess_user_id'];
     $Directory = "./tools/doc_people/$ID_people/";
@@ -801,21 +828,22 @@ function AddAFile(){
         if (file_exists("$Directory" . $_FILES["file"]["name"])) {
             echo $_FILES["file"]["name"] . " already exists. ";
         } else {
-            if (!is_dir("$Directory")){
+            if (!is_dir("$Directory")) {
                 mkdir($Directory);
-            }else{
+            } else {
                 move_uploaded_file($_FILES["file"]["tmp_name"], $Directory . $_FILES["file"]["name"]);
                 echo "Stored in: " . "$Directory" . $_FILES["file"]["name"];
                 echo PathToBDD($DirectoryFile,  $ID_people);
-            }     
+            }
         }
     }
 }
 
-function PathToBDD($DirectoryFile,  $ID_people){
+function PathToBDD($DirectoryFile,  $ID_people)
+{
     require("bdd.php");
     try {
-        $query = 'INSERT INTO `File` (`ID_Path`, `Path`) VALUES (NULL, :directory)'; 
+        $query = 'INSERT INTO `File` (`ID_Path`, `Path`) VALUES (NULL, :directory)';
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('directory', $DirectoryFile, PDO::PARAM_STR);
         $stmt->execute();
@@ -824,7 +852,7 @@ function PathToBDD($DirectoryFile,  $ID_people){
 
         if ($query) {
             try {
-                $query1 = 'INSERT INTO `Upload` (`ID_Path`, `ID_people`) VALUES (:id_path, :id_people)'; 
+                $query1 = 'INSERT INTO `Upload` (`ID_Path`, `ID_people`) VALUES (:id_path, :id_people)';
                 $stmt = $bdd->prepare($query1);
                 $stmt->bindParam('id_people', $ID_people, PDO::PARAM_STR);
                 $stmt->bindParam('id_path', $LastID, PDO::PARAM_STR);
@@ -848,7 +876,8 @@ function PathToBDD($DirectoryFile,  $ID_people){
     return $msg;
 }
 
-function GetFilePeople($id_people){
+function GetFilePeople($id_people)
+{
     require("bdd.php");
     try {
         $query = 'SELECT * FROM upload JOIN file WHERE upload.ID_people = :id_people and file.ID_Path=upload.ID_Path';
@@ -868,17 +897,16 @@ function GetFilePeople($id_people){
     return $msg;
 }
 
-function DownloadFile($path, $name){ //attention le nom doit contenir l'extension, exemple :
+function DownloadFile($path, $name)
+{ //attention le nom doit contenir l'extension, exemple :
     // $path = './tools/doc_people/test.docx';
     // DownloadFile($path, 'test.docx');
     if (file_exists($path)) {
-        header("Content-disposition: attachment; filename=$name"); 
+        header("Content-disposition: attachment; filename=$name");
         header("Content-Type: application/force-download");
-        header("Content-Length: ".filesize($path));
+        header("Content-Length: " . filesize($path));
         header("Pragma: no-cache");
         header("Cache-Control: must-revalidate, post-check=0, pre-check=0, public");
         header("Expires: 0");
     }
 }
-
-?>

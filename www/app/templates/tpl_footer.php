@@ -18,24 +18,18 @@
                 <div class="col-sm-7 col-lg-5">
                     <h4>About</h4>
                     <ul class="u-listUnstyled">
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                class="text-decoration-none prin-color">Our Discord</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                class="text-decoration-none prin-color">Our Facebook page</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                class="text-decoration-none prin-color">Our Twitter</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-decoration-none prin-color">Our Discord</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-decoration-none prin-color">Our Facebook page</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-decoration-none prin-color">Our Twitter</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-1 col-lg-1"></div>
                 <div class="col-sm-7 col-lg-5">
                     <h4>Links</h4>
                     <ul class="u-listUnstyled">
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                class="text-decoration-none prin-color">Terms Of Use</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                class="text-decoration-none prin-color">Privacy policy</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                class="text-decoration-none prin-color">Report a Bug</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-decoration-none prin-color">Terms Of Use</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-decoration-none prin-color">Privacy policy</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-decoration-none prin-color">Report a Bug</a></li>
                     </ul>
                 </div>
                 <div class="col text-center">

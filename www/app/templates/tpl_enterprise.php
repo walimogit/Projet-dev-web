@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<main class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
             <div class="row">
@@ -53,6 +53,28 @@
             <div class="row row-gest justify-content-md-center">
                 Big tableau sa mère
             </div>
+            <div class="table-responsive">
+                <table class="table table-responsive">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Competense</th>
+                            <th scope="col">Advancement</th>
+                            <th scope="col">Internship duration</th>
+                            <th scope="col">Salary basis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php for ($i = 0; $i < count($AllStatsEntreprise); $i++) : ?>
+                            <tr>
+                                <td><? echo $AllStatsEntreprise[$i]['Name_enterprise'] ?></td>
+                                <td><? echo $AllStatsEntreprise[$i]['Number_interns_accepted'] ?></td>
+                                <td><? echo $AllStatsEntreprise[$i]['Booldel'] ?></td>
+                                
+                            </tr>
+                        <?php endfor; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
+</main>
