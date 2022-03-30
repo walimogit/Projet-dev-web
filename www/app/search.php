@@ -10,8 +10,6 @@ $search = trim($_GET['search']);
 $result_stage = Search2();
 require_once('templates/tpl_header.php');
 
-// $result = Search();
-
 foreach (Search() as $key) {
     if ($key['Name_enterprise'] === $search){
         $result[] = $key['ID_enterprise'] . ' ' . $key['Name_enterprise'] . ' ' . $key['Number_interns_accepted'];
@@ -25,6 +23,7 @@ if (empty($result)){
     $result = 'Nothing found';
 }
 
+$allresult = Search();
 
 require_once('templates/tpl_search.php');
 require_once('templates/tpl_footer.php');

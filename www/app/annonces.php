@@ -3,7 +3,11 @@ session_start();
 require_once("tools/bdd.php");
 require_once("tools/tools.php");
 
-$result_stage = Search();
+if(!isLoggedIn()){
+    header('Location: index.php');
+}
+
+$result_stage = Search2();
 $annonce = GetAllStatsOffer();
 $StatsPeople = GetAllStatsPeople();
 

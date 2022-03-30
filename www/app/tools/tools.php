@@ -621,7 +621,7 @@ function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_peo
 {
     require("bdd.php");
     try {
-        $query = 'UPDATE People SET First_name = :First_name, `Last_name` = :Last_name, `Login` = :Login, `Password` = :Password WHERE own.ID_people = :id_people AND People.ID_people = :id_people AND Own.ID_role = :role';
+        $query = 'UPDATE People SET First_name = :First_name, Last_name = :Last_name, Login = :Login, Password = :Password, Booldel = 1 WHERE ID_people = :id_people';
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('First_name', $First_name, PDO::PARAM_STR);
         $stmt->bindValue('Last_name', $Last_name, PDO::PARAM_STR);

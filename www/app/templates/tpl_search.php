@@ -1,9 +1,9 @@
 <form>
     <div class="row">
         <div class="col">
-            <label>Search</label>
             <pre><?php print_r ($result) ?></pre>
-            
+            <pre><?php print_r ($allresult) ?></pre>
         </div>
     </div>
 </form>
+

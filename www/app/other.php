@@ -2,8 +2,9 @@
 session_start();
 require_once('tools/tools.php');
 
-if(!isOther())
+if(!isOther()){
     header('Location: index.php');
+}
 
 require_once('templates/tpl_header.php');
 require_once('templates/tpl_other.php');
