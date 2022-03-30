@@ -20,7 +20,20 @@
                                 <p>Remuneration: <? echo $annonce[$i]['Base_remuneration'] ?></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                        <form method="POST">
+                                            <button type="submit" name="btn" class="btn btn-sm btn-outline-secondary">
+                                                <?php
+                                                if (IsOnWhishList($_SESSION['sess_user_id'], $annonce[$i]['ID_internship_offers'])) {
+                                                    echo 'On Whishlist';
+                                                } else {
+                                                    echo 'Add to Whishlist';
+                                                }
+                                                ?>
+                                            </button>
+
+                                            <input type="hidden" name="id" value="<? echo $_SESSION['sess_user_id'] ?>">
+                                            <input type="hidden" name="idintership" value="<? echo $annonce[$i]['ID_internship_offers'] ?>">
+                                        </form>
                                     </div>
                                     <small class="text-muted"><? echo $annonce[$i]['Date_offre'] ?></small>
                                 </div>
