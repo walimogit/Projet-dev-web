@@ -45,7 +45,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <img src="./img/logo.png" alt="logo" class="navbar-brand" width="150">
+                <a href="../index.php"><img src="./img/logo.png" alt="logo" class="navbar-brand" width="150"></a>
                 <form class="d-flex" action="/search.php">
                     <input class="typeahead form-control me-2" type="text" placeholder="<?php 
                     if (isset($_GET['search'])){
