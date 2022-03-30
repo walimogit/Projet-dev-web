@@ -160,7 +160,6 @@ function Search()
             array_push($tab, $value);
         }
     }
-
     if (isAdmin() or isTutor() or isStudent() or isDelegate()) {
         $query = 'SELECT * From Internship_offers where Boolsuppr=1';
         $stmt = $bdd->prepare($query);
@@ -171,7 +170,7 @@ function Search()
         }
     }
     if (isAdmin() or isDelegate()) {
-        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 3;';
+        $query = 'SELECT * FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 3 and Booldel = 1;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -180,7 +179,7 @@ function Search()
         }
     }
     if (isAdmin() or isTutor() or isDelegate()) {
-        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 2;';
+        $query = 'SELECT * FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 2 and Booldel = 1;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -189,7 +188,7 @@ function Search()
         }
     }
     if (isAdmin() or isTutor() or isDelegate()) {
-        $query = 'SELECT People.ID_people, First_name, Last_name FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 1;';
+        $query = 'SELECT * FROM People JOIN Own WHERE People.ID_people = Own.ID_people and ID_role = 1 and Booldel = 1;';
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -229,7 +228,7 @@ function Search2()
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $value) {
-            array_push($tab, $value);
+            array_push($tab, $value['First_name'] . ' ' . $value['Last_name']);
         }
     }
     if (isAdmin() or isTutor() or isDelegate()) {
@@ -238,7 +237,7 @@ function Search2()
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $value) {
-            array_push($tab, $value);
+            array_push($tab, $value['First_name'] . ' ' . $value['Last_name']);
         }
     }
     if (isAdmin() or isTutor() or isDelegate()) {
