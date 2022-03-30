@@ -618,10 +618,15 @@ function CreatePeople($First_name, $Last_name, $Login, $Password, $role)
 }
 
 function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_people)
-{
+{  
+    echo $First_name;
+    echo $Last_name;
+    echo $role;
+    echo $Login;
+    echo $Password;
     require("bdd.php");
     try {
-        $query1 = 'UPDATE People SET First_name = :First_name, Last_name = :Last_name, Login = :Login, Password = :Password, Booldel = 1 WHERE ID_people = :id_people';
+        $query1 = "UPDATE People SET First_name = :First_name, Last_name = :Last_name, Login = :Login, Password = :Password, Booldel = 1 WHERE ID_people = :id_people";
         $stmt = $bdd->prepare($query1);
         $stmt->bindValue('First_name', $First_name, PDO::PARAM_STR);
         $stmt->bindValue('Last_name', $Last_name, PDO::PARAM_STR);
@@ -630,15 +635,13 @@ function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_peo
         $stmt->bindValue('id_people', $id_people, PDO::PARAM_STR);
         $stmt->execute();
 
-        $LastID = $bdd->lastInsertId();
-
-        $query2 = 'UPDATE Own SET ID_role = :role, ID_people = :LastID WHERE ID_people = :id_people';
+        $query2 = "UPDATE Own SET ID_role = :role WHERE ID_people = :id_people";
         $stmt = $bdd->prepare($query2);
-        $stmt->bindParam('role', $role, PDO::PARAM_STR);
-        $stmt->bindValue('LastID', $LastID, PDO::PARAM_STR);
+        $stmt->bindValue('role', $role, PDO::PARAM_STR);
+        $stmt->bindValue('id_people', $id_people, PDO::PARAM_STR);
         $stmt->execute();
 
-        if (!empty($query1)) {
+        if ($query2) {
             return true;
         } else {
             $msg = "ERREUR";
@@ -648,31 +651,6 @@ function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_peo
     }
     return $msg;
 }
-
-// function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_people)
-// {
-//     require("bdd.php");
-//     try {
-//         $query = 'UPDATE People JOIN Own SET First_name = $First_name, `Last_name` = $Last_name, `Login` = $Login, `Password` = $Password , Own.ID_role = $role WHERE Own.ID_people = $id_people AND People.ID_people = $id_people';
-//         $stmt = $bdd->prepare($query);
-//         $stmt->bindValue('First_name', $First_name, PDO::PARAM_STR);
-//         $stmt->bindValue('Last_name', $Last_name, PDO::PARAM_STR);
-//         $stmt->bindValue('Login', $Login, PDO::PARAM_STR);
-//         $stmt->bindValue('Password', $Password, PDO::PARAM_STR);
-//         $stmt->bindValue('role', $role, PDO::PARAM_STR);
-//         $stmt->bindValue('id_people', $id_people, PDO::PARAM_STR);
-//         $stmt->execute();
-//         $rows = $stmt->fetchAll();
-//         if (!empty($rows)) {
-//             return true;
-//         } else {
-//             $msg = "ERREUR";
-//         }
-//     } catch (PDOException $e) {
-//         $msg = "Error : " . $e->getMessage();
-//     }
-//     return $msg;
-// }
 
 function DeletePeople($id_people)
 {

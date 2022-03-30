@@ -14,12 +14,7 @@ if (isset($_POST['BtnModAccount'])) {
     $password = trim($_POST['password']);
     $role = trim($_POST['role']);
     $id_people = trim($_POST['id_people']);
-    
-    echo UpdatePeople($fisrt_name, $last_name, $login, $password, $role, $id_people);
-    echo 'debug';
-    echo $first_name;
-    echo $last_name;
-    echo $login;
+    UpdatePeople($first_name, $last_name, $login, $password, $role, $id_people);
     //header('Location: tutor.php');
 }
 ?>
