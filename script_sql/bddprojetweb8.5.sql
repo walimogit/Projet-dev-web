@@ -1461,7 +1461,7 @@ INSERT INTO `People` (`ID_people`, `First_name`, `Last_name`, `Login`, `Password
 (278, 'Lubomir', 'Nitsch', 'Nitsch278', 'QFESG', 1),
 (279, 'Barton', 'Jumpertz', 'Jumpertz279', 'CVKJL', 1),
 (280, 'Stabislas', 'Delgrange', 'Delgrange280', 'VSOEO', 1),
-(281, 'Thierry', 'Beccaro', 'Beccaro281', 'TIOIP', 1);
+(281, 'Valentin', 'Goulier', 'Goulier281', 'VALOUU', 1);
 
 -- --------------------------------------------------------
 
