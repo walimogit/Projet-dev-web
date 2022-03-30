@@ -11,6 +11,17 @@ $result_stage = Search2();
 $annonce = GetAllStatsOffer();
 $StatsPeople = GetAllStatsPeople();
 
+if (isset($_POST['btn'])) {
+
+    $id = $_POST['id'];
+    $idintership = $_POST['idintership'];
+
+    AddToWishlist($id, $idintership); 
+    
+}
+
+
+
 require_once('templates/tpl_header.php');
 require_once('templates/tpl_annonces.php');
 require_once('templates/tpl_footer.php');

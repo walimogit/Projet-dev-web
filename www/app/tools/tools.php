@@ -737,9 +737,33 @@ function AddToWishlist($id_people, $id_offer)
         $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
         $stmt->bindValue('id_offer', $id_offer, PDO::PARAM_STR);
         $stmt->execute();
-        $rows = $stmt->fetchAll();
-        if (!empty($rows)) {
-            return true;
+        if ($query) {
+            return TRUE;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function IsOnWhishList($id_people, $id_offer)
+{
+    require("bdd.php");
+    try {
+        $query = 'SELECT * FROM Being_proposed WHERE ID_people = :id_people AND ID_internship_offers = :id_offer';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->bindValue('id_offer', $id_offer, PDO::PARAM_STR);
+        $stmt->execute();
+        
+        if ($query) {
+            if ($stmt->rowCount() > 0) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
         } else {
             $msg = "ERREUR";
         }
