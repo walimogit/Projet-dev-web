@@ -3,8 +3,9 @@ session_start();
 require_once("tools/bdd.php");
 require_once("tools/tools.php");
 
-if(!isLoggedIn())
-    header('Location: login.php');
+if(!isLoggedIn()){
+    header('Location: index.php');
+}
 
 $result_stage = Search2();
 
