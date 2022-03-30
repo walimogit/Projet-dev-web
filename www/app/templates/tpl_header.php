@@ -65,40 +65,40 @@
                         </li>
                         <li class="nav-item nav-role">
                             <?php if (isStudent()) : ?>
-                                <a class="nav-link active" href="../student.php">Student</a>
+                                <a class="nav-link active" href="../student.php" style="margin: auto;">Student</a>
                             <?php endif; ?>
                             <?php if (isDelegate()) : ?>
-                                <a class="nav-link active" href="../delegate.php">Delegate</a>
+                                <a class="nav-link active" href="../delegate.php" style="margin: auto;">Delegate</a>
                             <?php endif; ?>
                             <?php if (isDelegateStudent()) : ?>
-                                <a class="nav-link active" href="../delegate.php">Delegate Student</a>
+                                <a class="nav-link active" href="../delegate.php" style="margin: auto;">Delegate Student</a>
                             <?php endif; ?>
                             <?php if (isDelegateTutor()) : ?>
-                                <a class="nav-link active" href="../delegate.php">Delegate Tutor</a>
+                                <a class="nav-link active" href="../delegate.php" style="margin: auto;">Delegate Tutor</a>
                             <?php endif; ?>
                             <?php if (isDelegateOther()) : ?>
-                                <a class="nav-link active" href="../delegate.php">Delegate Other</a>
+                                <a class="nav-link active" href="../delegate.php" style="margin: auto;">Delegate Other</a>
                             <?php endif; ?>
                             <?php if (isDelegateAdmin()) : ?>
-                                <a class="nav-link active" href="../delegate.php">Delegate Admin</a>
+                                <a class="nav-link active" href="../delegate.php" style="margin: auto;">Delegate Admin</a>
                             <?php endif; ?>
                             <?php if (isDelegateEnterprise()) : ?>
-                                <a class="nav-link active" href="../delegate.php">Delegate Enterprise</a>
+                                <a class="nav-link active" href="../delegate.php" style="margin: auto;">Delegate Enterprise</a>
                             <?php endif; ?>
                             <?php if (isTutor()) : ?>
-                                <a class="nav-link active" href="../tutor.php">Tutor</a>
+                                <a class="nav-link active" href="../tutor.php" style="margin: auto;">Tutor</a>
                             <?php endif; ?>
                             <?php if (isOther()) : ?>
-                                <a class="nav-link active" href="../other.php">Other</a>
+                                <a class="nav-link active" href="../other.php"style="margin: auto;">Other</a>
                             <?php endif; ?>
                             <?php if (isEnterprise()) : ?>
-                                <a class="nav-link active" href="../enterprise.php">Entreprise</a>
+                                <a class="nav-link active" href="../enterprise.php" style="margin: auto;">Entreprise</a>
                             <?php endif; ?>
                             <?php if (isAdmin()) : ?>
-                                <a class="nav-link active" href="../admin.php">Admin</a>
+                                <a class="nav-link active" href="../admin.php" style="margin: auto;">Admin</a>
                             <?php endif; ?>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" style="margin: auto;">
                             <a class="nav-link active dropdown-toggle deroulant" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"> </i></a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Your Account</a></li>
