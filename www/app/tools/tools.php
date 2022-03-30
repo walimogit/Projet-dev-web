@@ -619,11 +619,6 @@ function CreatePeople($First_name, $Last_name, $Login, $Password, $role)
 
 function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_people)
 {  
-    echo $First_name;
-    echo $Last_name;
-    echo $role;
-    echo $Login;
-    echo $Password;
     require("bdd.php");
     try {
         $query1 = "UPDATE People SET First_name = :First_name, Last_name = :Last_name, Login = :Login, Password = :Password, Booldel = 1 WHERE ID_people = :id_people";
