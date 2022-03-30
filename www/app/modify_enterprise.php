@@ -12,8 +12,7 @@ if (isset($_POST['BtnModEnterprise'])) {
     $ID_enterprise = trim($_POST['ID_enterprise']);
     $city = trim($_POST['city']);
     $sector = trim($_POST['sector']);
-    
-    echo UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise, $city, $sector);
+    UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise, $city, $sector);
     //header('Location: tutor.php');
 }
 ?>

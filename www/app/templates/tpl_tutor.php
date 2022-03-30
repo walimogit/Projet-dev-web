@@ -62,7 +62,12 @@
                 </div>
                 <div class="col col-gest">
                     <div class="row">
-                        <div class="btn btn-modif">Modify/delete enterprise</div>
+                        <a href="../modify_enterprise.php" class="btn btn-modif">Modify enterprise</a>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../delete_enterprise.php" class="btn btn-modif">Delete enterprise</a>
                     </div>
                 </div>
             </div><br></br>
