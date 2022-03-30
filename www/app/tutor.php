@@ -8,6 +8,7 @@ if (!isTutor())
 
 $result_stage = Search();
 $StatsPeople = GetAllStatsPeople();
+// $id_campus = $_SESSION('sess_campus');
 
 // $msg = "";
 // if (isset($_POST['BtnNewAccount'])) {

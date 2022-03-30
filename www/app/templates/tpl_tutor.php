@@ -86,6 +86,7 @@
                             <tr>
                                 <td><? echo $StatsPeople[$i]['First_name'] ?></td>
                                 <td><? echo $StatsPeople[$i]['Last_name'] ?></td>
+                                <td><? echo $StatsPeople[$i]['ID_campus'] ?></td>
                                 <td><? echo $StatsPeople[$i]['Duree_de_stage'] ?></td>
                                 <td><? echo $StatsPeople[$i]['Base_remuneration'] ?></td>
                             </tr>

@@ -210,7 +210,9 @@ function Search2()
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $value) {
             array_push($tab, $value['Name_enterprise']);
+            //return $value['Name_enterprise'];
         }
+        
     }
 
     if (isAdmin() or isTutor() or isStudent() or isDelegate()) {
@@ -587,8 +589,9 @@ function GetAllStatsOffer()
 function GetAllStatsPeople()
 {
     require("bdd.php");
+    // require_once("login.php");
     try {
-        $query = 'SELECT * FROM People JOIN Own WHERE Own.ID_people = People.ID_people AND ID_role = 1 OR ID_role = 21';
+        $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_role = 1 OR ID_role = 21"; //AND ID_campus = $_SESSION('sess_campus')
         $stmt = $bdd->prepare($query);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
