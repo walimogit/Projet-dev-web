@@ -42,17 +42,22 @@
             <div class="row">
                 <div class="col col-gest">
                     <div class="row">
-                        <button class="btn btn-modif" data-bs-toggle="modal" data-bs-target="#exampleModal">Create student account</button>
+                        <a href="../new_account.php" class="btn btn-modif">Create student account</a>
                     </div>
                 </div>
                 <div class="col col-gest">
                     <div class="row">
-                        <div class="btn btn-modif">Offer management</div>
+                        <a href="../modify_account.php" class="btn btn-modif">Modify student account</a>
                     </div>
                 </div>
                 <div class="col col-gest">
                     <div class="row">
-                        <div class="btn btn-modif">Create enterprise</div>
+                        <a href="../delete_account.php" class="btn btn-modif">Delete student account</a>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../new_enterprise.php" class="btn btn-modif">Create enterprise</a>
                     </div>
                 </div>
                 <div class="col col-gest">
@@ -61,9 +66,6 @@
                     </div>
                 </div>
             </div><br></br>
-            <div class="row row-gest justify-content-md-center">
-                Big tableau sa mère
-            </div>
             <div class="table-responsive">
                 <table class="table table-responsive">
                     <thead class="table-dark">
@@ -86,52 +88,6 @@
                     </tbody>
                 </table>
             </div>
-            <!-- Modal
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="tutor.php" method="POST">
-                                <div class="mb-3">
-                                    <label for="floatingInput">First name</label>
-                                    <input class="form-control type=" text" name="first_name" id="first_name" value="" autocomplete="off" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="floatingInput">Last name</label>
-                                    <input class="form-control type=" text" name="last_name" id="last_name" value="" autocomplete="off" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="floatingInput">Role</label>
-                                    <input class="form-control type=" text" name="role" id="role" value="" autocomplete="off" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="floatingInput">Login</label>
-                                    <input class="form-control type=" text" name="login" id="login" value="" autocomplete="off" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="floatingPassword">Password</label>
-                                    <input type="password" class="form-control" name="password" id="password" value="" autocomplete="off" />
-
-                                </div>
-                                <?php if (!empty($msg)) { ?>
-                                    <p class="alert alert-danger alert-dismissible fade show"><?php echo $msg; ?></p>
-                                <?php } ?>
-                                <button type="button" class="btn btn-secondary" name="BtnNewAccount" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" name="BtnNewAccount" id="BtnNewAccount" class="btn btn-primary">Create Account</button>
-                                <button name="BtnNewAccount" class="btn btn-primary" type="submit">Create Account</button>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </main>

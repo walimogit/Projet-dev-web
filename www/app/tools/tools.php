@@ -618,20 +618,25 @@ function CreatePeople($First_name, $Last_name, $Login, $Password, $role)
 }
 
 function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_people)
-{
+{  
     require("bdd.php");
     try {
-        $query = 'UPDATE People SET First_name = :First_name, Last_name = :Last_name, Login = :Login, Password = :Password, Booldel = 1 WHERE ID_people = :id_people';
-        $stmt = $bdd->prepare($query);
-        $stmt->bindParam('First_name', $First_name, PDO::PARAM_STR);
+        $query1 = "UPDATE People SET First_name = :First_name, Last_name = :Last_name, Login = :Login, Password = :Password, Booldel = 1 WHERE ID_people = :id_people";
+        $stmt = $bdd->prepare($query1);
+        $stmt->bindValue('First_name', $First_name, PDO::PARAM_STR);
         $stmt->bindValue('Last_name', $Last_name, PDO::PARAM_STR);
         $stmt->bindValue('Login', $Login, PDO::PARAM_STR);
         $stmt->bindValue('Password', $Password, PDO::PARAM_STR);
+        $stmt->bindValue('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $query2 = "UPDATE Own SET ID_role = :role WHERE ID_people = :id_people";
+        $stmt = $bdd->prepare($query2);
         $stmt->bindValue('role', $role, PDO::PARAM_STR);
         $stmt->bindValue('id_people', $id_people, PDO::PARAM_STR);
         $stmt->execute();
-        $rows = $stmt->fetchAll();
-        if (!empty($rows)) {
+
+        if ($query2) {
             return true;
         } else {
             $msg = "ERREUR";
@@ -650,8 +655,7 @@ function DeletePeople($id_people)
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
         $stmt->execute();
-        $rows = $stmt->fetchAll();
-        if (!empty($rows)) {
+        if ($query) {
             return true;
         } else {
             $msg = "ERREUR";
