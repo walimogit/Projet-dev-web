@@ -10,7 +10,7 @@ $search = trim($_GET['search']);
 $result_stage = Search2();
 require_once('templates/tpl_header.php');
 
-// $result = Search();
+$allresult = Search();
 
 foreach (Search() as $key) {
     if ($key['Name_enterprise'] === $search){
