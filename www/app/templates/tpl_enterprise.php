@@ -66,9 +66,9 @@
                     <tbody>
                         <?php for ($i = 0; $i < count($AllStatsEntreprise); $i++) : ?>
                             <tr>
-                                <td><? echo $AllStatsEntreprise[$i]['Name_enterprise'] ?></td>
                                 <td><? echo $AllStatsEntreprise[$i]['Number_interns_accepted'] ?></td>
-                                <td><? echo $AllStatsEntreprise[$i]['Booldel'] ?></td>
+                                <td><? echo $AllStatsEntreprise[$i]['AVG(Evaluation_interns)'] ?></td>
+                                <td><? echo $AllStatsEntreprise[$i]['AVG(Pilot_trust)'] ?></td>
                                 
                             </tr>
                         <?php endfor; ?>

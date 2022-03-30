@@ -422,20 +422,59 @@ function EvaluateEntreprise($ID_enterprise, $note, $id_people)
 }
 
 function GetStatsEntreprise($ID_enterprise)
-{ //renvoie directement la moyenne des notes par id d'entreprise
+{ //renvoie directement la moyenne des notes par id d'entreprise //si float ne va pas utiliser round(avg(xx))
     require("bdd.php");
     $stats = [];
     try {
-        $query = 'SELECT Enterprise.ID_enterprise, Number_interns_accepted, AVG(Evaluation_interns), AVG(Pilot_trust) FROM Enterprise, Evaluation_interns, Pilot_trust WHERE Enterprise.ID_enterprise =:enterprise ;'; // 
-        $stmt->bindParam('enterprise', $ID_enterprise, PDO::PARAM_STR);
+        $query = 'SELECT Enterprise.ID_enterprise, Number_interns_accepted, AVG(Evaluation_interns), AVG(Pilot_trust) FROM Enterprise, Evaluation_interns, Pilot_trust WHERE Enterprise.ID_enterprise= :enterprise;'; // 
         $stmt = $bdd->prepare($query);
+        $stmt->bindParam('enterprise', $ID_enterprise, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return $rows;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
+function PeopleOfEnterprise($ID_people)
+{
+    require("bdd.php");
+    $stats = [];
+    try {
+        $query = 'SELECT * FROM Enterprise WHERE ID_people = :people;'; // 
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('people', $ID_people, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (!empty($rows)) {
-            foreach ($rows as $value) {
-                array_push($stats, $value['Number_interns_accepted'], $value['AVG(Evaluation_interns)'], $value['AVG(Pilot_trust)']);
-            }
-            return $stats;
+            return $rows;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+} { //renvoie directement la moyenne des notes par id d'entreprise
+    require("bdd.php");
+    $stats = [];
+    try {
+        $query = 'SELECT Enterprise.ID_enterprise, Number_interns_accepted, AVG(Evaluation_interns), AVG(Pilot_trust) FROM Enterprise, Evaluation_interns, Pilot_trust WHERE Enterprise.ID_enterprise= :enterprise;'; // 
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('enterprise', $ID_enterprise, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($rows)) {
+            // foreach ($rows as $value) {
+            //     array_push($stats, $value['Number_interns_accepted'], $value['AVG(Evaluation_interns)'], $value['AVG(Pilot_trust)']);
+            // }
+            return $rows;
         } else {
             $msg = "ERREUR";
         }
@@ -618,7 +657,7 @@ function CreatePeople($First_name, $Last_name, $Login, $Password, $role)
 }
 
 function UpdatePeople($First_name, $Last_name, $Login, $Password, $role, $id_people)
-{  
+{
     require("bdd.php");
     try {
         $query1 = "UPDATE People SET First_name = :First_name, Last_name = :Last_name, Login = :Login, Password = :Password, Booldel = 1 WHERE ID_people = :id_people";
@@ -761,7 +800,7 @@ function IsOnWhishList($id_people, $id_offer)
         $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
         $stmt->bindValue('id_offer', $id_offer, PDO::PARAM_STR);
         $stmt->execute();
-        
+
         if ($query) {
             if ($stmt->rowCount() > 0) {
                 return TRUE;
