@@ -24,8 +24,12 @@
                                             <button type="submit" name="btn" class="btn btn-sm btn-outline-secondary">
                                                 <?php
                                                 if (IsOnWhishList($_SESSION['sess_user_id'], $annonce[$i]['ID_internship_offers'])) {
+                                                    echo '<i class="fas fa-heart"></i>';
+                                                    echo ' ';
                                                     echo 'On Whishlist';
                                                 } else {
+                                                    echo '<i class="far fa-heart"></i>';
+                                                    echo ' ';
                                                     echo 'Add to Whishlist';
                                                 }
                                                 ?>
