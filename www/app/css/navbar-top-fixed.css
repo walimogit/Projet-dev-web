@@ -283,7 +283,7 @@ a:hover{
 }
 
  @media (min-width: 0px) and (max-width: 560px) { /*cache l'image en fonction de la taille de l'écran */
-  a{
+  test{
     display: none;
   }
   .img navbar-brand{

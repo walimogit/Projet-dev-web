@@ -19,7 +19,7 @@ foreach (Search() as $key) {
         $result_people[] = $key; 
     }
 }
-if (empty($search )){
+if (empty($search)){
     $result = 'Nothing found';
 }
 
