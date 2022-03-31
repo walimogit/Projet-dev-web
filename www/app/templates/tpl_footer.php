@@ -33,7 +33,7 @@
                 </div>
                 <div class="col text-center">
                     <img class="mt-3" src="./img/logo.png" width="121" height="36" alt="Logo StageHUB">
-                    <div class="mt-4 sec-color">Copyright © StageHUB</div>
+                    <div class="mt-4 sec-color">Copyright &copy; StageHUB</div>
                     <div class="sec-color">2018 - 2022</div>
                 </div>
             </div>
