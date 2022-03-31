@@ -9,7 +9,7 @@ if(!isLoggedIn()){
 
 $result_stage = Search2();
 $annonce = GetAllStatsOffer();
-$StatsPeople = GetAllStatsPeople();
+//$StatsPeople = GetAllStatsPeople();
 
 if (isset($_POST['btn'])) {
 
@@ -17,6 +17,15 @@ if (isset($_POST['btn'])) {
     $idintership = $_POST['idintership'];
 
     AddToWishlist($id, $idintership); 
+    
+}
+
+if (isset($_POST['btn_del'])) {
+
+    $id = $_POST['id'];
+    $idintership = $_POST['idintership'];
+
+    RemoveWishlist($id, $idintership); 
     
 }
 
