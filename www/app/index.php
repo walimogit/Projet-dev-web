@@ -9,8 +9,15 @@ if(!isLoggedIn())
 
 $result_stage = Search2();
 
-require_once('templates/tpl_header.php');   
-require_once('templates/tpl_index.php');
+if (!isEnterprise()){
+    require_once('templates/tpl_header.php'); 
+    require_once('templates/tpl_index.php');
+    
+}else {
+    require_once('templates/tpl_headerENTERPRISE.php'); 
+    require_once('templates/tpl_index.php');
+}
+
 require_once('templates/tpl_footer.php');
 
 ?>
