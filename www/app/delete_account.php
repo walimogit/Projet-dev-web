@@ -3,7 +3,7 @@ session_start();
 require_once('tools/tools.php');
 require_once("tools/bdd.php");
 
-if(isStudent() or isEnterprise() or !isDelegateTutor() or !isDelegateAdmin() or !isDelegateStudent()){
+if(isStudent() or isEnterprise() or !isDelegateTutor() or !isDelegateStudent() or !isDelegateAdmin() or !isAdmin()){
     header('Location: index.php');
 }
 
