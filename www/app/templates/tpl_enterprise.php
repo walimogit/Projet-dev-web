@@ -57,10 +57,9 @@
                     <table class="table table-responsive">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">Competense</th>
-                                <th scope="col">Advancement</th>
-                                <th scope="col">Internship duration</th>
-                                <th scope="col">Salary basis</th>
+                                <th scope="col">Number interns accepted</th>
+                                <th scope="col"> Average evaluation interns</th>
+                                <th scope="col">Average pilot trust</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,7 +68,6 @@
                                     <td><? echo $AllStatsEntreprise[$i]['Number_interns_accepted'] ?></td>
                                     <td><? echo $AllStatsEntreprise[$i]['AVG(Evaluation_interns)'] ?></td>
                                     <td><? echo $AllStatsEntreprise[$i]['AVG(Pilot_trust)'] ?></td>
-
                                 </tr>
                             <?php endfor; ?>
                         </tbody>

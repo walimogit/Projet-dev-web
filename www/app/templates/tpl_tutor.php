@@ -1,4 +1,4 @@
-<section class="container-fluid">
+<main class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
             <div class="row">
@@ -81,17 +81,17 @@
                             <th scope="col">ID Role</th>
                             <th scope="col">Role</th>
                             <th scope="col">Login</th>
-                            <th scope="col"></th>
+                            <th scope="col"><a href="../new_account.php" class="btn btn-modif">Create</a></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php for ($i = 0; $i < count($StatsPeople); $i++) : ?>
-                            <tr id="">
+                            <tr>
                                 <form action="../modify_account.php" method="POST">
-                                    <td><input type="text" name="ID_People" value="<? echo $StatsPeople[$i]['ID_people'] ?>" class="inputid"/></td>
+                                    <td><input type="text" name="ID_People" value="<? echo $StatsPeople[$i]['ID_people'] ?>" class="inputid" /></td>
                                     <td><input type="text" name="First_name" value="<? echo $StatsPeople[$i]['First_name'] ?>" /></td>
                                     <td><input type="text" name="Last_name" value="<? echo $StatsPeople[$i]['Last_name'] ?>" /></td>
-                                    <td><input type="text" name="ID_role" value="<? echo $StatsPeople[$i]['ID_role'] ?>"class="inputid"/></td>
+                                    <td><input type="text" name="ID_role" value="<? echo $StatsPeople[$i]['ID_role'] ?>" class="inputid" /></td>
                                     <td><input type="text" name="Role" value="<? echo $StatsPeople[$i]['role'] ?>" /></td>
                                     <td><input type="text" name="Login" value="<? echo $StatsPeople[$i]['Login'] ?>" /></td>
                                     <td><button type="submit" class="btn btn-modif">Modify</button></td>
@@ -101,7 +101,37 @@
                     </tbody>
                 </table>
             </div>
+            <div class="table-responsive">
+                <table class="table table-responsive">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">ID Entreprise</th>
+                            <th scope="col">Entreprise</th>
+                            <th scope="col">Number interns accepted</th>
+                            <th scope="col">ID City</th>
+                            <th scope="col">ID Sector</th>
+                            <th scope="col">ID Manager</th>
+                            <th scope="col"><a href="../new_account.php" class="btn btn-modif">Create</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php for ($i = 0; $i < count($AllStatsEntreprise); $i++) : ?>
+                            <tr>
+                                <form action="../modify_enterprise.php" method="POST">
+                                    <td><input type="text" name="ID_Enterprise" value="<? echo $AllStatsEntreprise[$i]['ID_enterprise'] ?>" class="inputid" /></td>
+                                    <td><input type="text" name="Name_enterprise" value="<? echo $AllStatsEntreprise[$i]['Name_enterprise'] ?>" /></td>
+                                    <td><input type="text" name="Number_interns_accepted" value="<? echo $AllStatsEntreprise[$i]['Number_interns_accepted'] ?>" class="inputid" /></td>
+                                    <td><input type="text" name="ID_City" value="<? echo $AllStatsEntreprise[$i]['ID_City'] ?>" class="inputid" /></td>
+                                    <td><input type="text" name="ID_sector" value="<? echo $AllStatsEntreprise[$i]['ID_sector'] ?>" class="inputid" /></td>
+                                    <td><input type="text" name="ID_Manager" value="<? echo $AllStatsEntreprise[$i]['ID_Manager'] ?>" class="inputid" /></td>
+                                    <td><button type="submit" class="btn btn-modif">Modify</button></td>
+                                </form>
+                            </tr>
+                        <?php endfor; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</section>
+</main>
 </div>

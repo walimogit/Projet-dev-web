@@ -10,6 +10,7 @@ $result_stage = Search2();
 $StatsOnePeople = GetOneStatsPeople($ID_people);
 $id_campus = $StatsOnePeople[0]['ID_campus'];
 $StatsPeople = GetAllStatsPeople($id_campus);
+$AllStatsEntreprise = GetAllStatsEntreprise();
 
 require_once('templates/tpl_header.php');
 require_once('templates/tpl_tutor.php');

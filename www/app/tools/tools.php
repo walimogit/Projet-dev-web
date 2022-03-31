@@ -445,12 +445,32 @@ function GetStatsEntreprise($ID_enterprise)
     return $msg;
 }
 
+function GetAllStatsEntreprise()
+{
+    require("bdd.php");
+    $stats = [];
+    try {
+        $query = 'SELECT Enterprise.ID_enterprise, Name_enterprise , Number_interns_accepted, ID_City, ID_sector , ID_people AS ID_Manager FROM Enterprise JOIN Being_located JOIN Being_in WHERE Enterprise.ID_enterprise = Being_in.ID_enterprise AND Being_in.ID_enterprise = Being_located.ID_enterprise;';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        if (!empty($rows)) {
+            return $rows;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
 function PeopleOfEnterprise($ID_people)
 {
     require("bdd.php");
     $stats = [];
     try {
-        $query = 'SELECT * FROM Enterprise WHERE ID_people = :people;'; // 
+        $query = 'SELECT * FROM Enterprise WHERE ID_people = :people;';
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('people', $ID_people, PDO::PARAM_STR);
         $stmt->execute();
@@ -591,7 +611,7 @@ function GetAllStatsPeople($id_campus)
 {
     require("bdd.php");
     try {
-        $query = "SELECT * FROM People JOIN Own JOIN Role JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_campus = :id_campus AND Own.ID_role = Role.ID_role AND Own.ID_role = 1 OR Own.ID_role = 21;"; //AND ID_campus = $_SESSION('sess_campus')
+        $query = "SELECT * FROM People JOIN Own JOIN Role JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_campus = :id_campus AND Own.ID_role = Role.ID_role AND Own.ID_role = 1 OR Own.ID_role = 21;";
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('id_campus', $id_campus, PDO::PARAM_STR);
         $stmt->execute();

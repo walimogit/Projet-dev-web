@@ -23,4 +23,10 @@ if (isset($_POST['BtnModEnterprise'])) {
     UpdateEnterprise($name, $Number_accepted, $id_people, $ID_enterprise, $city, $sector);
     //header('Location: tutor.php');
 }
+
+if (isset($_POST['BtnDelEnterprise'])) {
+    $ID_enterprise = trim($_POST['ID_enterprise']);
+    DeleteEnterprise($ID_enterprise);
+    //header('Location: tutor.php');
+}
 ?>

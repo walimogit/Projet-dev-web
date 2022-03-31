@@ -301,6 +301,10 @@ a:hover{
   max-width: 70px;
 }
 
+.btn-carac {
+  min-width: 66px;
+}
+
 body {
   background-color: #f5f5f5;
 }
