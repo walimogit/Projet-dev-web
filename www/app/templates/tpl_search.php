@@ -68,10 +68,15 @@
                                 echo '</p>';
                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                 echo '<div class="btn-group">';
-                                echo '<button type="submit" name="btn_enter" class="btn btn-sm btn-outline-secondary">';
-                                echo '<i class="fas fa-heart"></i>';
+                                echo '<a href="https://www.';
+                                echo $result_enterprise[0]['Name_enterprise'];
+                                echo '.fr" target="_blank" class="btn">';
+                                echo '<button type="submit" name="btn_RIEN" class="btn btn-sm btn-outline-secondary">';
+                                echo  'See more about this enterprise';
                                 echo ' ';
-                                echo 'See more about this enterprise';
+                                echo '<i class="fas fa-heart"></i>';
+                                echo '</a>';
+                                echo ' ';
                                 echo '</button>';
                             } elseif ($result_people) {
                                 echo '<div class="card-body">';
@@ -93,7 +98,7 @@
                             }
                             ?>
                             <input type="hidden" name="id" value="<? $_SESSION['sess_user_id'] ?>">
-                            <input type="hidden" name="idintership" value="<? echo $allresult[$i]['ID_internship_offers'] ?>">
+                            <input type="hidden" name="idintership" value="<? echo $result_competense[0]['ID_internship_offers']?>">
                         </form>
                     </div>
                     <small class="text-muted">
@@ -115,7 +120,9 @@
                         <div class="card shadow-sm">
                                      <form method="POST">
                                             <?php
+                                            // echo $allresult[$i]['Name_enterprise'];
                                             if ($allresult[$i]['Name_enterprise']) {
+                                                
                                                 echo '<div class="card-body">';
                                                 echo '<h4>';
                                                 echo $allresult[$i]['Name_enterprise'];
@@ -126,10 +133,15 @@
                                                 echo '</p>';
                                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                                 echo '<div class="btn-group">';
-                                                echo '<button type="submit" name="btn_enter" class="btn btn-sm btn-outline-secondary">';
-                                                echo '<i class="fas fa-heart"></i>';
+                                                echo '<a href="https://www.';
+                                                echo $allresult[$i]['Name_enterprise'];
+                                                echo '.fr" target="_blank" class="btn">';
+                                                echo '<button type="submit" name="btn_RIEN" class="btn btn-sm btn-outline-secondary">';
+                                                echo  'See more about this enterprise';
                                                 echo ' ';
-                                                echo 'See more about this enterprise';
+                                                echo '<i class="fas fa-heart"></i>';
+                                                echo '</a>';
+                                                echo ' ';
                                                 echo '</button>';
                                             } elseif ($allresult[$i]['Competense']) {
                                                 echo '<div class="card-body">';
