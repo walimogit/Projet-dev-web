@@ -1,4 +1,4 @@
-<main class="container-fluid">
+<section class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
             <div class="row">
@@ -77,5 +77,5 @@
             </div>
         </div>
     </div>
-</main>
+</section>
 </div>
