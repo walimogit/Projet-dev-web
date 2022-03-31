@@ -6,7 +6,7 @@ require_once('tools/tools.php');
 if (!isTutor())
     header('Location: index.php');
 $ID_people = $_SESSION['sess_user_id'];
-$result_stage = Search();
+$result_stage = Search2();
 $StatsOnePeople = GetOneStatsPeople($ID_people);
 $id_campus = $StatsOnePeople[0]['ID_campus'];
 $StatsPeople = GetAllStatsPeople($id_campus);
