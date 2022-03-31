@@ -7,10 +7,16 @@ if(!isLoggedIn())
     header('Location: login.php');
 
 
-$result_stage = Search2();
+if (!isEnterprise()){
+    $result_stage = Search2();
+    require_once('templates/tpl_header.php'); 
+    require_once('templates/tpl_index.php');
+    
+}else {
+    require_once('templates/tpl_headerENTERPRISE.php'); 
+    require_once('templates/tpl_index.php');
+}
 
-require_once('templates/tpl_header.php');   
-require_once('templates/tpl_index.php');
 require_once('templates/tpl_footer.php');
 
 ?>
