@@ -4,23 +4,23 @@
   <form action="new_enterprise.php" method="POST">
     <div class="mb-3">
       <label for="floatingInput">Name</label>
-      <input class="form-control type=" text" name="name" id="name" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="name" id="name" value="" autocomplete="off" />
     </div>
     <div class="mb-3">
       <label for="floatingInput">Number accepted</label>
-      <input class="form-control type=" text" name="Number_accepted" id="Number_accepted" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="Number_accepted" id="Number_accepted" value="" autocomplete="off" />
     </div>
     <div class="mb-3">
       <label for="floatingInput">Manager</label>
-      <input class="form-control type=" text" name="id_people" id="id_people" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="id_people" id="id_people" value="" autocomplete="off" />
     </div>
     <div class="mb-3">
       <label for="floatingInput">City</label>
-      <input class="form-control type=" text" name="city" id="city" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="city" id="city" value="" autocomplete="off" />
     </div>
     <div class="mb-3">
       <label for="floatingInput">Sector</label>
-      <input class="form-control type=" text" name="sector" id="sector" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="sector" id="sector" value="" autocomplete="off" />
 
     </div>
     <?php if (!empty($msg)) { ?>

@@ -2,7 +2,7 @@
 session_start();
 require_once('tools/tools.php');
 
-if(!isOther()){
+if(!isOther() or !isAdmin()){
     header('Location: index.php');
 }
 

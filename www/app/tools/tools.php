@@ -549,15 +549,15 @@ function GetStatsOffer($ID_offer)
     $stats = [];
     try {
         $query = 'SELECT * FROM Internship_offers where ID_internship_offers=:ID_offer'; //Penser à join l'id de l'entreprise à l'offre
-        $stmt->bindParam('ID_offer', $ID_offer, PDO::PARAM_STR);
         $stmt = $bdd->prepare($query);
+        $stmt->bindParam('ID_offer', $ID_offer, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (!empty($rows)) {
-            foreach ($rows as $value) {
-                array_push($stats, $value['Duree_de_stage'], $value['Base_remuneration'], $value['Date_offre'], $value['Nb_places_offertes']);
-            }
-            return $stats;
+            // foreach ($rows as $value) {
+            //     array_push($stats, $value['Duree_de_stage'], $value['Base_remuneration'], $value['Date_offre'], $value['Nb_places_offertes']);
+            // }
+            return $rows;
         } else {
             $msg = "ERREUR";
         }
@@ -827,11 +827,9 @@ function GetWishlist($id_people)
         $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll();
-        if (!empty($rows)) {
-            foreach ($rows as $value) {
-                array_push($stats, $value['ID_internship_offers'], $value['Advancement']);
-            }
-            return $stats;
+        if ($query) {
+            
+            return $rows;
         } else {
             $msg = "ERREUR";
         }
@@ -866,12 +864,13 @@ function GetStatsStudent($id_people)
 {
     require("bdd.php");
     try {
-        $query = 'SELECT * FROM people, Being_proposed JOIN Internship_offers WHERE Being_proposed.ID_people = 142 AND people.ID_people = 142 AND Being_proposed.ID_internship_offers=internship_offers.ID_internship_offers AND Boolsuppr = 1';
+        $query = 'SELECT * FROM people, Being_proposed JOIN Internship_offers WHERE Being_proposed.ID_people = :id_people AND people.ID_people = :id_people2 AND Being_proposed.ID_internship_offers=internship_offers.ID_internship_offers AND Boolsuppr = 1;';
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->bindValue('id_people2', $id_people, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll();
-        if (!empty($rows)) {
+        if ($query) {
             return $rows;
         } else {
             $msg = "ERREUR";

@@ -47,7 +47,7 @@
             <div class="container-fluid">
                 <test><a href="../index.php"><img src="./img/logo.png" alt="logo" class="navbar-brand" width="150"></a></test>
                 <form class="d-flex" action="/search.php">
-                    <input class="typeahead form-control me-2" type="text" placeholder="<?php 
+                    <input class="typeahead form-control form-control2 me-2" type="text" placeholder="<?php 
                     if (isset($_GET['search'])){
                         echo $_GET['search'];
                     }else

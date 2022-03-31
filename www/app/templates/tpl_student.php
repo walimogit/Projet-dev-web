@@ -1,8 +1,3 @@
-<pre><?php
-
-        var_dump($StatsStudent);
-
-        ?></pre>
 <main class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
@@ -55,6 +50,11 @@
                     <div class="row">
                         <a href="../wishlist.php" class="btn btn-modif">My whishlist</a>
                     </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../upload.php" class="btn btn-modif">My files</a>
+                    </div>
                 </div><br></br>
 
                 <div class="table-responsive">
@@ -79,10 +79,6 @@
                             <?php endfor; ?>
                         </tbody>
                     </table>
-                </div>
-
-                <div class="row row-gest justify-content-md-center">
-                    Big tableau sa mère
                 </div>
             </div>
         </div>
