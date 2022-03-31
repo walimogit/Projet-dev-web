@@ -589,7 +589,6 @@ function GetAllStatsOffer()
 function GetAllStatsPeople($id_campus)
 {
     require("bdd.php");
-    // require_once("login.php");
     try {
         $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_campus = :id_campus AND ID_role = 1 OR ID_role = 21;"; //AND ID_campus = $_SESSION('sess_campus')
         $stmt = $bdd->prepare($query);
@@ -610,7 +609,6 @@ function GetAllStatsPeople($id_campus)
 function GetOneStatsPeople($id_people)
 {
     require("bdd.php");
-    // require_once("login.php");
     try {
         $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND People.ID_people = :id_people"; //AND ID_campus = $_SESSION('sess_campus')
         $stmt = $bdd->prepare($query);
