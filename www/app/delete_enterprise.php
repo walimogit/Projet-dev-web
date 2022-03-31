@@ -3,9 +3,9 @@ session_start();
 require_once('tools/tools.php');
 require_once("tools/bdd.php");
 
-if(isStudent() or isEnterprise() or !isDelegateTutor() or !isDelegateEnterprise() or !isDelegateAdmin() or !isAdmin()){
-    header('Location: index.php');
-}
+// if(isStudent() or isEnterprise() or !isDelegateTutor() or !isDelegateEnterprise() or !isDelegateAdmin() or !isAdmin()){
+//     header('Location: index.php'); //revoir le systeme de permission
+// }
 
 $result_stage = Search2();
 
