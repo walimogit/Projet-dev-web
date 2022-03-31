@@ -1,22 +1,22 @@
-<section class="form-signin">
+<section class="form-signin text-center">
   <img class="mb-4" src="./img/logo.png" alt="logo" width="200" height="57">
   <h1 class="h3 mb-3 fw-normal">Create account</h1>
   <form action="new_account.php" method="POST">
     <div class="mb-3">
       <label for="floatingInput">First name</label>
-      <input class="form-control type=" text" name="first_name" id="first_name" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="first_name" id="first_name" value="" autocomplete="off" />
     </div>
     <div class="mb-3">
       <label for="floatingInput">Last name</label>
-      <input class="form-control type=" text" name="last_name" id="last_name" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="last_name" id="last_name" value="" autocomplete="off" />
     </div>
     <div class="mb-3">
       <label for="floatingInput">Role</label>
-      <input class="form-control type=" text" name="role" id="role" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="role" id="role" value="" autocomplete="off" />
     </div>
     <div class="mb-3">
       <label for="floatingInput">Login</label>
-      <input class="form-control type=" text" name="login" id="login" value="" autocomplete="off" />
+      <input class="form-control" type=" text" name="login" id="login" value="" autocomplete="off" />
     </div>
     <div class="mb-3">
       <label for="floatingPassword">Password</label>
