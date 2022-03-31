@@ -118,6 +118,12 @@ border-color: rgb(191, 191, 191);
 background-color: rgb(132, 151, 176);
 }
 
+.btn-delete{
+  color: rgb(240, 242, 245);
+  border-color: rgb(191, 191, 191);
+  background-color: rgb(132, 151, 176);
+  }
+
 .row-gest{
 padding-right: 10px;
 padding-bottom: 10px;
