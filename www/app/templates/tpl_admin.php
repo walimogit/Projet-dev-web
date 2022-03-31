@@ -37,7 +37,32 @@
             <div class="row">
                 <div class="col col-gest">
                     <div class="row">
-                        <div class="btn btn-modif">Student management</div>
+                        <a href="../new_account.php" class="btn btn-modif">Create student account</a>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../modify_account.php" class="btn btn-modif">Modify student account</a>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../delete_account.php" class="btn btn-modif">Delete student account</a>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../new_enterprise.php" class="btn btn-modif">Create enterprise</a>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../modify_enterprise.php" class="btn btn-modif">Modify enterprise</a>
+                    </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../delete_enterprise.php" class="btn btn-modif">Delete enterprise</a>
                     </div>
                 </div>
                 <div class="col col-gest">
@@ -45,30 +70,10 @@
                         <div class="btn btn-modif">Internship offers</div>
                     </div>
                 </div>
-                <div class="col col-gest">
-                    <div class="row">
-                        <div class="btn btn-modif">My internship</div>
-                    </div>
-                </div>
-                <div class="col col-gest">
-                    <div class="row">
-                        <div class="btn btn-modif">Create enterprise</div>
-                    </div>
-                </div>
-                <div class="col col-gest">
-                    <div class="row">
-                        <div class="btn btn-modif">Modify/delete enterprise</div>
-                    </div>
-                </div>
-                <div class="col col-gest">
-                    <div class="row">
-                        <div class="btn btn-modif">Accounts</div>
-                    </div>
-                </div>
             </div><br></br>
 
             <div class="row row-gest justify-content-md-center">
-                Big tableau sa mère
+                Faudrait un boutton déroulant pour toutes les actions élèves et un autre pour celles des enterprises, from 7 to  3 bouttons (et limite pareil pour les tuteurs) mais ca marche pas, que ce soit les tpl bootstraps ou le boutton people là en haut a droite
             </div>
         </div>
     </div>
