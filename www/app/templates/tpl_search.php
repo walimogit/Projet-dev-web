@@ -131,6 +131,15 @@
                                                 echo 'Number of interns already accept : ';
                                                 echo $allresult[$i]['Number_interns_accepted'];
                                                 echo '</p>';
+                                                $note = GetStatsEntreprise($allresult[$i]['ID_enterprise']);
+                                                echo 'Notation : ';
+                                                echo $note[0]['AVG(Evaluation_interns)'] .'   /20';
+                                                echo ' ';
+                                                // echo 'Notation : ';
+                                                // echo $note[0]['AVG(Evaluation_tutor)'] .'   /20';
+                                                // echo ' ';
+                                                
+                                                echo '</p>';
                                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                                 echo '<div class="btn-group">';
                                                 echo '<a href="https://www.';
