@@ -222,18 +222,6 @@ a:hover{
   padding-top: 50px;
 }
 
-.div8123{
-margin-right: 480px;
-}
-
-.div3218{
-  margin-left: 480px;
-  }
-
-.lolo-titoo{
-  min-width: 1000px;
-}
-
 @media (min-width: 535px){
   .col-sm-7 {
     -webkit-box-flex: 0;
