@@ -1,8 +1,3 @@
-<pre><?php
-
-        var_dump($StatsStudent);
-
-        ?></pre>
 <main class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
@@ -79,10 +74,6 @@
                             <?php endfor; ?>
                         </tbody>
                     </table>
-                </div>
-
-                <div class="row row-gest justify-content-md-center">
-                    Big tableau sa mère
                 </div>
             </div>
         </div>

@@ -9,7 +9,8 @@ if(!isStudent()){
 
 $result_stage = Search2();
 
-$StatsStudent = GetStatsStudent(142);
+$StatsStudent = GetStatsStudent($_SESSION['sess_user_id']);
+
 
 require_once('templates/tpl_header.php');
 require_once('templates/tpl_student.php');
