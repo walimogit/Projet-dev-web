@@ -13,8 +13,8 @@
                 </div>
                 <div class="div6942">
                     <img src="./img/logo.png" class="card-img pb-5" alt="...">
-                    <a href="./files/project.pdf" target="-blank" type="button" class="btn btn-primary">Learn more</a>
-                    <div class="btn-group ms-5" role="group" aria-label="Basic example">
+                    <a href="./files/project.pdf" target="blank" type="button" class="btn btn-primary">Learn more</a>
+                    <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="mailto:maxence.leroux@viacesi.fr" type="button" class="btn btn-primary">Mr. LEROUX</a>
                         <a href="mailto:jules.roge@viacesi.fr" type="button" class="btn btn-primary">Mr. ROGE</a>
                         <a href="mailto:timothee.renaud1@viacesi.fr" type="button" class="btn btn-primary">Mr. RENAUD</a>
