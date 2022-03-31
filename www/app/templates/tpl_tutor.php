@@ -1,4 +1,4 @@
-<main class="container-fluid">
+<section class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
             <div class="row">
@@ -14,16 +14,16 @@
                 </div>
             </div><br></br>
             <div class="row row-gest">
-                <div class="btn btn-carac">Name</div>
+                <div class="btn btn-carac"><? echo $StatsOnePeople[0]['First_name'] ?></div>
             </div>
             <div class="row row-gest">
-                <div class="btn btn-carac">First name</div>
+                <div class="btn btn-carac"><? echo $StatsOnePeople[0]['Last_name'] ?></div>
             </div>
             <div class="row row-gest">
-                <div class="btn btn-carac">Campus</div>
+                <div class="btn btn-carac"><? echo $StatsOnePeople[0]['Campus'] ?></div>
             </div>
             <div class="row row-gest">
-                <div class="btn btn-carac">Promo</div>
+                <div class="btn btn-carac"><? echo $StatsOnePeople[0]['Class'] ?></div>
             </div><br></br>
             <div class="row row-gest">
                 <div class="col col-gest">
@@ -75,10 +75,10 @@
                 <table class="table table-responsive">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">Competense</th>
-                            <th scope="col">Advancement</th>
-                            <th scope="col">Internship duration</th>
-                            <th scope="col">Salary basis</th>
+                            <th scope="col">First name</th>
+                            <th scope="col">First last</th>
+                            <th scope="col">Campus</th>
+                            <th scope="col">Class</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,36 +86,14 @@
                             <tr>
                                 <td><? echo $StatsPeople[$i]['First_name'] ?></td>
                                 <td><? echo $StatsPeople[$i]['Last_name'] ?></td>
-                                <td><? echo $StatsPeople[$i]['ID_campus'] ?></td>
-                                <td><? echo $StatsPeople[$i]['Duree_de_stage'] ?></td>
-                                <td><? echo $StatsPeople[$i]['Base_remuneration'] ?></td>
+                                <td><? echo $StatsPeople[$i]['Campus'] ?></td>
+                                <td><? echo $StatsPeople[$i]['Class'] ?></td>
                             </tr>
                         <?php endfor; ?>
                     </tbody>
                 </table>
             </div>
-            <div class="table-responsive">
-                <table class="table table-responsive">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">Competense</th>
-                            <th scope="col">Advancement</th>
-                            <th scope="col">Internship duration</th>
-                            <th scope="col">Salary basis</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            <tr>
-                                <td><? echo $StatsOnePeople[0]['First_name'] ?></td>
-                                <td><? echo $StatsOnePeople[0]['Last_name'] ?></td>
-                                <td><? echo $StatsOnePeople[0]['ID_campus'] ?></td>
-                                <td><? echo $StatsOnePeople[0]['Duree_de_stage'] ?></td>
-                                <td><? echo $StatsOnePeople[0]['Base_remuneration'] ?></td>
-                            </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
-</main>
+</section>
 </div>
