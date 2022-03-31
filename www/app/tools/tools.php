@@ -610,7 +610,7 @@ function GetOneStatsPeople($id_people)
 {
     require("bdd.php");
     try {
-        $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND People.ID_people = :id_people"; //AND ID_campus = $_SESSION('sess_campus')
+        $query = "SELECT * FROM People JOIN Own JOIN Working_in JOIN Campus JOIN Class JOIN Represent WHERE Own.ID_people = People.ID_people AND Working_in.ID_people = Own.ID_people AND Campus.ID_campus = Working_in.ID_campus AND Working_in.ID_people = Represent.ID_people AND Class.ID_class = Represent.ID_class AND People.ID_people = :id_people";
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
         $stmt->execute();
