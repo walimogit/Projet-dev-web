@@ -976,6 +976,8 @@ function DownloadFile($path, $name)
         header("Pragma: no-cache");
         header("Cache-Control: must-revalidate, post-check=0, pre-check=0, public");
         header("Expires: 0");
+        flush();
+        readfile($path);
     }
     return $path;
 }
