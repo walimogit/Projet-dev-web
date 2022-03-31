@@ -12,15 +12,31 @@ require_once('templates/tpl_header.php');
 
 foreach (Search() as $key) {
     if ($key['Name_enterprise'] === $search){
-        $result[] = $key['ID_enterprise'] . ' ' . $key['Name_enterprise'] . ' ' . $key['Number_interns_accepted'];
+        $result_enterprise[] = $key;
     }elseif ($key['Competense'] === $search){
-        $result[] = $key['Competense'] . ' ' . $key['Duree_de_stage'] .  ' ' . $key['Base_remuneration'] . ' ' . $key['Date_offre'] . ' ' . $key['Nb_places_offertes'];
+        $result_competense[] = $key;
     }elseif ($key['First_name'].' '.$key['Last_name'] === $search){
-        $result[] = $key['First_name'] . ' ' . $key['Last_name'] . ' ' . $key['ID_people'] . ' ' . $key['ID_role'];; 
+        $result_people[] = $key; 
     }
 }
-if (empty($result)){
+if (empty($search )){
     $result = 'Nothing found';
+}
+
+if (isset($_POST['btn_comp'])) {
+
+    $id = $_POST['id'];
+    $idintership = $_POST['idintership'];
+
+    AddToWishlist($id, $idintership);
+}
+
+if (isset($_POST['btn_DELET'])) {
+    $id = $_POST['id'];
+    $idintership = $_POST['idintership'];
+
+    RemoveWishlist($id, $idintership); 
+    
 }
 
 $allresult = Search();
