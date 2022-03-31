@@ -3,7 +3,7 @@
         var_dump($StatsStudent);
 
         ?></pre>
-<div class="container-fluid">
+<main class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
             <div class="row">
@@ -82,3 +82,5 @@
             </div>
         </div>
     </div>
+</main>
+</div>
