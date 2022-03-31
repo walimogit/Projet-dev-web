@@ -1,4 +1,4 @@
-/*html,
+html,
 
 body {
   height: 100%;
@@ -48,15 +48,15 @@ body {
 }
 
 .btn-primary {
-  background-color: rgba(0, 0, 0, 0.424);
+  background-color: rgba(178, 190, 206);
   border-color: rgba(250, 128, 114, 0.062);
-  color: #000000;
+  color: rgb(33, 37, 41);
 }
 
 .btn-primary:hover{
-  background-color: rgba(0, 0, 0, 0.424);
+  background-color: rgba(191,191,191);
   border-color: rgba(250, 128, 114, 0.062);
-  color: #005de9;
+  color: rgb(33, 37, 41);
 }
 
 .homelogin{
