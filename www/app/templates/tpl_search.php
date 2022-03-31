@@ -31,9 +31,15 @@
                                 echo $result_competense[0]['Competense'];  
                                 echo '</h4>';
                                 echo '<p>';
+                                echo 'Remuneration : ';
+                                echo $result_competense[0]['Base_remuneration'];
+                                echo '</p>';
+                                echo '<p>';
+                                echo 'Start of internship : ';
                                 echo $result_competense[0]['Date_offre'];
                                 echo '</p>';
                                 echo '<small class="text-muted">'; 
+                                echo 'Time of internship : ';
                                 echo $result_competense[0]['Duree_de_stage'];
                                 echo '</small>'; 
                                 echo '<div class="d-flex justify-content-between align-items-center">';
@@ -57,6 +63,10 @@
                                 echo '<h4>';
                                 echo $result_enterprise[0]['Name_enterprise'];                                
                                 echo '</h4>';
+                                echo '<p>';
+                                echo 'Number of interns already accept : ';
+                                echo $result_enterprise[0]['Number_interns_accepted'];
+                                echo '</p>';
                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                 echo '<div class="btn-group">';
                                 echo '<button type="submit" name="btn_enter" class="btn btn-sm btn-outline-secondary">';
@@ -68,13 +78,13 @@
                             }elseif ($result_people){
                                 echo '<div class="card-body">';
                                 echo '<h4>';
-                                echo $result_people[0]['First_name']; 
+                                echo $result_people[0]['First_name'] . ' ' . $result_people[0]['Last_name']; 
                                 echo '</h4>';
                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                 echo '<div class="btn-group">';
-                                // echo '<button type="submit" name="btn" class="btn btn-sm btn-outline-secondary">';
-                                // echo "JSP";
-                                // echo '</button>'; 
+                                echo '<button type="submit" name="btn_student" class="btn btn-sm btn-outline-secondary">';
+                                echo "JSP";
+                                echo '</button>'; 
                             }           
                                 ?>
                             <input type="hidden" name="id" value="<?$_SESSION['sess_user_id']?>">
