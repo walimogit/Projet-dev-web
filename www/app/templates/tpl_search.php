@@ -46,12 +46,12 @@
                                 echo '<div class="btn-group">';
 
                                 if (IsOnWhishList($_SESSION['sess_user_id'], $result_competense[0]['ID_internship_offers'])) {
-                                    echo '<button type="submit" name="btn_DELET" class="btn btn-sm btn-outline-secondary">';
+                                    echo '<button type="submit" name="btn_DELET" class="btn btn-result-a btn-result-b btn-sm btn-outline-secondary rounded">';
                                     echo '<i class="fas fa-heart"></i>';
                                     echo ' ';
                                     echo 'On Whishlist';
                                 } else {
-                                    echo '<button type="submit" name="btn_comp" class="btn btn-sm btn-outline-secondary">';
+                                    echo '<button type="submit" name="btn_comp" class="btn btn-result-a btn-result-b btn-sm btn-outline-secondary rounded">';
                                     echo '<i class="far fa-heart"></i>';
                                     echo ' ';
                                     echo 'Add to Whishlist';
@@ -70,8 +70,8 @@
                                 echo '<div class="btn-group">';
                                 echo '<a href="https://www.';
                                 echo $result_enterprise[0]['Name_enterprise'];
-                                echo '.fr" target="_blank" class="btn">';
-                                echo '<button type="submit" name="btn_RIEN" class="btn btn-sm btn-outline-secondary">';
+                                echo '.fr" target="_blank" class="btn btn-result-a">';
+                                echo '<button type="submit" name="btn_RIEN" class="btn btn-result-b btn-sm btn-outline-secondary rounded">';
                                 echo  'See more about this enterprise';
                                 echo ' ';
                                 echo '<i class="fas fa-heart"></i>';
@@ -85,7 +85,7 @@
                                 echo '</h4>';
                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                 echo '<div class="btn-group">';
-                                echo '<button type="submit" name="btnRIEN" class="btn btn-sm btn-outline-secondary">';
+                                echo '<button type="submit" name="btnRIEN" class="btn btn-result-a btn-result-b btn-sm btn-outline-secondary rounded">';
                                 echo "Hello !";
                                 echo '</button>';
                             }else {
@@ -146,8 +146,8 @@
                                                 echo '<div class="btn-group">';
                                                 echo '<a href="https://www.';
                                                 echo $allresult[$i]['Name_enterprise'];
-                                                echo '.fr" target="_blank" class="btn">';
-                                                echo '<button type="submit" name="btn_RIEN" class="btn btn-sm btn-outline-secondary">';
+                                                echo '.fr" target="_blank" class="btn btn-result-a">';
+                                                echo '<button type="submit" name="btn_RIEN" class="btn btn-result-b btn-sm btn-outline-secondary rounded">';
                                                 echo  'See more about this enterprise';
                                                 echo ' ';
                                                 echo '<i class="fas fa-heart"></i>';
@@ -174,12 +174,12 @@
                                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                                 echo '<div class="btn-group">';
                                                 if (IsOnWhishList($_SESSION['sess_user_id'], $allresult[$i]['ID_internship_offers'])) {
-                                                    echo '<button type="submit" name="btn_DELET" class="btn btn-sm btn-outline-secondary">';
+                                                    echo '<button type="submit" name="btn_DELET" class="btn btn-result-a btn-result-b btn-sm btn-outline-secondary rounded">';
                                                     echo '<i class="fas fa-heart"></i>';
                                                     echo ' ';
                                                     echo 'On Whishlist';
                                                 } else {
-                                                    echo '<button type="submit" name="btn_comp" class="btn btn-sm btn-outline-secondary">';
+                                                    echo '<button type="submit" name="btn_comp" class="btn btn-result-a btn-result-b btn-sm btn-outline-secondary rounded">';
                                                     echo '<i class="far fa-heart"></i>';
                                                     echo ' ';
                                                     echo 'Add to Whishlist';
@@ -192,7 +192,7 @@
                                                 echo '</h4>';
                                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                                 echo '<div class="btn-group">';
-                                                echo '<button type="submit" name="btnRIEN" class="btn btn-sm btn-outline-secondary">';
+                                                echo '<button type="submit" name="btnRIEN" class="btn btn-result-a btn-result-b btn-sm btn-outline-secondary rounded">';
                                                 echo "Hello ! ";
                                                 echo '</button>';
                                             }
