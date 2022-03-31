@@ -132,12 +132,14 @@
                                                 echo $allresult[$i]['Number_interns_accepted'];
                                                 echo '</p>';
                                                 $note = GetStatsEntreprise($allresult[$i]['ID_enterprise']);
+                                                echo '<p>';
                                                 echo 'Notation : ';
                                                 echo $note[0]['AVG(Evaluation_interns)'] .'   /20';
-                                                echo ' ';
-                                                // echo 'Notation : ';
-                                                // echo $note[0]['AVG(Evaluation_tutor)'] .'   /20';
-                                                // echo ' ';
+                                                echo '</p>';
+                                                echo '<p>';
+                                                echo 'Notation : ';
+                                                echo $note[0]['AVG(Pilot_trust)'] .'   /20';
+                                                echo '</p>';
                                                 
                                                 echo '</p>';
                                                 echo '<div class="d-flex justify-content-between align-items-center">';
