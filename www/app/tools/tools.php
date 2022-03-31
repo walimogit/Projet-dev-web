@@ -586,13 +586,13 @@ function GetAllStatsOffer()
     return $msg;
 }
 
-function GetAllStatsPeople()
+function GetAllStatsPeople($id_campus)
 {
     require("bdd.php");
-    // require_once("login.php");
     try {
-        $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_role = 1 OR ID_role = 21"; //AND ID_campus = $_SESSION('sess_campus')
+        $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_campus = :id_campus AND ID_role = 1 OR ID_role = 21;"; //AND ID_campus = $_SESSION('sess_campus')
         $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_campus', $id_campus, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (!empty($rows)) {
@@ -609,9 +609,8 @@ function GetAllStatsPeople()
 function GetOneStatsPeople($id_people)
 {
     require("bdd.php");
-    // require_once("login.php");
     try {
-        $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_role = 1 OR ID_role = 21 AND People.ID_people = :id_people"; //AND ID_campus = $_SESSION('sess_campus')
+        $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND People.ID_people = :id_people"; //AND ID_campus = $_SESSION('sess_campus')
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
         $stmt->execute();

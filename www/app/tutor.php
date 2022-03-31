@@ -5,9 +5,13 @@ require_once('tools/tools.php');
 
 if (!isTutor())
     header('Location: index.php');
-
+$ID_people = $_SESSION['sess_user_id'];
 $result_stage = Search();
-$StatsPeople = GetAllStatsPeople();
+$StatsOnePeople = GetOneStatsPeople($ID_people);
+$id_campus = $StatsOnePeople[0]['ID_campus'];
+$StatsPeople = GetAllStatsPeople($id_campus);
+echo $StatsOnePeople[0]['ID_campus'];
+echo $id_campus;
 // $id_campus = $_SESSION('sess_campus');
 
 // $msg = "";

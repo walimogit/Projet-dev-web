@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 28 mars 2022 à 14:14
+-- Généré le : jeu. 31 mars 2022 à 11:29
 -- Version du serveur : 10.3.34-MariaDB-1:10.3.34+maria~focal
 -- Version de PHP : 8.0.16
 
@@ -967,7 +967,6 @@ INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES
 (2, 2),
 (2, 3),
 (2, 6),
-(25, 8),
 (2, 9),
 (2, 10),
 (2, 13),
@@ -1144,6 +1143,11 @@ INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES
 (3, 215),
 (3, 216),
 (3, 221),
+(3, 289),
+(3, 290),
+(3, 295),
+(3, 296),
+(3, 297),
 (5, 3),
 (6, 234),
 (6, 235),
@@ -1159,7 +1163,8 @@ INSERT INTO `Own` (`ID_role`, `ID_people`) VALUES
 (6, 271),
 (6, 275),
 (6, 277),
-(6, 281);
+(6, 281),
+(25, 8);
 
 -- --------------------------------------------------------
 
@@ -1461,7 +1466,16 @@ INSERT INTO `People` (`ID_people`, `First_name`, `Last_name`, `Login`, `Password
 (278, 'Lubomir', 'Nitsch', 'Nitsch278', 'QFESG', 1),
 (279, 'Barton', 'Jumpertz', 'Jumpertz279', 'CVKJL', 1),
 (280, 'Stabislas', 'Delgrange', 'Delgrange280', 'VSOEO', 1),
-(281, 'Valentin', 'Goulier', 'Goulier281', 'VALOUU', 1);
+(281, 'Valentin', 'Goulier', 'Goulier281', 'VALOUU', 1),
+(289, 'Raymon', 'Henry', 'Uwu', 'Test', 1),
+(290, 'Raymon', 'Henry', 'Uwu', 'Test', 1),
+(291, '', '', '', '', 1),
+(292, '', '', '', '', 1),
+(293, '', '', '', '', 1),
+(294, '', '', '', '', 1),
+(295, 'Raymon', 'Henry', 'Uwu', 'Test', 1),
+(296, 'Raymon', 'Henry', 'Uwu', 'Test', 1),
+(297, 'Raymon', 'Henry', 'Uwu', 'Test', 1);
 
 -- --------------------------------------------------------
 
@@ -1575,43 +1589,67 @@ CREATE TABLE `Represent` (
 INSERT INTO `Represent` (`ID_people`, `ID_class`) VALUES
 (1, 3),
 (2, 1),
+(5, 1),
 (6, 8),
+(7, 2),
 (8, 7),
 (9, 8),
 (10, 11),
+(12, 3),
 (13, 14),
+(15, 4),
 (18, 6),
+(19, 5),
+(20, 6),
 (22, 16),
 (23, 12),
+(24, 7),
 (25, 10),
 (26, 14),
 (29, 5),
+(30, 8),
+(31, 9),
+(32, 10),
 (33, 14),
 (34, 12),
 (35, 2),
+(36, 11),
 (37, 15),
 (38, 13),
+(39, 12),
 (41, 13),
 (46, 3),
 (48, 14),
+(49, 13),
+(50, 14),
+(51, 15),
 (52, 7),
+(53, 16),
 (54, 7),
 (56, 14),
+(58, 17),
 (59, 13),
 (60, 15),
 (63, 10),
 (64, 8),
 (65, 3),
+(66, 1),
 (67, 14),
 (70, 6),
 (71, 12),
 (72, 12),
+(73, 2),
+(75, 3),
+(76, 4),
 (77, 4),
+(80, 8),
+(81, 5),
 (82, 3),
 (83, 4),
 (84, 5),
 (86, 15),
 (87, 1),
+(88, 8),
 (99, 15),
 (104, 5),
 (105, 7),
@@ -1625,6 +1663,7 @@ INSERT INTO `Represent` (`ID_people`, `ID_class`) VALUES
 (121, 15),
 (133, 13),
 (142, 17),
+(143, 2),
 (147, 14),
 (149, 12),
 (151, 2),
@@ -1697,7 +1736,11 @@ INSERT INTO `Role` (`ID_role`, `role`) VALUES
 (3, 'Tutor'),
 (4, 'Other'),
 (5, 'Admin'),
-(6, 'Enterprise');
+(6, 'Enterprise'),
+(21, 'Delegate Student'),
+(23, 'Delegate Tutor'),
+(25, 'Delegate Admin'),
+(26, 'Delegate Enterprise');
 
 -- --------------------------------------------------------
 
@@ -1760,8 +1803,8 @@ INSERT INTO `Working_in` (`ID_people`, `ID_campus`) VALUES
 (5, 17),
 (6, 2),
 (7, 11),
-(8, 1),
-(9, 5),
+(8, 21),
+(9, 21),
 (10, 7),
 (11, 9),
 (12, 22),
@@ -1773,7 +1816,7 @@ INSERT INTO `Working_in` (`ID_people`, `ID_campus`) VALUES
 (18, 18),
 (19, 25),
 (20, 15),
-(21, 15),
+(21, 21),
 (22, 7),
 (23, 15),
 (24, 20),
@@ -2224,7 +2267,7 @@ ALTER TABLE `Internship_offers`
 -- AUTO_INCREMENT pour la table `People`
 --
 ALTER TABLE `People`
-  MODIFY `ID_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=282;
+  MODIFY `ID_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=298;
 
 --
 -- AUTO_INCREMENT pour la table `Pilot_trust`
@@ -2236,7 +2279,7 @@ ALTER TABLE `Pilot_trust`
 -- AUTO_INCREMENT pour la table `Role`
 --
 ALTER TABLE `Role`
-  MODIFY `ID_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT pour la table `Sector`
