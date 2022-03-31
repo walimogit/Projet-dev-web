@@ -606,6 +606,27 @@ function GetAllStatsPeople()
     return $msg;
 }
 
+function GetOneStatsPeople($id_people)
+{
+    require("bdd.php");
+    // require_once("login.php");
+    try {
+        $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_role = 1 OR ID_role = 21 AND People.ID_people = :id_people"; //AND ID_campus = $_SESSION('sess_campus')
+        $stmt = $bdd->prepare($query);
+        $stmt->bindParam('id_people', $id_people, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($rows)) {
+            return $rows;
+        } else {
+            $msg = "ERREUR";
+        }
+    } catch (PDOException $e) {
+        $msg = "Error : " . $e->getMessage();
+    }
+    return $msg;
+}
+
 function CreatePeople($First_name, $Last_name, $Login, $Password, $role)
 {
     require("bdd.php");
