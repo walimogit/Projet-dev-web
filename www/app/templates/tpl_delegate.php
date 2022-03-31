@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<main class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
             <div class="row">
@@ -22,7 +22,7 @@
             <div class="row row-gest">
                 <div class="btn btn-carac">Campus</div>
             </div>
-            <div class="row row-gest">   
+            <div class="row row-gest">
                 <div class="btn btn-carac">Promo</div>
             </div><br></br>
             <div class="row row-gest">
@@ -63,4 +63,5 @@
             </div>
         </div>
     </div>
+</main>
 </div>
