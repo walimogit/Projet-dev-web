@@ -45,7 +45,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <a href="../index.php"><img src="./img/logo.png" alt="logo" class="navbar-brand" width="150"></a>
+                <test><a href="../index.php"><img src="./img/logo.png" alt="logo" class="navbar-brand" width="150"></a></test>
                 <form class="d-flex" action="/search.php">
                     <input class="typeahead form-control me-2" type="text" placeholder="<?php 
                     if (isset($_GET['search'])){
@@ -101,7 +101,6 @@
                         <li class="nav-item dropdown" style="margin: auto;">
                             <a class="nav-link active dropdown-toggle deroulant" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"> </i></a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Your Account</a></li>
                                 <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
                             </ul>
                         </li>
