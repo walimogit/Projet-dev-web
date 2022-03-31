@@ -278,6 +278,12 @@ a:hover{
   color: rgb(33, 37, 41);
 }
 
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+  color: rgb(33, 37, 41);
+}
+
 .form-signin {
   width: 100%;
   max-width: 330px;
