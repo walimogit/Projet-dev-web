@@ -21,19 +21,19 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <form method="POST">
-                                                <?php
-                                                if (IsOnWhishList($_SESSION['sess_user_id'], $annonce[$i]['ID_internship_offers'])) {
-                                                    echo '<button type="submit" name="btn_del" class="btn btn-sm btn-outline-secondary">';
-                                                    echo '<i class="fas fa-heart"></i>';
-                                                    echo ' ';
-                                                    echo 'On Whishlist';
-                                                } else {
-                                                    echo '<button type="submit" name="btn" class="btn btn-sm btn-outline-secondary">';
-                                                    echo '<i class="far fa-heart"></i>';
-                                                    echo ' ';
-                                                    echo 'Add to Whishlist';
-                                                }
-                                                ?>
+                                            <?php
+                                            if (IsOnWhishList($_SESSION['sess_user_id'], $annonce[$i]['ID_internship_offers'])) {
+                                                echo '<button type="submit" name="btn_del" class="btn btn-sm btn-outline-secondary">';
+                                                echo '<i class="fas fa-heart"></i>';
+                                                echo ' ';
+                                                echo 'On Whishlist';
+                                            } else {
+                                                echo '<button type="submit" name="btn" class="btn btn-sm btn-outline-secondary">';
+                                                echo '<i class="far fa-heart"></i>';
+                                                echo ' ';
+                                                echo 'Add to Whishlist';
+                                            }
+                                            ?>
                                             </button>
 
                                             <input type="hidden" name="id" value="<? echo $_SESSION['sess_user_id'] ?>">
@@ -50,3 +50,4 @@
         </div>
     </div>
 </main>
+</div>
