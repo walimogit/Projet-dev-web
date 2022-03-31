@@ -85,8 +85,8 @@
                                 echo '</h4>';
                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                 echo '<div class="btn-group">';
-                                echo '<button type="submit" name="btn" class="btn btn-sm btn-outline-secondary">';
-                                echo "JSP";
+                                echo '<button type="submit" name="btnRIEN" class="btn btn-sm btn-outline-secondary">';
+                                echo "Hello !";
                                 echo '</button>';
                             }else {
                                 echo '<div class="card-body">';
@@ -181,8 +181,8 @@
                                                 echo '</h4>';
                                                 echo '<div class="d-flex justify-content-between align-items-center">';
                                                 echo '<div class="btn-group">';
-                                                echo '<button type="submit" name="btn" class="btn btn-sm btn-outline-secondary">';
-                                                echo "JSP";
+                                                echo '<button type="submit" name="btnRIEN" class="btn btn-sm btn-outline-secondary">';
+                                                echo "Hello ! ";
                                                 echo '</button>';
                                             }
                                             ?>
