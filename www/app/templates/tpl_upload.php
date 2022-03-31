@@ -44,7 +44,11 @@
                     <input type="submit" name="submit" value="Submit" />
                 </form>
             </div>
-
+            <form method="POST">
+            <button type="submit" name="submitdownload" class="btn btn-result-b btn-sm btn-outline-secondary rounded">RIEN</button>
+            </form>
+            
+            
         </div>
     </section>
 </main>
