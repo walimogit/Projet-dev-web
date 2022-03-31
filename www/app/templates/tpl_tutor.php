@@ -94,6 +94,28 @@
                     </tbody>
                 </table>
             </div>
+            <div class="table-responsive">
+                <table class="table table-responsive">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Competense</th>
+                            <th scope="col">Advancement</th>
+                            <th scope="col">Internship duration</th>
+                            <th scope="col">Salary basis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td><? echo $StatsOnePeople[0]['First_name'] ?></td>
+                                <td><? echo $StatsOnePeople[0]['Last_name'] ?></td>
+                                <td><? echo $StatsOnePeople[0]['ID_campus'] ?></td>
+                                <td><? echo $StatsOnePeople[0]['Duree_de_stage'] ?></td>
+                                <td><? echo $StatsOnePeople[0]['Base_remuneration'] ?></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </main>
+</div>

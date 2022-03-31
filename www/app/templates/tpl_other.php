@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<main class="container-fluid">
     <div class="row">
         <div class="col-3"><br></br>
             <div class="row">
@@ -22,7 +22,7 @@
             <div class="row row-gest">
                 <div class="btn btn-carac">Who</div>
             </div>
-            <div class="row row-gest">   
+            <div class="row row-gest">
                 <div class="btn btn-carac">Where</div>
             </div><br></br>
             <div class="row row-gest">
@@ -45,11 +45,13 @@
                     <div class="row">
                         <div class="btn btn-modif">Others are here</div>
                     </div>
-            </div><br></br>
+                </div><br></br>
 
-            <div class="row row-gest justify-content-md-center">
-                Big tableau sa mère
+                <div class="row row-gest justify-content-md-center">
+                    Big tableau sa mère
+                </div>
             </div>
         </div>
     </div>
+</main>
 </div>
