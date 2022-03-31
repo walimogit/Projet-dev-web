@@ -20,11 +20,11 @@
                             <?php
                             if ($result == 'Nothing found') {
                                 echo '<div class="card-body">';
-                                echo '<div class="d-flex justify-content-between align-items-center">';
-                                echo '<div class="btn-group">';
                                 echo '<h4>';
                                 echo $result;
                                 echo '</h4>';
+                                echo '<div class="d-flex justify-content-between align-items-center">';
+                                echo '<div class="btn-group">';
                             } elseif ($result_competense) {
                                 echo '<div class="card-body">';
                                 echo '<h4>';
@@ -83,6 +83,13 @@
                                 echo '<button type="submit" name="btn" class="btn btn-sm btn-outline-secondary">';
                                 echo "JSP";
                                 echo '</button>';
+                            }else {
+                                echo '<div class="card-body">';
+                                echo '<h4>';
+                                echo 'Nothing found';
+                                echo '</h4>';
+                                echo '<div class="d-flex justify-content-between align-items-center">';
+                                echo '<div class="btn-group">';
                             }
                             ?>
                             <input type="hidden" name="id" value="<? $_SESSION['sess_user_id'] ?>">
