@@ -24,42 +24,12 @@
 
                 <!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
 
-                <?php if (isStudent()) : ?>
-
-
-                    <a href="../annonces.php" class="lead text-decoration-none prin-color">Annonces</a>
-
-
-                <?php elseif (isTutor()) : ?>
-
-
-                    <a href="../annonces.php" class="lead text-decoration-none prin-color">Annonces</a>
-
-
-                <?php elseif (isAdmin()) : ?>
-
-
-                    <a href="../annonces.php" class="lead text-decoration-none prin-color">Annonces</a>
-
-
-                <?php elseif (isDelegate()) : ?>
-
-
-                    <a href="../annonces.php" class="lead text-decoration-none prin-color">Annonces</a>
-
-
-                <?php endif; ?>
-
-
-                <!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
-
-                <?php if (isEnterprise()) : ?>
-
-
-                    <a href="../enterprise.php" class="lead text-decoration-none prin-color">Annonces</a>
-
-
-                <?php endif; ?>
+                <?php 
+                if (!isEnterprise()){
+                    echo '<a href="../annonces.php" class="lead text-decoration-none prin-color">Annonces</a>';
+                }else 
+                    echo '<a href="../enterprise.php" class="lead text-decoration-none prin-color">Annonces</a>';
+                ?>
 
 
                 <!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
