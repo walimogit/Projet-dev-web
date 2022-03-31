@@ -1,4 +1,4 @@
-<section class="form-signin">
+<section class="form-signin text-center">
     <img class="mb-4" src="./img/logo.png" alt="logo" width="200" height="57">
     <h1 class="h3 mb-3 fw-normal">Modify account</h1>
     <form action="modify_account.php" method="POST">
