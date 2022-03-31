@@ -18,7 +18,7 @@ $AllStatsEntreprise = GetStatsEntreprise($peoplee);
 echo $AllStatsEntreprise;
 var_dump($AllStatsEntreprise) ;
 
-require_once('templates/tpl_header.php');
+require_once('templates/tpl_headerENTERPRISE.php');
 require_once('templates/tpl_enterprise.php');
 require_once('templates/tpl_footer.php');
 ?>
