@@ -50,6 +50,11 @@
                     <div class="row">
                         <a href="../wishlist.php" class="btn btn-modif">My whishlist</a>
                     </div>
+                </div>
+                <div class="col col-gest">
+                    <div class="row">
+                        <a href="../upload.php" class="btn btn-modif">My files</a>
+                    </div>
                 </div><br></br>
 
                 <div class="table-responsive">
