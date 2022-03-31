@@ -3,9 +3,8 @@ session_start();
 require_once('tools/tools.php');
 require_once("tools/bdd.php");
 
-// if(isStudent() or isEnterprise() or isDelegateTutor() or !isDelegateAdmin() or !isAdmin()){
-//     header('Location: index.php');  //revoir le systeme de permission
-// }
+if(!isLoggedIn())
+    header('Location: login.php');
 
 $result_stage = Search2();
 require_once('templates/tpl_header.php');
@@ -21,6 +20,10 @@ if (isset($_POST['BtnModAccount'])) {
     $role = trim($_POST['role']);
     $id_people = trim($_POST['id_people']);
     UpdatePeople($first_name, $last_name, $login, $password, $role, $id_people);
+}
+if (isset($_POST['BtnDelAccount'])) {
+    $id_people = trim($_POST['id_people']);
+    DeletePeople($id_people);
     //header('Location: tutor.php');
 }
 ?>

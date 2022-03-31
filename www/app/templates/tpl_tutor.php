@@ -75,19 +75,27 @@
                 <table class="table table-responsive">
                     <thead class="table-dark">
                         <tr>
+                            <th scope="col">ID People</th>
                             <th scope="col">First name</th>
                             <th scope="col">First last</th>
-                            <th scope="col">Campus</th>
-                            <th scope="col">Class</th>
+                            <th scope="col">ID Role</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Login</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php for ($i = 0; $i < count($StatsPeople); $i++) : ?>
-                            <tr>
-                                <td><? echo $StatsPeople[$i]['First_name'] ?></td>
-                                <td><? echo $StatsPeople[$i]['Last_name'] ?></td>
-                                <td><? echo $StatsPeople[$i]['Campus'] ?></td>
-                                <td><? echo $StatsPeople[$i]['Class'] ?></td>
+                            <tr id="">
+                                <form action="../modify_account.php" method="POST">
+                                    <td><input type="text" name="ID_People" value="<? echo $StatsPeople[$i]['ID_people'] ?>" class="inputid"/></td>
+                                    <td><input type="text" name="First_name" value="<? echo $StatsPeople[$i]['First_name'] ?>" /></td>
+                                    <td><input type="text" name="Last_name" value="<? echo $StatsPeople[$i]['Last_name'] ?>" /></td>
+                                    <td><input type="text" name="ID_role" value="<? echo $StatsPeople[$i]['ID_role'] ?>"class="inputid"/></td>
+                                    <td><input type="text" name="Role" value="<? echo $StatsPeople[$i]['role'] ?>" /></td>
+                                    <td><input type="text" name="Login" value="<? echo $StatsPeople[$i]['Login'] ?>" /></td>
+                                    <td><button type="submit" class="btn btn-modif">Modify</button></td>
+                                </form>
                             </tr>
                         <?php endfor; ?>
                     </tbody>

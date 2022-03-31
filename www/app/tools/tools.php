@@ -147,6 +147,8 @@ function changeRoleDelegate($ID_role, $ID_people)
     return $msg;
 }
 
+
+
 function Search()
 {
     require("bdd.php");
@@ -210,7 +212,6 @@ function Search2()
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $value) {
             array_push($tab, $value['Name_enterprise']);
-            //return $value['Name_enterprise'];
         }
         
     }
@@ -590,7 +591,7 @@ function GetAllStatsPeople($id_campus)
 {
     require("bdd.php");
     try {
-        $query = "SELECT * FROM People JOIN Own JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_campus = :id_campus AND ID_role = 1 OR ID_role = 21;"; //AND ID_campus = $_SESSION('sess_campus')
+        $query = "SELECT * FROM People JOIN Own JOIN Role JOIN Working_in WHERE People.ID_people = Own.ID_people AND Own.ID_people = Working_in.ID_people AND ID_campus = :id_campus AND Own.ID_role = Role.ID_role AND Own.ID_role = 1 OR Own.ID_role = 21;"; //AND ID_campus = $_SESSION('sess_campus')
         $stmt = $bdd->prepare($query);
         $stmt->bindParam('id_campus', $id_campus, PDO::PARAM_STR);
         $stmt->execute();
