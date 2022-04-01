@@ -4,7 +4,7 @@
     <form action="modify_account.php" method="POST">
         <div class="mb-3">
             <label for="floatingInput">ID People</label>
-            <input class="form-control" type=" text" name="id_people" id="id_people" value="<?php echo $_POST['ID_People']?>" autocomplete="off" />
+            <input class="form-control" type=" text" name="id_people" id="id_people" value="<?php echo $_POST['ID_People']?>" autocomplete="off" readonly/>
         </div>
         <div class="mb-3">
             <label for="floatingInput">First name</label>

@@ -1,11 +1,11 @@
-<section class="row">
+<main class="row">
 
     <div class="div4251 text-center">
 
         <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
 
-            <main role="main" class="inner cover pt-5">
+            <div role="main" class="inner cover pt-5">
                 <div class="div692">
                     <h1 class="cover-heading">Stage HUB</h1>
 
@@ -24,19 +24,19 @@
 
                 <!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
 
-                <?php 
-                if (!isEnterprise()){
+                <?php
+                if (!isEnterprise()) {
                     echo '<a href="../annonces.php" class="lead text-decoration-none prin-color">Annonces</a>';
-                }else 
+                } else
                     echo '<a href="../enterprise.php" class="lead text-decoration-none prin-color">Annonces</a>';
                 ?>
 
 
                 <!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
 
-            </main>
+            </div>
         </div>
     </div>
 
-</section>
+</main>
 </div>
