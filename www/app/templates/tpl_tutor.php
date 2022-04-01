@@ -87,5 +87,6 @@
         </div>
     </div>
     </div>
+    <script src="../RunServiceWorker.js"></script>
 </main>
 </div>

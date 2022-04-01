@@ -2,7 +2,7 @@
     "name": "HUB-STAGE",
     "short_name": "HUBSTAGE",
     "description": "Hub Stage Login",
-    "start_url": "index.html",
+    "start_url": "index.php",
     "display": "standalone",
     "background-color": "#FFFF",
     "theme_color" : "#03a9f4",
