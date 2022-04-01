@@ -49,10 +49,6 @@
                         <div class="btn btn-modif">Internship offers</div>
                     </div>
                 </div><br></br>
-
-                <div class="row row-gest justify-content-md-center">
-                    Big tableau sa mère
-                </div>
                 <div class="table-responsive">
                     <table class="table table-responsive">
                         <thead class="table-dark">

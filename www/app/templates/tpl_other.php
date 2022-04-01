@@ -46,10 +46,6 @@
                         <div class="btn btn-modif">Others are here</div>
                     </div>
                 </div><br></br>
-
-                <div class="row row-gest justify-content-md-center">
-                    Big tableau sa mère
-                </div>
             </div>
         </div>
     </div>

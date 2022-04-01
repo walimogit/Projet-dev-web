@@ -57,10 +57,6 @@
                     </div>
                 </div>
             </div><br></br>
-
-            <div class="row row-gest justify-content-md-center">
-                Big tableau sa mère
-            </div>
         </div>
     </div>
 </section>
