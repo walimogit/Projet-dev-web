@@ -26,9 +26,9 @@
 
                 <?php
                 if (!isEnterprise()) {
-                    echo '<a href="../annonces.php" class="lead text-decoration-none prin-color">Annonces</a>';
+                    echo '<a href="../annonces.php" class="lead text-decoration-none prin-color">Offers</a>';
                 } else
-                    echo '<a href="../enterprise.php" class="lead text-decoration-none prin-color">Annonces</a>';
+                    echo '<a href="../enterprise.php" class="lead text-decoration-none prin-color">Offers</a>';
                 ?>
 
 
