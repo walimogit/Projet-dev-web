@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../css/navbar-top-fixed.css">
 <script src="../vendors/bootstrap/js/bootstrap.js"></script>
-
+</body>
 <footer>
     <div class="Footer pb-2 bg-dark">
         <div class="container">
@@ -41,6 +41,6 @@
     </div>
 </footer>
 
-</body>
+
 
 </html>
