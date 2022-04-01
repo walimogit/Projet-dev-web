@@ -11,7 +11,7 @@
       <input class="form-control" type=" text" name="name" id="name" value="<?php echo $_POST['Name_enterprise']?>" autocomplete="off" />
     </div>
     <div class="mb-3">
-      <label for="floatingInput">Number accepted</label>
+      <label for="floatingInput">Number interns accepted</label>
       <input class="form-control" type=" text" name="Number_accepted" id="Number_accepted" value="<?php echo $_POST['Number_interns_accepted']?>" autocomplete="off" />
     </div>
     <div class="mb-3">
