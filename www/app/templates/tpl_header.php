@@ -10,7 +10,6 @@
     <meta name="author" content="Hub Stage Fundation">
     <link rel="stylesheet" href="./vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="./vendors/jquery/jquery.js">
     <link rel="icon" href="./img/logo3.ico">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="192x192" href="./img/hub_stage_x192.png">

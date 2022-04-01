@@ -1,4 +1,4 @@
-<main class="row">
+<section class="row">
 
     <div class="div4251 text-center">
 
@@ -38,5 +38,5 @@
         </div>
     </div>
 
-</main>
+            </section>
 </div>

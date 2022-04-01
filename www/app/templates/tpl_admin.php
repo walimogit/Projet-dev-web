@@ -71,10 +71,6 @@
                     </div>
                 </div>
             </div><br></br>
-
-            <div class="row row-gest justify-content-md-center">
-                Faudrait un boutton déroulant pour toutes les actions élèves et un autre pour celles des enterprises, from 7 to  3 bouttons (et limite pareil pour les tuteurs) mais ca marche pas, que ce soit les tpl bootstraps ou le boutton people là en haut a droite
-            </div>
         </div>
     </div>
 </section>

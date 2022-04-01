@@ -3,8 +3,8 @@
   <h1 class="h3 mb-3 fw-normal">Modify enterprise</h1>
   <form action="modify_enterprise.php" method="POST">
     <div class="mb-3">
-      <label for="floatingInput">ID People</label>
-      <input class="form-control type=" text" name="id_enterprise" id="id_enterprise" value="<?php echo $_POST['ID_Enterprise']?>" autocomplete="off" />
+      <label for="floatingInput">ID Enterprise</label>
+      <input class="form-control type=" text" name="id_enterprise" id="id_enterprise" value="<?php echo $_POST['ID_Enterprise']?>" autocomplete="off" readonly/>
     </div>
     <div class="mb-3">
       <label for="floatingInput">Name</label>
